@@ -13,3 +13,11 @@ config_version=5
 config/name="New Game Project"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Resources/": "red",
+"res://Scenes/": "teal",
+"res://Scripts/": "yellow"
+}

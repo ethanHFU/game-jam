@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c64cjsv4teeu8"]
+
+[ext_resource type="PackedScene" uid="uid://7h5bq2l7e6j7" path="res://Resources/Models/Boat/test_boat.blend" id="1_6sf2h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6sf2h"]
+size = Vector3(1, 2, 3.25)
+
+[node name="Boat" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("BoxShape3D_6sf2h")
+
+[node name="VisualAppearance" type="Node3D" parent="CharacterBody3D"]
+
+[node name="test_boat" parent="CharacterBody3D/VisualAppearance" instance=ExtResource("1_6sf2h")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0)
