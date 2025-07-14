@@ -24,7 +24,9 @@ var wave_speed = 5.0
 var marker_scene = preload("res://Scenes/Debug/ClickMarker.tscn")
 
 func _process(delta: float) -> void:
-	canvas.circles.clear()
+	if is_mouse_down:
+		mouse_press_time += delta
+	canvas.circles.clear()  # Debugging - clear circles
 	for wave in active_waves:
 		if not wave.active:
 			print("Not active")
@@ -76,15 +78,27 @@ func _process(delta: float) -> void:
 				wave.rotating = false
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		var water_surface_y = water_obj.global_position.y + water_obj.shape.size.y / 2.0
-		var wave_pos = get_mouse_click_position_on_plane_y(water_surface_y, event.position)
-		var wave = RadialWave.new(wave_pos, wave_radius_max, wave_speed)
-		active_waves.append(wave)
-		
-		# Debugging
-		spawn_marker(wave_pos)
-		
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				is_mouse_down = true
+				mouse_press_time = 0.0
+				mouse_press_pos = event.position
+			else:
+				is_mouse_down = false
+				handle_mouse_release(event.position)
+
+func handle_mouse_release(release_pos: Vector2):
+	var time_held = mouse_press_time
+	var move_distance = mouse_press_pos.distance_to(release_pos)
+
+	if time_held < hold_threshold and move_distance < drag_threshold:
+		print("Fast click")
+	elif time_held >= hold_threshold and move_distance < drag_threshold:
+		print("Hold")
+	elif move_distance >= drag_threshold:
+		print("Drag")
+
 func get_mouse_click_position_on_plane_y(y_value: float, mouse_pos: Vector2) -> Vector3:
 	var ray_origin = camera.project_ray_origin(mouse_pos)
 	var ray_dir = camera.project_ray_normal(mouse_pos)
