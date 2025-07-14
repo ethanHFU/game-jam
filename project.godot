@@ -11,5 +11,25 @@ config_version=5
 [application]
 
 config/name="New Game Project"
+run/main_scene="uid://b5q2figpm7n0r"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[input]
+
+click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(352, 23),"global_position":Vector2(361, 71),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[shader_globals]
+
+wave_origin={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+ampl_decrement={
+"type": "float",
+"value": 0.0
+}
