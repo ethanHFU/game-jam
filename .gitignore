@@ -26,3 +26,5 @@ mono_crash.*.json
 # ffmpeg
 *.vs
 ffmpeg.exe
+/android/
+/addons/
