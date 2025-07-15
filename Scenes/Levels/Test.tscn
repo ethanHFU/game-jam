@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ergbfgtc4273"]
 
 [ext_resource type="Script" uid="uid://dkrm20h376m2x" path="res://Scripts/Controller/water_event_controller.gd" id="1_iwbsa"]
-[ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_pdb2y"]
+[ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/main.gd" id="1_pdb2y"]
 [ext_resource type="Script" uid="uid://7h7c2yvx0t7r" path="res://Scripts/Controller/input_controller.gd" id="2_1hdcq"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="2_iwbsa"]
 [ext_resource type="Script" uid="uid://btfb7d3vyclnk" path="res://Scripts/Controller/canvas_controller.gd" id="3_pdb2y"]
