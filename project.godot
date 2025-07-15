@@ -22,3 +22,8 @@ folder_colors={
 "res://Scenes/": "teal",
 "res://Scripts/": "yellow"
 }
+
+[rendering]
+
+environment/volumetric_fog/volume_size=128
+environment/volumetric_fog/volume_depth=256
