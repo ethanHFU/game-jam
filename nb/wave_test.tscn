@@ -1,15 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5q2figpm7n0r"]
+[gd_scene load_steps=9 format=3 uid="uid://b5q2figpm7n0r"]
 
 [ext_resource type="Script" uid="uid://ciai0u317585a" path="res://nb/wave_test.gd" id="1_27yj0"]
 [ext_resource type="Shader" uid="uid://c680pdi16rytn" path="res://nb/wave_shader.gdshader" id="1_u2bwp"]
 
-[sub_resource type="Curve" id="Curve_27yj0"]
-_data = [Vector2(0, 0), 0.0, 3.26864, 0, 0, Vector2(0.51, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.37079, 0.0, 0, 0]
-point_count = 3
-
 [sub_resource type="Gradient" id="Gradient_27yj0"]
 offsets = PackedFloat32Array(0, 0.991803)
-colors = PackedColorArray(4.11999e-05, 0.354105, 0.983004, 1, 5.43877e-06, 0.0794645, 0.498769, 1)
+colors = PackedColorArray(4.11999e-05, 0.354105, 0.983004, 1, 1.09257e-05, 0.062264, 0.427586, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_27yj0"]
 noise_type = 2
@@ -24,7 +20,7 @@ noise = SubResource("FastNoiseLite_27yj0")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_27yj0"]
 render_priority = 0
 shader = ExtResource("1_u2bwp")
-shader_parameter/water_col = Color(4.39915e-05, 0.151435, 0.496498, 1)
+shader_parameter/debug_time = 0.0
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_jxiw6")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jxiw6"]
@@ -39,7 +35,6 @@ map_data = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_27yj0")
-ampl_curve = SubResource("Curve_27yj0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323906, 0, 0)

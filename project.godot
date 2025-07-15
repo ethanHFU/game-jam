@@ -29,7 +29,7 @@ wave_origin={
 "type": "vec3",
 "value": Vector3(0, 0, 0)
 }
-ampl_decrement={
+expand_wave={
 "type": "float",
 "value": 0.0
 }

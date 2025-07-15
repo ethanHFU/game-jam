@@ -3,12 +3,14 @@ render_mode unshaded;
 //render_mode wireframe;
 
 global uniform vec3 wave_origin;
-global uniform float ampl_decrement;
+global uniform float expand_wave;
 
-uniform vec4 water_col: source_color;
+uniform float debug_time = 0.0;
+
 uniform sampler2D noise_tex;
 
 varying float d;
+varying float foam;
 
 void vertex() {
 	vec3 world_vertex = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz; // use world space
@@ -16,12 +18,23 @@ void vertex() {
 	
 	d = length(vec2(wave_center.x, wave_center.z));
 	
-	VERTEX.y += sin(d*2. - TIME*8.) * ampl_decrement*exp(-d*.25);
+	float w1 = abs(d - debug_time - expand_wave + 2.);
+	w1 = smoothstep(0.0, 2.0, w1);
+	w1 -= .25;
+	
+	float w2 = abs(d - debug_time - expand_wave + 6.5);
+	w2 = smoothstep(0.0, 3.5, w2);
+	
+	float w = w1 * w2;
+	
+	VERTEX.y = -w +.75;
+	foam = smoothstep(.4, 1., VERTEX.y);
 }
 
 void fragment() {
-	vec3 noise = texture(noise_tex, UV).rgb;
-	vec3 noise2 = texture(noise_tex, UV*2.+4.).rgb;
-	ALBEDO = (noise * noise2) / 2.;
+	vec3 noise = texture(noise_tex, UV+TIME*.01).rgb;
+	vec3 noise2 = texture(noise_tex, UV*.5+TIME*.01).rgb;
+	vec3 col = noise*.5 + noise2*foam;
+	ALBEDO = col;
 	ALPHA = 1.-smoothstep(.0, 10., d);
 }
