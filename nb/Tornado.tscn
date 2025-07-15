@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://bbmfs03o1here"]
 
 [sub_resource type="Curve" id="Curve_uuc2j"]
-_data = [Vector2(0.0678851, 0), 0.0, 14.7739, 0, 0, Vector2(0.148825, 0.517578), 0.0, 0.0, 0, 0, Vector2(0.498695, 0), 0.0699925, 0.0, 0, 0]
+_data = [Vector2(0.0678851, 0), 0.0, 14.7739, 0, 0, Vector2(0.256579, 1), 0.0, 0.0, 0, 0, Vector2(0.498695, 0), 0.0699925, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_m86jh"]
 curve = SubResource("Curve_uuc2j")
 
 [sub_resource type="Gradient" id="Gradient_h3lki"]
-colors = PackedColorArray(0.102864, 0.156991, 0.181155, 1, 0.259519, 0.352155, 0.400731, 1)
+colors = PackedColorArray(0.0441081, 0.0495149, 0.0427462, 1, 0.229679, 0.195466, 0.155088, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_rprln"]
 gradient = SubResource("Gradient_h3lki")
@@ -60,7 +60,7 @@ turbulence_noise_strength = 0.1
 turbulence_noise_scale = 1.0
 
 [sub_resource type="Curve" id="Curve_mx0s2"]
-_data = [Vector2(0, 0), 0.0, 4.7191, 0, 0, Vector2(0.108434, 0.742159), 2.51685, 2.51685, 0, 0, Vector2(0.513253, 0.328413), 0.0, 0.0, 0, 0, Vector2(0.884337, 0.760148), -2.71348, -2.71348, 0, 0, Vector2(1, 0), -5.66292, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 4.7191, 0, 0, Vector2(0.157609, 0.449438), 2.51685, 2.51685, 0, 0, Vector2(0.513253, 0.328413), 0.0, 0.0, 0, 0, Vector2(0.88587, 0.47191), -2.71348, -2.71348, 0, 0, Vector2(1, 0), -5.66292, 0.0, 0, 0]
 point_count = 5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxlpb"]
@@ -70,7 +70,6 @@ use_particle_trails = true
 
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_okoew"]
 material = SubResource("StandardMaterial3D_bxlpb")
-radius = 0.2
 radial_steps = 16
 sections = 12
 section_rings = 128
@@ -84,3 +83,9 @@ trail_enabled = true
 trail_lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_hrarn")
 draw_pass_1 = SubResource("TubeTrailMesh_okoew")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.87277, 2.73955, -0.0769875)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.39104)
