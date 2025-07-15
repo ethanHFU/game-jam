@@ -29,7 +29,7 @@ func _process(delta):
 		wave_force = process_wave(wave, delta)
 		force += wave_force
 		
-	canvas.show_force_line_3D(boat.global_position, boat.global_position + force)
+	canvas.show_force_line(boat.global_position, boat.global_position + force)
 
 	# Gradually move and rotate boat
 	boat.global_position += force * delta
@@ -69,8 +69,7 @@ func process_wave(wave, delta) -> Vector3:
 
 
 func handle_click(pos: Vector2):
-	var y = water_obj.global_position.y + water_obj.shape.size.y / 2.0
-	var world_pos = get_mouse_click_position_on_plane_y(y, pos)
+	var world_pos = get_mouse_click_position_boat_plane(pos)
 	canvas.show_disappearing_marker(world_pos)
 	waves.append(RadialWave.new(world_pos, wave_radius_max, wave_speed))
 
@@ -79,8 +78,8 @@ func handle_hold(pos: Vector2, time: float):
 
 func handle_drag(start: Vector2, end: Vector2):
 	var y = water_obj.global_position.y + water_obj.shape.size.y / 2.0
-	var start_pos = get_mouse_click_position_on_plane_y(y, start)
-	var end_pos = get_mouse_click_position_on_plane_y(y, end)
+	var start_pos = get_mouse_click_position_boat_plane(start)
+	var end_pos = get_mouse_click_position_boat_plane(end)
 	var drag_vector = start_pos - end_pos
 	drag_vector.y = 0  # Flatten to XZ if needed
 	var drag_length = drag_vector.length()
@@ -92,12 +91,12 @@ func handle_drag(start: Vector2, end: Vector2):
 	var opening_radians = deg_to_rad(opening_angle)
 	waves.append(DirectedWave.new(start_pos, wave_radius_max, wave_speed, force_vec, opening_radians))
 
-func get_mouse_click_position_on_plane_y(y_value: float, mouse_pos: Vector2) -> Vector3:
+func get_mouse_click_position_boat_plane(mouse_pos: Vector2) -> Vector3:
 	var ray_origin = camera.project_ray_origin(mouse_pos)
 	var ray_dir = camera.project_ray_normal(mouse_pos)
 	if abs(ray_dir.y) < 0.001:
 		return Vector3.ZERO
-	var distance = (y_value - ray_origin.y) / ray_dir.y
+	var distance = (boat.global_position.y - ray_origin.y) / ray_dir.y
 	return ray_origin + ray_dir * distance
 
 class RadialWave:

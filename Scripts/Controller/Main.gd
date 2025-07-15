@@ -8,8 +8,9 @@ func _ready():
 	# Pass reference to canvas controller
 	water_controller.canvas = canvas_controller
 	water_controller.boat = $Boat
-	water_controller.water_obj = $StaticBody3D/WaterSurface
+	water_controller.water_obj = $Water/CollisionShape3D
 	water_controller.camera = $Camera3D
+	canvas_controller.camera = $Camera3D
 
 	input_controller.canvas = canvas_controller
 

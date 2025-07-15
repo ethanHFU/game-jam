@@ -1,34 +1,46 @@
-[gd_scene load_steps=9 format=3 uid="uid://buvsx21l7n363"]
+[gd_scene load_steps=13 format=3 uid="uid://buvsx21l7n363"]
 
+[ext_resource type="Script" uid="uid://7h7c2yvx0t7r" path="res://Scripts/Controller/input_controller.gd" id="1_2ytpj"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="1_7t06c"]
+[ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/main.gd" id="1_npfmg"]
+[ext_resource type="Script" uid="uid://dkrm20h376m2x" path="res://Scripts/Controller/water_event_controller.gd" id="2_db73o"]
+[ext_resource type="Script" uid="uid://btfb7d3vyclnk" path="res://Scripts/Controller/canvas_controller.gd" id="3_db73o"]
+[ext_resource type="Script" uid="uid://c47w15kn1oxio" path="res://Scenes/Levels/track_boat.gd" id="6_k8g1k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7t06c"]
-size = Vector3(30, 1, 1)
+size = Vector3(1, 1, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_b07c4"]
-size = Vector3(30, 1, 1)
+size = Vector3(1, 1, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2ytpj"]
-size = Vector3(30, 1, 1)
+size = Vector3(1, 1, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b07c4"]
-size = Vector3(30, 1, 1)
+size = Vector3(1, 1, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aeolh"]
-size = Vector3(30, 0.1, 6)
+size = Vector3(15, 0.1, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aeolh"]
-size = Vector3(30, 0.1, 6)
-
-[sub_resource type="Environment" id="Environment_7t06c"]
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
-volumetric_fog_length = 1024.0
+size = Vector3(15, 0.1, 100)
 
 [node name="TestLevel" type="Node3D"]
+script = ExtResource("1_npfmg")
+
+[node name="InputController" type="Node" parent="."]
+script = ExtResource("1_2ytpj")
+
+[node name="WaterEventController" type="Node" parent="."]
+script = ExtResource("2_db73o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CanvasController" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("3_db73o")
 
 [node name="Wall01" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall01"]
 shape = SubResource("BoxShape3D_7t06c")
@@ -37,7 +49,7 @@ shape = SubResource("BoxShape3D_7t06c")
 mesh = SubResource("BoxMesh_b07c4")
 
 [node name="Wall02" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall02"]
 mesh = SubResource("BoxMesh_2ytpj")
@@ -55,15 +67,13 @@ shape = SubResource("BoxShape3D_aeolh")
 mesh = SubResource("BoxMesh_aeolh")
 
 [node name="Boat" parent="." instance=ExtResource("1_7t06c")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_7t06c")
-
-[node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.56457, 0)
-size = Vector3(500, 20, 500)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.607641, 46.097)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -3.72984, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 61.1151, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+script = ExtResource("6_k8g1k")
+boat_path = NodePath("../Boat")
+offset = Vector3(0, 20, 0)

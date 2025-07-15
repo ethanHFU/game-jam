@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var camera: Camera3D = get_tree().get_root().get_node("Test/Camera3D")
+@onready var camera: Camera3D = null
 
 var wave_arcs: Array = []
 var origin_markers: Array = []
@@ -29,16 +29,21 @@ func _draw():
 		if arc.direction != null and arc.angle != null:
 			var origin = arc.origin_3d
 			var dir = arc.direction.normalized()
-			dir.y = 0  # Flatten to XZ
-			var forward_2d = Vector2(dir.x, dir.z)
-
+			dir.y = 0
+			# Compute left/right direction in world space
+			var left_dir = dir.rotated(Vector3.UP, arc.angle / 2.0)
+			var right_dir = dir.rotated(Vector3.UP, -arc.angle / 2.0)
+			# Compute world endpoints of the sector lines
+			var left_point = origin + left_dir * arc.radius_world
+			var right_point = origin + right_dir * arc.radius_world
+			# Project all to screen space
 			var screen_center = arc.center
-			var radius = arc.radius
-			var left = screen_center + forward_2d.rotated(arc.angle / 2.0) * radius
-			var right = screen_center + forward_2d.rotated(-arc.angle / 2.0) * radius
+			var left_screen = camera.unproject_position(left_point)
+			var right_screen = camera.unproject_position(right_point)
+			# Draw sector lines in screen space
+			draw_line(screen_center, left_screen, Color.DARK_RED, 2)
+			draw_line(screen_center, right_screen, Color.DARK_RED, 2)
 
-			draw_line(screen_center, left, Color.DARK_RED, 2)
-			draw_line(screen_center, right, Color.DARK_RED, 2)
 	# Draw temporary origin markers
 	for marker in origin_markers:
 		draw_circle(marker.center, marker.radius, Color.RED)
@@ -49,15 +54,16 @@ func _draw():
 	if show_drag:
 		draw_line(drag_line_start, drag_line_end, Color.DARK_ORANGE, 3)
 	
-func show_wave_radius(world_pos: Vector3, radius_in_world_units: float, direction = null, opening_angle = null):
+func show_wave_radius(world_pos: Vector3, radius_world: float, direction = null, opening_angle = null):
 	var screen_center = camera.unproject_position(world_pos)
-	var world_edge = world_pos + Vector3(radius_in_world_units, 0, 0)
+	var world_edge = world_pos + Vector3(radius_world, 0, 0)
 	var screen_edge = camera.unproject_position(world_edge)
 	var screen_radius = (screen_edge - screen_center).length()
 
 	wave_arcs.append({
 		"center": screen_center,
 		"radius": screen_radius,
+		"radius_world": radius_world,
 		"origin_3d": world_pos,
 		"direction": direction,
 		"angle": opening_angle,
@@ -73,7 +79,7 @@ func show_disappearing_marker(world_pos: Vector3, screen_radius := 3.0):
 	})
 	queue_redraw()
 
-func show_force_line_3D(world_pos_start: Vector3, world_pos_end: Vector3):
+func show_force_line(world_pos_start: Vector3, world_pos_end: Vector3):
 	force_screen_start = camera.unproject_position(world_pos_start)
 	force_screen_end = camera.unproject_position(world_pos_end)
 	show_force = true
