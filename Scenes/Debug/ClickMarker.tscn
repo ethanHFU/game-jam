@@ -1,6 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5h6at6bjajw7"]
 
-[ext_resource type="Script" uid="uid://8n045ulnfaoe" path="res://Scripts/Debug/marker.gd" id="1_p5tan"]
+[sub_resource type="GDScript" id="GDScript_t4bqg"]
+script/source = "extends Node3D
+
+func _ready():
+	await get_tree().create_timer(1.0).timeout  # Wait 1 second
+	queue_free()  # Destroy the marker
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip2qq"]
 albedo_color = Color(1, 0, 0, 1)
@@ -10,7 +16,7 @@ material = SubResource("StandardMaterial3D_ip2qq")
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Marker" type="Node3D"]
-script = ExtResource("1_p5tan")
+script = SubResource("GDScript_t4bqg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_uvpag")

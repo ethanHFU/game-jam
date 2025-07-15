@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ergbfgtc4273"]
+[gd_scene load_steps=7 format=3 uid="uid://ergbfgtc4273"]
 
-[ext_resource type="Script" uid="uid://dkrm20h376m2x" path="res://Scripts/Controller/water_event_controller.gd" id="1_iwbsa"]
-[ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_pdb2y"]
-[ext_resource type="Script" uid="uid://7h7c2yvx0t7r" path="res://Scripts/Controller/input_controller.gd" id="2_1hdcq"]
+[ext_resource type="Script" uid="uid://dkrm20h376m2x" path="res://Scripts/Waves/wave_control.gd" id="1_iwbsa"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="2_iwbsa"]
-[ext_resource type="Script" uid="uid://btfb7d3vyclnk" path="res://Scripts/Controller/canvas_controller.gd" id="3_pdb2y"]
+[ext_resource type="Script" uid="uid://btfb7d3vyclnk" path="res://Scripts/Debug/radi_drawer.gd" id="3_pdb2y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f2nln"]
 size = Vector3(50, 0.1, 50)
@@ -16,12 +14,6 @@ material = SubResource("StandardMaterial3D_iwbsa")
 size = Vector3(50, 0.1, 50)
 
 [node name="Test" type="Node3D"]
-script = ExtResource("1_pdb2y")
-
-[node name="InputController" type="Node" parent="."]
-script = ExtResource("2_1hdcq")
-
-[node name="WaterEventController" type="Node" parent="."]
 script = ExtResource("1_iwbsa")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -41,8 +33,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -5.
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CanvasController" type="Node2D" parent="CanvasLayer"]
+[node name="Canvas" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("3_pdb2y")
 
 [node name="Boat" parent="." instance=ExtResource("2_iwbsa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21.4359)
