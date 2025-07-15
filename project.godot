@@ -21,14 +21,16 @@ folder_colors={
 "res://Resources/": "red",
 "res://Scenes/": "teal",
 "res://Scripts/": "yellow"
+}
+
 [audio]
 
-buses/default_bus_layout="res://nb/default_bus_layout.tres"
+buses/default_bus_layout="res://Resources/Audio/default_bus_layout.tres"
 
 [autoload]
 
-EventBus="*res://nb/EventBus.gd"
-SceneLoader="*res://nb/scene_loader.tscn"
+EventBus="*res://Scripts/GameStateSystems/EventBus.gd"
+SceneLoader="*res://Scenes/GameStateSystems/scene_loader.tscn"
 
 [display]
 
