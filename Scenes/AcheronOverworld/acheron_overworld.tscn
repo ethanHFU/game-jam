@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://fmg1twj86522"]
+
+[ext_resource type="ArrayMesh" uid="uid://dhciax1vn0or3" path="res://Resources/Models/Scene/AcheronOverworld/cliffs.res" id="1_fxlww"]
+[ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="2_sxhid"]
+[ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/beach.glb" id="4_sxhid"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxlww"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_sxhid"]
+sky_material = SubResource("ProceduralSkyMaterial_fxlww")
+
+[sub_resource type="Environment" id="Environment_pmyky"]
+background_mode = 2
+sky = SubResource("Sky_sxhid")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fxlww"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sxhid"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxlww"]
+albedo_color = Color(0.8, 0.74902, 0.521569, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pmyky")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0366437, -0.865444, 0.499664, 0, 0.5, 0.866025, -0.999328, -0.0317344, 0.0183219, 0, 115.428, 13.286)
+shadow_enabled = true
+
+[node name="Cliffs" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_fxlww")
+
+[node name="Mountains" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_sxhid")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.5623, -45.9435)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.7038)
+shape = SubResource("BoxShape3D_fxlww")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2122, 0, 0)
+mesh = SubResource("BoxMesh_sxhid")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.88387, 338.307, -229.693)
+
+[node name="beach" parent="." instance=ExtResource("4_sxhid")]
+
+[node name="Cliffs2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
+mesh = ExtResource("1_fxlww")
+
+[node name="Mountains2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
+mesh = ExtResource("2_sxhid")
+
+[node name="beach2" parent="." instance=ExtResource("4_sxhid")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.354767, -25.9159, -236.255)
+size = Vector3(1431.43, 1, 398.826)
+material = SubResource("StandardMaterial3D_fxlww")
