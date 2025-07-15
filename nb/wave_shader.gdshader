@@ -32,8 +32,11 @@ void vertex() {
 }
 
 void fragment() {
-	vec3 noise = texture(noise_tex, UV+TIME*.01).rgb;
-	vec3 noise2 = texture(noise_tex, UV*.5+TIME*.01).rgb;
+	// threshhold , colors
+	vec2 uv = UV;
+	uv.y *= 2.;
+	vec3 noise = texture(noise_tex, uv+TIME*.1).rgb;
+	vec3 noise2 = texture(noise_tex, uv*.5+TIME*.1).rgb;
 	vec3 col = noise*.5 + noise2*foam;
 	ALBEDO = col;
 	ALPHA = 1.-smoothstep(.0, 10., d);
