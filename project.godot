@@ -15,6 +15,27 @@ run/main_scene="uid://b5q2figpm7n0r"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://nb/default_bus_layout.tres"
+
+[autoload]
+
+EventBus="*res://nb/EventBus.gd"
+SceneLoader="*res://nb/scene_loader.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="uid://cp0np0rp2fyse"
+
 [input]
 
 click={
