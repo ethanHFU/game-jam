@@ -100,7 +100,6 @@ func get_mouse_click_position_on_plane_y(y_value: float, mouse_pos: Vector2) -> 
 	var distance = (y_value - ray_origin.y) / ray_dir.y
 	return ray_origin + ray_dir * distance
 
-# TODO: Find better structure than this inheritance
 class RadialWave:
 	var origin: Vector3
 	var radius := 0.0
