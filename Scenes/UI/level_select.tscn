@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjnspkce36142"]
+
+[ext_resource type="Script" uid="uid://brnh4atjc0fjc" path="res://Scripts/UI/level_select.gd" id="1_xqnso"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xqnso")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Spacing" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Acheron" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Acheron"
+
+[node name="Phlegeton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Phlegeton"
+
+[node name="Kokytus" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Kokytus"
+
+[node name="Spacing2" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Acheron" to="." method="_on_acheron_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Phlegeton" to="." method="_on_phlegeton_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Kokytus" to="." method="_on_kokytus_button_down"]
