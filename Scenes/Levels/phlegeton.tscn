@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="2_0byig"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="3_c8qp5"]
 [ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/Beach/beach.glb" id="3_jd53g"]
-[ext_resource type="Material" uid="uid://cpwfx2cjinhx5" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Beach.tres" id="4_8vix4"]
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="4_wjcdm"]
-[ext_resource type="Material" uid="uid://q2uqjcygrej5" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Cliffs.tres" id="5_vfngt"]
 [ext_resource type="ArrayMesh" uid="uid://bakc2pelflmy5" path="res://Resources/Models/Scene/Phlegeton/cliffs.res" id="6_sukqu"]
+[ext_resource type="Material" uid="uid://ceqhhgn0q2xka" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Noise_Beach.tres" id="6_vfngt"]
 [ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="7_0byig"]
+[ext_resource type="Material" uid="uid://d1et1qb0j0pe4" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Noise.tres" id="9_p8rfr"]
 [ext_resource type="PackedScene" uid="uid://kd0rmh15oxf8" path="res://Resources/Models/Scene/AcheronOverworld/Cliffs/cliffs_overworld.glb" id="11_vfngt"]
 [ext_resource type="Material" uid="uid://bdgh74xtnx5p6" path="res://Resources/Models/Scene/Phlegeton/rock.tres" id="12_0byig"]
 
@@ -600,7 +600,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.4968, 0)
 
 [node name="beach_mesh" parent="beach" index="0"]
 layers = 8
-material_override = ExtResource("4_8vix4")
+material_override = ExtResource("6_vfngt")
 
 [node name="@StaticBody3D@30267" parent="beach" index="1"]
 collision_layer = 5
@@ -619,7 +619,7 @@ mesh = ExtResource("6_sukqu")
 [node name="Mountains" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.7048, 0)
 visible = false
-material_override = ExtResource("5_vfngt")
+material_override = ExtResource("9_p8rfr")
 mesh = ExtResource("7_0byig")
 
 [node name="beach2" parent="." instance=ExtResource("3_jd53g")]
@@ -627,7 +627,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -4.
 
 [node name="beach_mesh" parent="beach2" index="0"]
 layers = 8
-material_override = ExtResource("4_8vix4")
+material_override = ExtResource("6_vfngt")
 
 [node name="@StaticBody3D@30267" parent="beach2" index="1"]
 collision_layer = 5
@@ -648,7 +648,7 @@ metadata/_edit_group_ = true
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.354746, -25.9159, -225.163)
 size = Vector3(1431.43, 1, 398.826)
-material = ExtResource("4_8vix4")
+material = ExtResource("6_vfngt")
 
 [node name="Water2" type="CSGBox3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.354747, -13.2053, -236.866)
@@ -658,7 +658,7 @@ material = SubResource("StandardMaterial3D_l4k85")
 [node name="Mountains2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -20.7048, -461.418)
 visible = false
-material_override = ExtResource("5_vfngt")
+material_override = ExtResource("9_p8rfr")
 mesh = ExtResource("7_0byig")
 
 [node name="cliffs_overworld2" parent="." instance=ExtResource("11_vfngt")]
