@@ -5,25 +5,29 @@ enum obstacle_kind {ROCK, HAND, SOUL, BARREL, AMBROSIA, HAMMER, PADDLE}
 @export var obstacle : obstacle_kind
 @export var amount: float = 10.
 
-
-
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("Boat"):
-		match obstacle_kind:
+		match obstacle:
 			obstacle_kind.ROCK:
-				pass
+				print("rock hit ", self)
+				EventBus.take_damage.emit(amount)
 			obstacle_kind.HAND:
-				pass
+				print("hand hit ", self)
+				EventBus.take_damage.emit(amount)
 			obstacle_kind.SOUL:
-				pass
+				print("soul hit ", self)
+				EventBus.take_damage.emit(amount)
 			obstacle_kind.BARREL:
-				pass
+				print("barrel hit ", self)
+				EventBus.take_damage.emit(amount)
 			obstacle_kind.AMBROSIA:
-				pass
+				print("ambrosia hit ", self)
+				EventBus.make_invincible.emit()
 			obstacle_kind.HAMMER:
-				pass
+				print("hammer hit ", self)
+				EventBus.repair_boat.emit(amount)
 			obstacle_kind.PADDLE:
-				pass
+				print("paddle hit ", self)
+				EventBus.boost_boat.emit()
 			_:
 				print("missing obstacle in player detector")
-				

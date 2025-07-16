@@ -53,6 +53,13 @@ text = "Kokytus"
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="ReturnButton" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Zurück zum Hauptmenü"
+
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Acheron" to="." method="_on_acheron_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Phlegeton" to="." method="_on_phlegeton_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Kokytus" to="." method="_on_kokytus_button_down"]
+[connection signal="button_down" from="MarginContainer/ReturnButton" to="." method="_on_return_button_button_down"]

@@ -10,13 +10,13 @@ uniform sampler2D noise_tex2;
 void fragment() {
 	vec2 uv = fract(UV)*tex_reapeater;
 	uv.y = uv.y * 2. + sin(TIME*.5)*.25;
-	uv.x += TIME*tex_scroll_speed;
+	uv.x = uv.x * 2. + TIME*tex_scroll_speed;
 	vec3 noise = texture(noise_tex, uv).rgb;
 	noise = length(noise) < .8 ? col_1 : col_2;
 	
 	vec2 uv2 = UV;
-	uv2.y = uv.y - sin(TIME*.25)*.25;
-	uv2.x += TIME*tex_scroll_speed*.9;
+	uv2.y = uv2.y - sin(TIME*.25)*.25;
+	uv2.x = uv2.x *2. + TIME*tex_scroll_speed*.9;
 	vec3 noise2 = texture(noise_tex2, uv2).rgb;
 	noise2 = length(noise2) < .6 ? col_2 : col_1;
 	
