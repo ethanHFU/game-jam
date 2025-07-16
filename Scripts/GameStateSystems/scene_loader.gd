@@ -1,9 +1,10 @@
 extends Node
 
+@export var debug_mode: bool = false # script is deactivated if true
+
+@export_group("Scene Loader Properties")
 @export var scenes: Dictionary
 @export var loading_screen: PackedScene
-
-@export var debug_mode: bool = false # script is deactivated if true
 
 var _load_next_scene: bool = false
 var _next_scene: String = ""
