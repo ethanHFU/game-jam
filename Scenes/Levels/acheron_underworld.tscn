@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://codoxcod7ison" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Fog.tres" id="1_in514"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="1_p4pq6"]
-[ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/beach.glb" id="2_uu7ck"]
+[ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/Beach/beach.glb" id="2_uu7ck"]
 [ext_resource type="ArrayMesh" uid="uid://dhciax1vn0or3" path="res://Resources/Models/Scene/AcheronOverworld/cliffs.res" id="3_in514"]
 [ext_resource type="Material" uid="uid://cpwfx2cjinhx5" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Beach.tres" id="4_hr0rx"]
 [ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="4_xher2"]
@@ -98,6 +98,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.884
 material_override = ExtResource("4_hr0rx")
 
 [node name="Cliffs" type="MeshInstance3D" parent="."]
+layers = 3
 material_override = ExtResource("5_3e5io")
 mesh = ExtResource("3_in514")
 

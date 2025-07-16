@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://k3b22o620ic"
+path.s3tc="res://.godot/imported/cliffs_overworld_cliff2_normal.png-3040eaea10f2307602f761f7755c22b4.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "6d636bf922b367bb0748e5a0a5742314"
+}
+
+[deps]
+
+source_file="res://Resources/Models/Scene/AcheronOverworld/Cliffs/cliffs_overworld_cliff2_normal.png"
+dest_files=["res://.godot/imported/cliffs_overworld_cliff2_normal.png-3040eaea10f2307602f761f7755c22b4.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Resources/Models/Scene/AcheronOverworld/cliffs_overworld_cliff2_normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

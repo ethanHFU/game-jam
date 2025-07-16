@@ -1,8 +1,669 @@
-[gd_scene load_steps=10 format=3 uid="uid://fmg1twj86522"]
+[gd_scene load_steps=66 format=3 uid="uid://fmg1twj86522"]
 
-[ext_resource type="ArrayMesh" uid="uid://dhciax1vn0or3" path="res://Resources/Models/Scene/AcheronOverworld/cliffs.res" id="1_fxlww"]
-[ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="2_sxhid"]
-[ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/beach.glb" id="4_sxhid"]
+[ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="2_byuqy"]
+[ext_resource type="PackedScene" uid="uid://dwtyvdkh3ypv6" path="res://Resources/Models/Scene/AcheronOverworld/Mountains/mountains_overworld.glb" id="3_3sdht"]
+[ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="3_b47ct"]
+[ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="4_ew1u6"]
+[ext_resource type="PackedScene" uid="uid://kd0rmh15oxf8" path="res://Resources/Models/Scene/AcheronOverworld/Cliffs/cliffs_overworld.glb" id="4_oy3th"]
+[ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/Beach/beach.glb" id="4_sxhid"]
+[ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="5_v50jq"]
+[ext_resource type="PackedScene" uid="uid://7h5bq2l7e6j7" path="res://Resources/Models/Boat/test_boat.blend" id="8_b47ct"]
+
+[sub_resource type="Resource" id="Resource_b47ct"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(513, 833, 513)
+extent = 2048.0
+bounds = AABB(-1535, -1215, -1535, 4096, 4096, 4096)
+max_bounds_to_center_dist = 3547.24
+min_bounds_to_center_dist = 2048.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_6hjmt"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_b47ct")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_0pglt"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, -321, -351)
+extent = 1024.0
+bounds = AABB(-1023, -1345, -1375, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_fu8k1"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_0pglt")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_g3eaq"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, -321, 351)
+extent = 1024.0
+bounds = AABB(-1023, -1345, -673, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_4ua2i"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_g3eaq")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_ymnr3"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, -321, -351)
+extent = 1024.0
+bounds = AABB(-1023, -1345, -1375, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_o0cxk"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_ymnr3")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_ldpkn"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, -321, 337)
+extent = 1024.0
+bounds = AABB(-1023, -1345, -687, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_jse4t"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_ldpkn")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_u2ttn"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, -321, 341)
+extent = 1024.0
+bounds = AABB(-1023, -1345, -683, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_5bs8g"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_u2ttn")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_1ewqn"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, -321, 351)
+extent = 1024.0
+bounds = AABB(-1023, -1345, -673, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_5tp38"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_1ewqn")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_hsir6"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, -321, -351)
+extent = 1024.0
+bounds = AABB(-1023, -1345, -1375, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_q4fw3"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_hsir6")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_qyxko"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, -321, 417)
+extent = 1024.0
+bounds = AABB(-1023, -1345, -607, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_41rrd"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_qyxko")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_308w2"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, -337, 321)
+extent = 1024.0
+bounds = AABB(-1023, -1361, -703, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_0yc84"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_308w2")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_rui04"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(1, 351, 321)
+extent = 1024.0
+bounds = AABB(-1023, -673, -703, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_1qyw5"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_rui04")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_mkqx0"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(335, 191, 175)
+extent = 512.0
+bounds = AABB(-177, -321, -337, 1024, 1024, 1024)
+max_bounds_to_center_dist = 886.81
+min_bounds_to_center_dist = 512.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_qqth2"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_mkqx0")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_38bbh"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(33, 63, -33)
+extent = 128.0
+bounds = AABB(-95, -65, -161, 256, 256, 256)
+max_bounds_to_center_dist = 221.703
+min_bounds_to_center_dist = 128.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_82xs6"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_38bbh")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_nxta5"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(447, 703, 703)
+extent = 2048.0
+bounds = AABB(-1601, -1345, -1345, 4096, 4096, 4096)
+max_bounds_to_center_dist = 3547.24
+min_bounds_to_center_dist = 2048.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_druae"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_nxta5")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_3kr5g"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-1, -351, -351)
+extent = 1024.0
+bounds = AABB(-1025, -1375, -1375, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_21gjm"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_3kr5g")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_liahb"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(447, 703, -673)
+extent = 2048.0
+bounds = AABB(-1601, -1345, -2721, 4096, 4096, 4096)
+max_bounds_to_center_dist = 3547.24
+min_bounds_to_center_dist = 2048.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_4v5au"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_liahb")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_me5ye"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-577, 703, -687)
+extent = 2048.0
+bounds = AABB(-2625, -1345, -2735, 4096, 4096, 4096)
+max_bounds_to_center_dist = 3547.24
+min_bounds_to_center_dist = 2048.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_h3p3f"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_me5ye")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_llrdm"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(447, 703, -661)
+extent = 2048.0
+bounds = AABB(-1601, -1345, -2709, 4096, 4096, 4096)
+max_bounds_to_center_dist = 3547.24
+min_bounds_to_center_dist = 2048.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_3frf7"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_llrdm")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_3hh1g"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = [[Vector3(-682.824, -12.3848, -428.094), Vector3(0.0670701, 0.995527, 0.0665333), Transform3D(2.71881, -2.87099, -4.80054, 9.26748e-08, 5.33758, -3.19217, 5.59354, 1.39548, 2.33336, -682.824, -12.3848, -428.094), 2], [Vector3(-488.478, -17.3778, -400.404), Vector3(0.496229, 0.689329, 0.527809), Transform3D(-7.70866, -0.00839661, 0.574573, -8.99897e-10, 7.72923, 0.112952, -0.574634, 0.11264, -7.70784, -488.478, -17.3778, -400.404), 2], [Vector3(-407.048, -8.8256, -466.887), Vector3(0.00251784, 0.999902, 0.0137369), Transform3D(3.36076, -1.43708, -8.17251, 3.33512e-08, 8.81736, -1.55048, 8.2979, 0.582038, 3.30998, -407.048, -8.8256, -466.887), 2], [Vector3(-346.371, -10.7164, -456.266), Vector3(-0.0378705, 0.996229, 0.0780622), Transform3D(3.49131, 4.24403, -6.2512, 0, 6.88629, 4.6752, 7.55574, -1.96106, 2.88852, -346.371, -10.7164, -456.266), 2], [Vector3(-286.857, -12.5324, -418.776), Vector3(0.0833891, 0.919813, 0.383394), Transform3D(2.25014, 5.10714, -0.0880839, -1.66343e-07, 0.0962519, 5.58072, 5.1079, -2.2498, 0.0388027, -286.857, -12.5324, -418.776), 2], [Vector3(-221.358, -9.7975, -442.611), Vector3(-0.0191727, 0.994748, 0.100539), Transform3D(-0.492385, -5.17055, -7.43825, 0, 7.44923, -5.17818, 9.05881, -0.281041, -0.404301, -221.358, -9.7975, -442.611), 2], [Vector3(-200.313, -9.98672, -413.743), Vector3(0.143314, 0.987722, 0.0621839), Transform3D(3.19958, -3.9278, -5.86233, 0, 6.4368, -4.3127, 7.05652, 1.78095, 2.65811, -200.313, -9.98672, -413.743), 2], [Vector3(-75.8933, -10.9455, -427.024), Vector3(0.0579109, 0.995976, 0.0683936), Transform3D(5.83477, -2.97754, 5.31056, 1.25659e-07, 7.35554, 4.12412, -6.08833, -2.85353, 5.08939, -75.8933, -10.9455, -427.024), 2], [Vector3(30.8331, -10.7319, -447.201), Vector3(0.0320784, 0.996514, 0.077015), Transform3D(5.18753, -4.02885, 2.44533, 0, 3.63654, 5.99144, -4.71288, -4.43461, 2.69161, 30.8331, -10.7319, -447.201), 6], [Vector3(45.9796, -9.56366, -461.692), Vector3(0.00605174, 0.995432, 0.0952806), Transform3D(1.78522, 1.71855, 7.62564, 2.987e-08, 7.82198, -1.7628, -7.81689, 0.392483, 1.74155, 45.9796, -9.56366, -461.692), 6], [Vector3(171.57, -8.88719, -458.69), Vector3(0.00918018, 0.990922, 0.134124), Transform3D(8.55679, 2.97836, -2.00948, 0, 5.19055, 7.69321, 3.59286, -7.0933, 4.78579, 171.57, -8.88719, -458.69), 6], [Vector3(206.192, -12.269, -420.998), Vector3(0.000592766, 0.994846, 0.101393), Transform3D(-5.78779, -1.95517, -7.89958, 0, 9.69372, -2.39922, 8.13794, -1.39053, -5.61827, 206.192, -12.269, -420.998), 6], [Vector3(225.645, -10.7706, -417.182), Vector3(0.160465, 0.986629, 0.0285329), Transform3D(2.74921, -4.76694, -2.70388, 0, 3.02502, -5.33311, 5.48039, 2.39131, 1.35639, 225.645, -10.7706, -417.182), 6], [Vector3(327.827, -8.75683, -469.387), Vector3(0.0161766, 0.99348, 0.112851), Transform3D(9.91686, 0.535229, 0.111492, 0, 2.02542, -9.72321, -0.546718, 9.70846, 2.02235, 327.827, -8.75683, -469.387), 6], [Vector3(455.816, -11.1573, -440.076), Vector3(-0.0281585, 0.995971, 0.0851438), Transform3D(6.25747, 0.388117, 0.693057, 0, 5.50348, -3.08199, -0.794332, 3.05745, 5.45967, 455.816, -11.1573, -440.076), 6], [Vector3(580.753, -10.888, -437.001), Vector3(-0.0178563, 0.99442, 0.103977), Transform3D(-5.50661, 5.75403, -0.277224, 0, 0.383505, 7.95998, 5.7607, 5.50023, -0.264996, 580.753, -10.888, -437.001), 6], [Vector3(672.303, -14.2923, -400.57), Vector3(0.164537, 0.913502, 0.372078), Transform3D(-5.11462, 5.12356, 4.58965, 0, 5.71935, -6.38467, -6.87864, -3.80962, -3.41263, 672.303, -14.2923, -400.57), 6], [Vector3(649.368, -26.0843, -78.8542), Vector3(-0.00134575, 0.999427, 0.0338284), Transform3D(-2.35389, 0.121382, -4.68451, -4.88391e-09, 5.2423, 0.135835, 4.68609, 0.0609718, -2.3531, 649.368, -26.0843, -78.8542), 7], [Vector3(571.03, -10.9009, -26.9717), Vector3(0.0105997, 0.995475, -0.0944329), Transform3D(0.0359803, -9.0332, 3.19954, 0, 3.19956, 9.03326, -9.5831, -0.0339157, 0.0120129, 571.03, -10.9009, -26.9717), 7], [Vector3(431.766, -10.2111, -5.32395), Vector3(-0.0176999, 0.995065, -0.0976364), Transform3D(4.45358, 6.14059, 0.830026, 2.27418e-07, 1.02217, -7.5621, -6.19643, 4.41345, 0.596568, 431.766, -10.2111, -5.32395), 7], [Vector3(383.095, -11.7119, -22.5613), Vector3(-0.147232, 0.98838, -0.0377929), Transform3D(-6.19109, 0.71406, 4.24705, 0, 7.43729, -1.25044, -4.30666, -1.02651, -6.1054, 383.095, -11.7119, -22.5613), 7], [Vector3(283.842, -9.34272, -13.1878), Vector3(0.00820162, 0.999477, -0.031289), Transform3D(1.30388, 4.65669, 1.84191, 0, 1.90332, -4.81195, -5.00773, 1.21248, 0.479583, 283.842, -9.34272, -13.1878), 7], [Vector3(193.827, -14.685, -65.3722), Vector3(-0.310977, 0.69145, -0.652066), Transform3D(4.16585, -0.133702, -3.16931, 9.75299e-09, 5.23145, -0.220697, 3.17213, 0.175587, 4.16215, 193.827, -14.685, -65.3722), 7], [Vector3(138.594, -9.86356, -25.9199), Vector3(-0.0195988, 0.995094, -0.0969756), Transform3D(7.264, -3.74379, 3.55984, 0, 6.14225, 6.45964, -5.16609, -5.26412, 5.00547, 138.594, -9.86356, -25.9199), 7], [Vector3(46.155, -10.2259, -17.7071), Vector3(0.152041, 0.98679, -0.0559388), Transform3D(-4.97002, -2.32656, 4.23883, 0, 6.07866, 3.33639, -4.83534, 2.39136, -4.35689, 46.155, -10.2259, -17.7071), 7], [Vector3(-53.4932, -9.64734, -1.17343), Vector3(0.0275473, 0.995141, -0.0945259), Transform3D(-3.67675, -0.263814, 3.53784, 0, 5.09511, 0.379938, -3.54766, 0.273413, -3.66657, -53.4932, -9.64734, -1.17343), 3], [Vector3(-52.4521, -18.4182, -46.6327), Vector3(0.119933, 0.889872, -0.440164), Transform3D(-3.46215, 1.8526, -7.82558, 0, 8.51998, 2.01699, 8.04187, 0.797574, -3.36903, -52.4521, -18.4182, -46.6327), 3], [Vector3(-79.8828, -10.6238, -8.59189), Vector3(0.0019322, 0.990201, -0.139638), Transform3D(1.80548, -4.66871, -7.31749, 0, 7.47411, -4.76864, 8.68, 0.971112, 1.52207, -79.8828, -10.6238, -8.59189), 3], [Vector3(-170.677, -13.7618, -38.8033), Vector3(-0.00918017, 0.990922, -0.134124), Transform3D(-4.3499, -5.10059, -2.69149, 2.15283e-07, 3.37124, -6.38878, 5.76716, -3.84713, -2.03006, -170.677, -13.7618, -38.8033), 3], [Vector3(-190.961, -11.4374, -38.1577), Vector3(-0.0574861, 0.994827, -0.0837481), Transform3D(4.18255, -0.638071, 6.03725, 0, 7.33136, 0.774845, -6.07087, -0.439602, 4.15939, -190.961, -11.4374, -38.1577), 3], [Vector3(-303.75, -9.93586, -25.2811), Vector3(0.136058, 0.989661, -0.0453696), Transform3D(-6.62979, 0.618738, 0.540496, 0, 4.39499, -5.03121, -0.821567, -4.99302, -4.36163, -303.75, -9.93586, -25.2811), 3], [Vector3(-630.384, -10.9587, -20.86), Vector3(0.133993, 0.989609, -0.052155), Transform3D(-9.4721, -0.187592, -0.143446, 0, 5.75544, -7.52671, 0.236151, -7.52437, -5.75365, -630.384, -10.9587, -20.86), 3], [Vector3(-643.163, -12.4114, -45.0874), Vector3(-0.0392128, 0.996014, -0.080113), Transform3D(6.58854, 0.0366208, 0.0139312, 3.06808e-09, 2.34265, -6.15812, -0.0391811, 6.15801, 2.34261, -643.163, -12.4114, -45.0874), 3]]
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-1, -351, -351)
+extent = 1024.0
+bounds = AABB(-1025, -1375, -1375, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_eh67a"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_3hh1g")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_0se18"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-1, 337, 321)
+extent = 1024.0
+bounds = AABB(-1025, -687, -703, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_f1b8e"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_0se18")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_hcu2u"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-1, 321, 321)
+extent = 1024.0
+bounds = AABB(-1025, -703, -703, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_4owgt"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_hcu2u")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_0nk6c"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-1, -351, 321)
+extent = 1024.0
+bounds = AABB(-1025, -1375, -703, 2048, 2048, 2048)
+max_bounds_to_center_dist = 1773.62
+min_bounds_to_center_dist = 1024.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_6v721"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_0nk6c")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_xt2e2"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = [[Vector3(600.505, -12.8224, -44.8371), Vector3(0.121227, 0.991016, -0.0564832), Transform3D(-1.0636, -0.241436, -1.67645, 0, 1.97958, -0.285092, 1.69374, -0.151612, -1.05274, 600.505, -12.8224, -44.8371), 5], [Vector3(526.151, -9.67267, -16.1583), Vector3(-0.0732446, 0.994602, -0.0734987), Transform3D(1.69304, -0.20692, -1.04442, 0, 1.96187, -0.388683, 1.06472, 0.329027, 1.66076, 526.151, -9.67267, -16.1583), 5], [Vector3(411.515, -11.4177, -24.5623), Vector3(0.143609, 0.985673, -0.0884644), Transform3D(1.24915, -0.356419, 1.52072, -1.49012e-08, 1.94723, 0.456384, -1.56193, -0.285047, 1.2162, 411.515, -11.4177, -24.5623), 5], [Vector3(328.597, -10.5942, -7.68993), Vector3(-0.0264028, 0.996351, -0.0811607), Transform3D(1.86419, -0.202854, 0.695456, 0, 1.91999, 0.560032, -0.724437, -0.522002, 1.78961, 328.597, -10.5942, -7.68993), 5], [Vector3(104.207, -11.9568, -42.7682), Vector3(-0.0132108, 0.994695, -0.102017), Transform3D(-1.49564, 0.418695, 1.26006, 0, 1.89797, -0.630657, -1.32781, -0.471617, -1.41933, 104.207, -11.9568, -42.7682), 5], [Vector3(7.65742, -11.622, -23.2254), Vector3(-0.00924447, 0.994753, -0.101885), Transform3D(-1.99809, -0.00777248, -0.0869862, 4.65661e-10, 1.99206, -0.177997, 0.0873327, -0.177827, -1.99016, 7.65742, -11.622, -23.2254), 5], [Vector3(3.95751, -9.38547, -1.05376), Vector3(-0.00924447, 0.994753, -0.101885), Transform3D(-0.622625, 0.628251, -1.79378, -1.49012e-08, 1.88758, 0.661103, 1.90062, 0.20581, -0.587626, 3.95751, -9.38547, -1.05376), 5], [Vector3(-117.811, -9.49581, -5.05175), Vector3(-0.0245721, 0.996324, -0.082061), Transform3D(-1.08728, -0.377982, -1.63553, 0, 1.94864, -0.450344, 1.67864, -0.244826, -1.05936, -117.811, -9.49581, -5.05175), 5], [Vector3(-521.203, -11.9295, -28.4316), Vector3(0.0056479, 0.994648, -0.103171), Transform3D(0.888103, 0.304479, 1.76595, 0, 1.97092, -0.33982, -1.792, 0.150897, 0.87519, -521.203, -11.9295, -28.4316), 1], [Vector3(-668.599, -9.58192, -460.898), Vector3(0.0111647, 0.994001, 0.108803), Transform3D(1.98729, -0.044312, -0.220727, 0, 1.96088, -0.393655, 0.225131, 0.391153, 1.94841, -668.599, -9.58192, -460.898), 1], [Vector3(-574.169, -8.96221, -455.235), Vector3(-0.0105997, 0.995475, 0.0944329), Transform3D(-1.89103, 0.0652369, 0.647887, 3.72529e-09, 1.98994, -0.20037, -0.651163, -0.189453, -1.88151, -574.169, -8.96221, -455.235), 1], [Vector3(-485.884, -11.2884, -421.704), Vector3(0.141247, 0.989974, 0.000541349), Transform3D(0.845972, -0.184028, 1.8029, 7.45058e-09, 1.98966, 0.203091, -1.81227, -0.0859045, 0.841599, -485.884, -11.2884, -421.704), 5], [Vector3(-312.358, -11.8025, -442.122), Vector3(-0.0117442, 0.995078, 0.0983985), Transform3D(0.209209, 0.567952, 1.90622, -3.72529e-09, 1.91673, -0.571085, -1.98903, 0.059738, 0.200499, -312.358, -11.8025, -442.122), 5], [Vector3(-212.826, -10.4417, -434.61), Vector3(-0.0191727, 0.994748, 0.100539), Transform3D(1.02831, -0.164015, -1.70753, 0, 1.99084, -0.191228, 1.71539, 0.098321, 1.0236, -212.826, -10.4417, -434.61), 5], [Vector3(183.033, -11.6893, -430.589), Vector3(-0.147991, 0.988008, 0.0440378), Transform3D(0.47773, -0.636269, -1.83492, 0, 1.88962, -0.655237, 1.94211, 0.156513, 0.451364, 183.033, -11.6893, -430.589), 5], [Vector3(395.105, -10.6727, -450.198), Vector3(-0.00431734, 0.994986, 0.099918), Transform3D(-1.92552, 0.0342815, -0.539615, 0, 1.99598, 0.126803, 0.540703, 0.122081, -1.92165, 395.105, -10.6727, -450.198), 5]]
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-489, 673, -703)
+extent = 2048.0
+bounds = AABB(-2537, -1375, -2751, 4096, 4096, 4096)
+max_bounds_to_center_dist = 3547.24
+min_bounds_to_center_dist = 2048.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_fcd0k"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_xt2e2")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_lwxe5"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = [[Vector3(582.902, -9.23458, -8.07387), Vector3(0.0105997, 0.995475, -0.0944329), Transform3D(0.0948708, 0.0269181, 1.99757, -1.16415e-10, 1.99982, -0.0269485, -1.99775, 0.00127831, 0.0948622, 582.902, -9.23458, -8.07387), 5], [Vector3(468.977, -11.7967, -27.2728), Vector3(-0.0162139, 0.994809, -0.100456), Transform3D(1.96837, -0.000587537, 0.354265, -5.82077e-11, 2, 0.00331692, -0.354266, -0.00326447, 1.96837, 468.977, -11.7967, -27.2728), 5], [Vector3(375.173, -12.1155, -15.7083), Vector3(-0.00163856, 0.994187, -0.107655), Transform3D(-0.436681, 0.264464, 1.93374, -3.72529e-09, 1.98155, -0.271003, -1.95175, -0.0591709, -0.432653, 375.173, -12.1155, -15.7083), 5], [Vector3(293.216, -9.12929, -3.91297), Vector3(0.00820162, 0.999477, -0.031289), Transform3D(1.06024, -0.0616523, -1.69473, 0, 1.99868, -0.0727098, 1.69585, 0.0385449, 1.05954, 293.216, -9.12929, -3.91297), 5], [Vector3(19.9461, -9.33357, -2.86288), Vector3(-0.0190878, 0.994556, -0.102442), Transform3D(1.86451, 0.180707, 0.700689, -1.49012e-08, 1.93663, -0.499456, -0.723616, 0.465619, 1.80543, 19.9461, -9.33357, -2.86288), 5], [Vector3(-26.6344, -11.0494, -20.0745), Vector3(-0.0320784, 0.996514, -0.077015), Transform3D(1.2882, -0.255837, 1.50834, 1.49012e-08, 1.97184, 0.334453, -1.52988, -0.215422, 1.27006, -26.6344, -11.0494, -20.0745), 5], [Vector3(-79.4729, -10.107, -4.92154), Vector3(0.0019322, 0.990201, -0.139638), Transform3D(1.52044, 0.351663, -1.25084, 0, 1.92536, 0.5413, 1.29933, -0.411507, 1.4637, -79.4729, -10.107, -4.92154), 5], [Vector3(-666.944, -9.20478, -464.513), Vector3(0.0111647, 0.994001, 0.108803), Transform3D(0.216483, -0.194648, -1.9787, 1.86265e-09, 1.99039, -0.195798, 1.98825, 0.0211935, 0.215443, -666.944, -9.20478, -464.513), 1], [Vector3(-306.531, -9.01265, -469.639), Vector3(-0.0117442, 0.995078, 0.0983985), Transform3D(1.68182, -0.0826885, -1.07918, 7.45058e-09, 1.99415, -0.152795, 1.08234, 0.128487, 1.67691, -306.531, -9.01265, -469.639), 5], [Vector3(487.167, -11.6056, -436.804), Vector3(-0.00454685, 0.995011, 0.0996614), Transform3D(0.34101, 0.438583, 1.92129, -7.45058e-09, 1.94984, -0.4451, -1.97071, 0.0758918, 0.332458, 487.167, -11.6056, -436.804), 5]]
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-489, 673, -703)
+extent = 2048.0
+bounds = AABB(-2537, -1375, -2751, 4096, 4096, 4096)
+max_bounds_to_center_dist = 3547.24
+min_bounds_to_center_dist = 2048.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_csyoi"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_lwxe5")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_f0ino"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = [[Vector3(641.568, -10.6383, -14.9364), Vector3(0.0329246, 0.994973, -0.0945799), Transform3D(-1.85874, -0.120701, 0.72836, 0, 1.97309, 0.326974, -0.738293, 0.30388, -1.83373, 641.568, -10.6383, -14.9364), 5], [Vector3(538.592, -11.3562, -23.7267), Vector3(-0.0467176, 0.989938, -0.133564), Transform3D(-1.80201, 0.115877, 0.859849, 0, 1.98208, -0.267114, -0.867622, -0.240671, -1.78586, 538.592, -11.3562, -23.7267), 5], [Vector3(433.453, -11.8844, -26.7942), Vector3(-0.0529623, 0.996135, -0.070078), Transform3D(-1.92783, -0.18, -0.501055, 0, 1.88223, -0.676174, 0.532406, -0.651776, -1.81431, 433.453, -11.8844, -26.7942), 5], [Vector3(355.831, -12.8655, -27.9887), Vector3(0.0378705, 0.996229, -0.0780622), Transform3D(-0.313103, -0.400637, 1.93428, 7.45058e-09, 1.95843, 0.405639, -1.97534, 0.0635035, -0.306596, 355.831, -12.8655, -27.9887), 5], [Vector3(377.487, -11.6216, -11.1827), Vector3(-0.00163856, 0.994187, -0.107655), Transform3D(-0.43012, 0.364853, -1.91882, 0, 1.9648, 0.373595, 1.9532, 0.0803452, -0.422549, 377.487, -11.6216, -11.1827), 5], [Vector3(23.1029, -11.4946, -24.431), Vector3(-0.0190878, 0.994556, -0.102442), Transform3D(-1.89266, 0.0817403, 0.641215, 0, 1.98395, -0.252908, -0.646404, -0.239334, -1.87747, 23.1029, -11.4946, -24.431), 5], [Vector3(-95.4557, -9.35157, 0.214562), Vector3(0.0019322, 0.990201, -0.139638), Transform3D(1.89103, 0.133937, 0.637236, 1.49012e-08, 1.95723, -0.41138, -0.651159, 0.388966, 1.85059, -95.4557, -9.35157, 0.214562), 5], [Vector3(-378.545, -9.15555, 4.60316), Vector3(0.00431735, 0.994986, -0.099918), Transform3D(0.295115, 0.354416, -1.9461, 0, 1.96764, 0.358338, 1.97811, -0.0528754, 0.290339, -378.545, -9.15555, 4.60316), 5], [Vector3(-518.864, -11.8117, -27.1682), Vector3(0.0056479, 0.994648, -0.103171), Transform3D(0.905703, -0.312659, -1.75555, 0, 1.96902, -0.350677, 1.78317, 0.158805, 0.891672, -518.864, -11.8117, -27.1682), 1], [Vector3(-589.951, -16.0547, -50.1804), Vector3(-0.117391, 0.966839, -0.226809), Transform3D(0.882214, 0.349286, 1.7606, 1.49012e-08, 1.96177, -0.389196, -1.79491, 0.171677, 0.865349, -589.951, -16.0547, -50.1804), 1], [Vector3(-669.765, -10.2868, -454.338), Vector3(0.0111647, 0.994001, 0.108803), Transform3D(-0.0568589, -0.599909, 1.90706, 0, 1.90783, 0.600151, -1.99919, 0.017062, -0.0542386, -669.765, -10.2868, -454.338), 1], [Vector3(-217.09, -11.6245, -423.72), Vector3(-0.0191727, 0.994748, 0.100539), Transform3D(1.43755, -0.126234, -1.38475, 0, 1.99174, -0.181568, 1.39049, 0.130507, 1.43161, -217.09, -11.6245, -423.72), 5], [Vector3(401.394, -9.64173, -460.192), Vector3(-0.00431734, 0.994986, 0.099918), Transform3D(-1.9989, 0.014315, -0.0649051, 9.31323e-10, 1.95306, 0.430754, 0.066465, 0.430516, -1.95198, 401.394, -9.64173, -460.192), 5]]
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-465, 673, -703)
+extent = 2048.0
+bounds = AABB(-2513, -1375, -2751, 4096, 4096, 4096)
+max_bounds_to_center_dist = 3547.24
+min_bounds_to_center_dist = 2048.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_rjj33"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_f0ino")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_b1haw"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("2_byuqy")
+member_placeforms = [[Vector3(636.845, -16.0028, -41.5276), Vector3(-0.0658555, 0.955745, -0.28673), Transform3D(-2.42485, -0.059075, 0.476869, 0, 2.45325, 0.303911, -0.480514, 0.298114, -2.40646, 636.845, -16.0028, -41.5276), 4], [Vector3(540.348, -11.7116, -26.9743), Vector3(-0.0467176, 0.989938, -0.133564), Transform3D(1.17778, 0.614923, 1.86781, 0, 2.17721, -0.716783, -1.96643, 0.368303, 1.11871, 540.348, -11.7116, -26.9743), 4], [Vector3(446.755, -9.49862, -2.9346), Vector3(-0.0529623, 0.996135, -0.070078), Transform3D(-1.30166, -0.314398, 1.5566, 1.52985e-08, 2.01269, 0.406516, -1.58804, 0.257701, -1.27589, 446.755, -9.49862, -2.9346), 4], [Vector3(403.1, -9.31467, -14.7911), Vector3(0.143609, 0.985673, -0.0884644), Transform3D(1.50587, -0.371098, 1.83363, 0, 2.35385, 0.476382, -1.87081, -0.298707, 1.47594, 403.1, -9.31467, -14.7911), 4], [Vector3(315.603, -11.9391, -20.2899), Vector3(0.0117442, 0.995078, -0.0983985), Transform3D(-1.9115, 0.018904, 1.97569, 1.28015e-09, 2.74897, -0.0263029, -1.97578, -0.0182889, -1.91141, 315.603, -11.9391, -20.2899), 4], [Vector3(82.2274, -12.4901, -50.3958), Vector3(0.014069, 0.995786, -0.0906236), Transform3D(-1.95802, 0.217481, 1.65637, -1.91766e-08, 2.55194, -0.33507, -1.67058, -0.2549, -1.94135, 82.2274, -12.4901, -50.3958), 4], [Vector3(-32.1775, -10.1261, -6.47834), Vector3(-0.00605173, 0.995432, -0.0952806), Transform3D(-1.91585, 0.426281, -1.87138, 0, 2.64414, 0.602308, 1.91932, 0.425511, -1.868, -32.1775, -10.1261, -6.47834), 4], [Vector3(-127.36, -11.3979, -25.6792), Vector3(0.0242538, 0.994492, -0.101969), Transform3D(-2.52384, -0.183989, 0.646411, 0, 2.51202, 0.715002, -0.672085, 0.690924, -2.42743, -127.36, -11.3979, -25.6792), 4], [Vector3(-519.342, -11.7463, -26.5637), Vector3(0.0056479, 0.994648, -0.103171), Transform3D(-1.92414, -0.316639, 1.28856, 1.74142e-08, 2.26978, 0.557754, -1.32689, 0.459162, -1.86856, -519.342, -11.7463, -26.5637), 0], [Vector3(-667.935, -9.12296, -465.159), Vector3(0.0111647, 0.994001, 0.108803), Transform3D(2.06716, 0.314217, -1.22246, 1.80456e-08, 2.34579, 0.602954, 1.26219, -0.514608, 2.00208, -667.935, -9.12296, -465.159), 0], [Vector3(-311.789, -10.503, -455.195), Vector3(-0.0117442, 0.995078, 0.0983985), Transform3D(-2.53356, 0.00806505, -0.0635589, 0, 2.51421, 0.31903, 0.0640686, 0.318928, -2.5134, -311.789, -10.503, -455.195), 4], [Vector3(-222.94, -12.4598, -415.598), Vector3(0.0398825, 0.995158, 0.0898379), Transform3D(-2.89801, -0.136384, 0.421421, 0, 2.78923, 0.902674, -0.44294, 0.892312, -2.75721, -222.94, -12.4598, -415.598), 4], [Vector3(390.633, -11.9933, -437.24), Vector3(-0.00431734, 0.994986, 0.099918), Transform3D(0.144192, -0.757107, 2.52444, -4.91639e-09, 2.52821, 0.758239, -2.63553, -0.0414221, 0.138115, 390.633, -11.9933, -437.24), 4]]
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-465, 673, 641)
+extent = 2048.0
+bounds = AABB(-2513, -1375, -1407, 4096, 4096, 4096)
+max_bounds_to_center_dist = 3547.24
+min_bounds_to_center_dist = 2048.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_rjo2a"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("3_b47ct")
+root_octree_node = SubResource("Resource_b1haw")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_byuqy"]
+resource_local_to_scene = true
+script = ExtResource("5_v50jq")
+octree_managers = [SubResource("Resource_6hjmt"), SubResource("Resource_fu8k1"), SubResource("Resource_4ua2i"), SubResource("Resource_o0cxk"), SubResource("Resource_jse4t"), SubResource("Resource_5bs8g"), SubResource("Resource_5tp38"), SubResource("Resource_q4fw3"), SubResource("Resource_41rrd"), SubResource("Resource_0yc84"), SubResource("Resource_1qyw5"), SubResource("Resource_qqth2"), SubResource("Resource_82xs6"), SubResource("Resource_druae"), SubResource("Resource_21gjm"), SubResource("Resource_4v5au"), SubResource("Resource_h3p3f"), SubResource("Resource_3frf7"), SubResource("Resource_eh67a"), SubResource("Resource_f1b8e"), SubResource("Resource_4owgt"), SubResource("Resource_6v721"), SubResource("Resource_fcd0k"), SubResource("Resource_csyoi"), SubResource("Resource_rjj33"), SubResource("Resource_rjo2a")]
+metadata/class = "Arborist"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxlww"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -17,14 +678,20 @@ sky = SubResource("Sky_sxhid")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fxlww"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_sxhid"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxlww"]
 albedo_color = Color(0.8, 0.74902, 0.521569, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Gardener" type="Node3D" parent="."]
+script = ExtResource("4_ew1u6")
+file_management/garden_work_directory = "res://Resources/Models/Scene/AcheronOverworld/Gardener/"
+gardening/gardening_collision_mask = 4.0
+arborist = SubResource("Resource_byuqy")
+plugin_version = "1.4.1"
+storage_version = 4
+metadata/class = "Gardener"
+metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pmyky")
@@ -33,40 +700,41 @@ environment = SubResource("Environment_pmyky")
 transform = Transform3D(0.0366437, -0.865444, 0.499664, 0, 0.5, 0.866025, -0.999328, -0.0317344, 0.0183219, 0, 115.428, 13.286)
 shadow_enabled = true
 
-[node name="Cliffs" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_fxlww")
-
-[node name="Mountains" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_sxhid")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.5623, -45.9435)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.7038)
-shape = SubResource("BoxShape3D_fxlww")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2122, 0, 0)
-mesh = SubResource("BoxMesh_sxhid")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.88387, 338.307, -229.693)
 
 [node name="beach" parent="." instance=ExtResource("4_sxhid")]
 
-[node name="Cliffs2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
-mesh = ExtResource("1_fxlww")
-
-[node name="Mountains2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
-mesh = ExtResource("2_sxhid")
+[node name="@StaticBody3D@30267" parent="beach" index="1"]
+collision_layer = 5
 
 [node name="beach2" parent="." instance=ExtResource("4_sxhid")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="@StaticBody3D@30267" parent="beach2" index="1"]
+collision_layer = 5
+
+[node name="floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.354767, -25.9159, -236.255)
 size = Vector3(1431.43, 1, 398.826)
 material = SubResource("StandardMaterial3D_fxlww")
+
+[node name="cliffs_overworld2" parent="." instance=ExtResource("4_oy3th")]
+
+[node name="cliffs_overworld" parent="." instance=ExtResource("4_oy3th")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.311)
+
+[node name="mountains_overworld2" parent="." instance=ExtResource("3_3sdht")]
+
+[node name="mountains_overworld" parent="." instance=ExtResource("3_3sdht")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -461.311)
+
+[node name="test_boat" parent="." instance=ExtResource("8_b47ct")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -168, -14, -169)
+
+[editable path="beach"]
+[editable path="beach2"]
+[editable path="cliffs_overworld2"]
+[editable path="cliffs_overworld"]
+[editable path="mountains_overworld2"]
+[editable path="mountains_overworld"]

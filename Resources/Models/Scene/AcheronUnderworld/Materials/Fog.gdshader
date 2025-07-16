@@ -41,7 +41,7 @@ void fog() {
 		fract((UVW.x + TIME * falloff_wave_speed * total_speed / 10.) * noise_scale),
 		fract((UVW.z + UVW.y + TIME * falloff_wave_speed * total_speed / 10.) * noise_scale)
 	);
-	
+
 	float falloff_noise = texture(noise_tex, falloff_noise_uv).r;
 	float falloff_mod = mix(1.0 - falloff_wave_amplitude, 1.0 + falloff_wave_amplitude, falloff_noise);
 
