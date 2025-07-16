@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dhrbhw4tijstv"
-path="res://.godot/imported/clay8.blend-19d525bb42986ad44c08b8593b17e99a.scn"
+valid=false
 
 [deps]
 
 source_file="res://Resources/Models/Scene/clay8.blend"
-dest_files=["res://.godot/imported/clay8.blend-19d525bb42986ad44c08b8593b17e99a.scn"]
 
 [params]
 
