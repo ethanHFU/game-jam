@@ -413,7 +413,7 @@ metadata/class = "Greenhouse_Plant"
 [sub_resource type="Resource" id="Resource_wapx4"]
 resource_name = "Greenhouse_PlantState"
 script = ExtResource("4_v28ne")
-plant/plant_brush_active = false
+plant/plant_brush_active = true
 plant/plant_label = ""
 plant/plant = SubResource("Resource_oq58j")
 metadata/class = "Greenhouse_PlantState"
@@ -437,7 +437,7 @@ octree/octree_reconfigure_button = false
 octree/octree_recenter_button = false
 density/density_per_units = 1.0
 scale/scale_scaling_type = 0
-scale/scale_range = [Vector3(2, 2, 2), Vector3(4, 4, 4)]
+scale/scale_range = [Vector3(6, 6, 6), Vector3(8, 8, 8)]
 up_vector/up_vector_primary_type = 2
 up_vector/up_vector_primary = Vector3(0, 0, 0)
 up_vector/up_vector_secondary_type = 2

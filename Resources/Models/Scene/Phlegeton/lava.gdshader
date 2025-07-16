@@ -76,7 +76,7 @@ float magma_layer(vec2 uv, float detail, float power, float noise_amount) {
     }
 
     float edge_dist = second_min_dist - min_dist;
-    float crack = smoothstep(0.0, 0.1, edge_dist);
+    float crack = smoothstep(0.0, 0.5, edge_dist);
     crack = 1.0 - crack;
 
     return crack;

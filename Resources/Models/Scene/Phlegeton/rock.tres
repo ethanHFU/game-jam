@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bdgh74xtnx5p6"]
+
+[ext_resource type="Shader" uid="uid://dqm0mgmkb4bdd" path="res://Resources/Models/Scene/Phlegeton/rock.gdshader" id="1_2ylmu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2ylmu")
+shader_parameter/time_scale = 0.1
+shader_parameter/detail1 = 20.26
+shader_parameter/power1 = 7.45
+shader_parameter/color_mul1 = 1.15
+shader_parameter/glow_rate1 = 15.525
+shader_parameter/noise_amt1 = 1.5
+shader_parameter/lava_color = Color(0.271538, 0.119309, 0.0722287, 1)
+shader_parameter/rock_color = Color(0.0117647, 0.00784314, 0.00784314, 1)
+shader_parameter/rock_color_change_intensity = 0.0
+shader_parameter/rock_color_change_speed = 0.0
