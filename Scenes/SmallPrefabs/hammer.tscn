@@ -1,21 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbpcn3gm56ial"]
+[gd_scene load_steps=4 format=3 uid="uid://bbpcn3gm56ial"]
 
 [ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_fs6da"]
 [ext_resource type="PackedScene" uid="uid://c867qc52yk3mh" path="res://Resources/Models/Small_Prefabs/hammer.blend" id="2_88ss5"]
 [ext_resource type="Script" uid="uid://cljugub1kcxc" path="res://Scripts/rotate_y_360_d.gd" id="3_cild3"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_h3gqr"]
-size = Vector3(0.5, 0.5, 0.5)
-
-[node name="Hammer" type="AnimatableBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_h3gqr")
+[node name="Hammer" type="Node3D"]
 
 [node name="Player_Detector" parent="." instance=ExtResource("1_fs6da")]
 obstacle = 5
 amount = 20.0
 
 [node name="hammer" parent="." instance=ExtResource("2_88ss5")]
-transform = Transform3D(6.83, 0, 0, 0, 5.30791, 4.29826, 0, -4.29826, 5.30791, 0, 0.26, -0.22)
+transform = Transform3D(120, 0, 0, 0, 93.2575, 75.5184, 0, -75.5184, 93.2575, 0, 4.00287, -2.19977)
 script = ExtResource("3_cild3")

@@ -1,61 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccuoj71q5kdch"]
+[gd_scene load_steps=4 format=3 uid="uid://ccuoj71q5kdch"]
 
+[ext_resource type="Script" uid="uid://ccmigxpmdylpv" path="res://Scripts/flow_up_and_down.gd" id="1_78l3q"]
 [ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_m8rgi"]
 [ext_resource type="PackedScene" uid="uid://bplaruwk5rrno" path="res://Resources/Models/Small_Prefabs/fass2.blend" id="2_phbec"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_phbec"]
-size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="Animation" id="Animation_78l3q"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_phbec"]
-resource_name = "move"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(5, -0.25, 0, 1.76667, -0.0744557, -5, -2.33333, -0.0400915, 2.53333, 0.0362735, 5, -2.33333, -0.0744557, 0.25, 0),
-"times": PackedFloat32Array(0, 5, 10)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjrx2"]
-_data = {
-&"RESET": SubResource("Animation_78l3q"),
-&"move": SubResource("Animation_phbec")
-}
-
-[node name="Barrel" type="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_phbec")
+[node name="Barrel" type="Node3D"]
+script = ExtResource("1_78l3q")
 
 [node name="Player_Detector" parent="." instance=ExtResource("1_m8rgi")]
 obstacle = 3
 
 [node name="fass2" parent="." instance=ExtResource("2_phbec")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_fjrx2")
-}
-autoplay = "move"
+transform = Transform3D(160, 0, 0, 0, 160, 0, 0, 0, 160, 0, 0, 0)

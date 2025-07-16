@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dsjshmb81nld1" path="res://Scripts/player_detector.gd" id="1_sf3oe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rauf0"]
+size = Vector3(18, 18, 18)
 
 [node name="Player_Detector" type="Node3D"]
 script = ExtResource("1_sf3oe")
@@ -12,5 +13,6 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_rauf0")
+debug_color = Color(0.97, 0, 0.485, 1)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

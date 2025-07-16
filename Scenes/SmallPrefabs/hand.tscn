@@ -1,19 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://f04cgv60ss8k"]
+[gd_scene load_steps=5 format=3 uid="uid://f04cgv60ss8k"]
 
 [ext_resource type="PackedScene" uid="uid://crxn22gdgjm7p" path="res://Resources/Models/Small_Prefabs/hand1.blend" id="1_hgf5r"]
+[ext_resource type="Script" uid="uid://d3jxtivess4y" path="res://Scripts/small_prefabs/follow_boat.gd" id="1_yej3m"]
 [ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="2_yej3m"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_n72js"]
-size = Vector3(0.5, 0.5, 0.5)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hgf5r"]
+height = 40.9232
+radius = 140.049
 
-[node name="Hand" type="AnimatableBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_n72js")
+[node name="Hand" type="Node3D"]
+script = ExtResource("1_yej3m")
 
 [node name="hand1" parent="." instance=ExtResource("1_hgf5r")]
-transform = Transform3D(3.86, 0, 0, 0, 3.86, 0, 0, 0, 3.86, 0, 0, 0)
+transform = Transform3D(-73.5088, 7.69278, -51.3544, 38.5871, 67.6542, -45.0992, 34.7489, -58.8534, -58.5559, 0, 0, 0)
 
 [node name="Player_Detector" parent="." instance=ExtResource("2_yej3m")]
 obstacle = 1
 amount = 15.0
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.25491, 0)
+shape = SubResource("CylinderShape3D_hgf5r")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
