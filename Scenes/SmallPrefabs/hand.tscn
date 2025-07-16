@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://f04cgv60ss8k"]
+
+[ext_resource type="PackedScene" uid="uid://crxn22gdgjm7p" path="res://Resources/Models/Small_Prefabs/hand1.blend" id="1_hgf5r"]
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="2_yej3m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n72js"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Hand" type="AnimatableBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_n72js")
+
+[node name="hand1" parent="." instance=ExtResource("1_hgf5r")]
+transform = Transform3D(3.86, 0, 0, 0, 3.86, 0, 0, 0, 3.86, 0, 0, 0)
+
+[node name="Player_Detector" parent="." instance=ExtResource("2_yej3m")]
+obstacle = 1
+amount = 15.0
