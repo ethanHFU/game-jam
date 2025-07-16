@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvjci4pl3r672"]
+
+[ext_resource type="Script" uid="uid://dsjshmb81nld1" path="res://Scripts/player_detector.gd" id="1_sf3oe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rauf0"]
+
+[node name="Player_Detector" type="Node3D"]
+script = ExtResource("1_sf3oe")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_rauf0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
