@@ -9,3 +9,10 @@ signal load_from_disc
 ### load scenes ###
 signal load_scene(scene: String)
 ###################
+
+
+### level stuff ###
+signal take_damage(amount: float)
+signal repair_boat(amount: float)
+signal make_invincible()
+signal boost_boat()
