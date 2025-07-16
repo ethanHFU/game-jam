@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://buvsx21l7n363"]
+[gd_scene load_steps=15 format=3 uid="uid://buvsx21l7n363"]
 
 [ext_resource type="Script" uid="uid://7h7c2yvx0t7r" path="res://Scripts/Controller/input_controller.gd" id="1_2ytpj"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="1_7t06c"]
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/main.gd" id="1_npfmg"]
 [ext_resource type="Script" uid="uid://dkrm20h376m2x" path="res://Scripts/Controller/water_event_controller.gd" id="2_db73o"]
 [ext_resource type="Script" uid="uid://btfb7d3vyclnk" path="res://Scripts/Controller/canvas_controller.gd" id="3_db73o"]
-[ext_resource type="Script" uid="uid://c47w15kn1oxio" path="res://Scenes/Levels/track_boat.gd" id="6_k8g1k"]
+[ext_resource type="Shader" uid="uid://mfcdabqbuqvq" path="res://Resources/Shader/z_gradient.gdshader" id="5_x4x4f"]
+[ext_resource type="Script" uid="uid://c47w15kn1oxio" path="res://Scripts/Controller/camera_controller.gd" id="6_k8g1k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7t06c"]
 size = Vector3(1, 1, 100)
@@ -22,7 +23,16 @@ size = Vector3(1, 1, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_aeolh"]
 size = Vector3(15, 0.1, 100)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7ek2"]
+render_priority = 0
+shader = ExtResource("5_x4x4f")
+shader_parameter/top_color = Color(0, 0, 1, 1)
+shader_parameter/bottom_color = Color(0.696803, 0.0796494, 0.675586, 1)
+shader_parameter/z_min = 0.0
+shader_parameter/z_max = 100.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_aeolh"]
+material = SubResource("ShaderMaterial_l7ek2")
 size = Vector3(15, 0.1, 100)
 
 [node name="TestLevel" type="Node3D"]
@@ -76,4 +86,3 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -3.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 script = ExtResource("6_k8g1k")
 boat_path = NodePath("../Boat")
-offset = Vector3(0, 20, 0)

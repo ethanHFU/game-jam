@@ -1,7 +1,7 @@
 extends Camera3D
 
 @export var boat_path: NodePath  # Drag the boat node into the inspector
-@export var offset: Vector3 = Vector3(0, 10, 0)  # Relative offset from boat
+@export var offset: Vector3 = Vector3(0, 20, 0)  # Relative offset from boat
 @export var smooth_speed: float = 5.0  # For interpolation
 
 var boat: Node3D

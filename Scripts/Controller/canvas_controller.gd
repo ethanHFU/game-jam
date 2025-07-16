@@ -47,9 +47,9 @@ func _draw():
 	# Draw temporary origin markers
 	for marker in origin_markers:
 		draw_circle(marker.center, marker.radius, Color.RED)
-	# Draw force line if set
-	if show_force:
-		draw_line(force_screen_start, force_screen_end, Color.RED, 3)
+	## Draw force line if set
+	#if show_force:
+		#draw_line(force_screen_start, force_screen_end, Color.RED, 3)
 	# Draw drag line
 	if show_drag:
 		draw_line(drag_line_start, drag_line_end, Color.DARK_ORANGE, 3)

@@ -2,17 +2,16 @@ extends Node
 
 # Assigned by Main.gd
 var camera: Camera3D = null
-var water_obj: CollisionShape3D = null
 var boat: Node3D = null
 var canvas: Node = null 
 
 var waves = []
 var wave_radius_max = 10.0
 var wave_speed = 5.0
-var wave_force_fac = 20.0
+var wave_force_fac = 5.0
 var wave_width = 0.5
 var turn_speed = 1.0
-var force = Vector3(0.0, 0.0, -1.0)  # Contains river force
+var force = Vector3.ZERO 
 
 # Directed waves config
 var drag_multiplier = 10.0
@@ -22,7 +21,7 @@ var angle_margin = 0.1
 
 func _process(delta):
 	canvas.wave_arcs.clear()
-	force = Vector3(0.0, 0.0, -1.0)
+	force = Vector3(0.0, 0.0, -1.0)  # river current force
 	
 	var wave_force
 	for wave in waves:
@@ -31,11 +30,7 @@ func _process(delta):
 		
 	canvas.show_force_line(boat.global_position, boat.global_position + force)
 
-	# Gradually move and rotate boat
-	boat.global_position += force * delta
-	var current_yaw = boat.rotation.y
-	var target_yaw = atan2(-force.x, -force.z)
-	boat.rotation.y = lerp_angle(current_yaw, target_yaw, turn_speed * force.length() * delta)
+	boat.move_force = force
 
 func process_wave(wave, delta) -> Vector3:
 	wave.radius += wave.speed * delta
@@ -63,10 +58,9 @@ func process_wave(wave, delta) -> Vector3:
 		if angle > max_angle + angle_margin:
 			return Vector3.ZERO
 		angle_falloff = clamp(1.0 - (angle / max_angle), 0.0, 1.0)
-
+	
 	var wave_force = wave_to_boat.normalized() * wave_force_fac * (1 - wave.radius / wave.radius_max) * angle_falloff
 	return wave_force if wave_force.length() >= 0.01 else Vector3.ZERO
-
 
 func handle_click(pos: Vector2):
 	var world_pos = get_mouse_click_position_boat_plane(pos)
@@ -77,7 +71,6 @@ func handle_hold(pos: Vector2, time: float):
 	print("Geyser")
 
 func handle_drag(start: Vector2, end: Vector2):
-	var y = water_obj.global_position.y + water_obj.shape.size.y / 2.0
 	var start_pos = get_mouse_click_position_boat_plane(start)
 	var end_pos = get_mouse_click_position_boat_plane(end)
 	var drag_vector = start_pos - end_pos
@@ -104,6 +97,7 @@ class RadialWave:
 	var radius := 0.0
 	var radius_max: float
 	var speed: float
+	var has_impacted := false
 	func _init(_origin: Vector3, _radius_max: float, _speed: float):
 		origin = _origin
 		radius_max = _radius_max
@@ -116,6 +110,7 @@ class DirectedWave:
 	var speed: float
 	var force: Vector3
 	var opening_angle: float
+	var has_impacted := false
 	func _init(_origin: Vector3, _radius_max: float, _speed: float, _force: Vector3, _opening_angle: float):
 		origin = _origin
 		radius_max = _radius_max
