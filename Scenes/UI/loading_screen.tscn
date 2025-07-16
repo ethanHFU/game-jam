@@ -35,7 +35,7 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Stell dir vor, wie hier ein Animation abgespielt wird."
+text = "Stell dir vor, wie hier eine Animation abgespielt wird."
 horizontal_alignment = 1
 
 [node name="Spacing2" type="Control" parent="ColorRect/MarginContainer/VBoxContainer"]
