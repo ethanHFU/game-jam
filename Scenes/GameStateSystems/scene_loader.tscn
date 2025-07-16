@@ -5,6 +5,7 @@
 
 [node name="SceneLoader" type="Node"]
 script = ExtResource("1_x463m")
+debug_mode = true
 scenes = {
 "acheron": "res://Scenes/DemoScenes/wave_test.tscn",
 "kokytus": "res://Scenes/Levels/Test.tscn",
@@ -14,4 +15,3 @@ scenes = {
 "settings": "res://Scenes/UI/settings.tscn"
 }
 loading_screen = ExtResource("2_awoig")
-debug_mode = true
