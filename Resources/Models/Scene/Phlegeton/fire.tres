@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b3elu3q1ajuhm"]
+
+[ext_resource type="Shader" uid="uid://cpgrxlxnih44r" path="res://Resources/Models/Scene/Phlegeton/fire.gdshader" id="1_drnnt"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_drnnt")
+shader_parameter/emission_color = Color(0.771417, 0.915888, 0.915903, 1)
+shader_parameter/base_strength = 18.539
+shader_parameter/flicker_strength = 67.416
+shader_parameter/flicker_speed = 3.572

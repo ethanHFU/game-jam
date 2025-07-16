@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dnskax1n8efkr"]
+[gd_scene load_steps=17 format=3 uid="uid://dnskax1n8efkr"]
 
 [ext_resource type="Material" uid="uid://codoxcod7ison" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Fog.tres" id="1_in514"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="1_p4pq6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://cpwfx2cjinhx5" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Beach.tres" id="4_hr0rx"]
 [ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="4_xher2"]
 [ext_resource type="Material" uid="uid://q2uqjcygrej5" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Cliffs.tres" id="5_3e5io"]
+[ext_resource type="PackedScene" uid="uid://cqmpumya5to07" path="res://Resources/Models/Scene/Phlegeton/fire_pit.tscn" id="8_ojqea"]
 
 [sub_resource type="Environment" id="Environment_7t06c"]
 glow_enabled = true
@@ -43,14 +44,6 @@ albedo_color = Color(0.329412, 0.388235, 0.392157, 0.580392)
 emission = Color(0.761002, 0.810746, 0.787143, 1)
 emission_energy_multiplier = 0.55
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4ud6"]
-albedo_color = Color(0.178347, 0.179136, 0.149926, 1)
-emission_enabled = true
-emission = Color(0.499061, 0.741208, 0.759178, 1)
-emission_energy_multiplier = 5.93
-
-[sub_resource type="BoxMesh" id="BoxMesh_ojqea"]
-
 [node name="TestLevel" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -58,7 +51,7 @@ environment = SubResource("Environment_7t06c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.987688, -0.156434, 3.67943e-09, -0.0391681, -0.247297, 0.968148, -0.151452, -0.956228, -0.25038, 0, 0, 0)
-light_energy = 0.1
+light_energy = 0.05
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 4.962
 
@@ -129,7 +122,7 @@ size = Vector3(1431.43, 1, 398.826)
 material = ExtResource("4_hr0rx")
 
 [node name="Water2" type="CSGBox3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.354746, -13.2053, -225.163)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.354746, -13.2053, -219.115)
 size = Vector3(1431.43, 0.2, 398.826)
 material = SubResource("StandardMaterial3D_l4k85")
 
@@ -138,159 +131,45 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 material_override = ExtResource("5_3e5io")
 mesh = ExtResource("4_xher2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, 0, 0, -425.047)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
+[node name="fire_pit" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.2606, -12.569, -25.1101)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, 149.274, 0.756409, -429.536)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
+[node name="fire_pit2" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -268.625, -12.569, -40.1417)
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, 351.665, 0, -425.047)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
+[node name="fire_pit3" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509.054, -12.569, -40.1417)
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, 500.939, 0.756409, -429.536)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
+[node name="fire_pit4" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.231, -12.569, -39.8843)
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, -645.273, 0, -425.047)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
+[node name="fire_pit5" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 573.906, -12.569, -40.014)
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, -495.999, 0.756409, -429.536)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
+[node name="fire_pit6" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -154.06, -12.569, -408.228)
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, -293.608, 0, -425.047)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
+[node name="fire_pit7" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 68.3045, -12.569, -439.197)
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, -144.334, 0.756409, -429.536)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
+[node name="fire_pit8" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 300.733, -12.569, -437.197)
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, 73.1527, 0, -44.6938)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
+[node name="fire_pit9" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -435.552, -12.569, -429.454)
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, 222.427, 0.756409, -49.1829)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, 424.817, 0, -44.6938)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
-
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, 574.092, 0.756409, -49.1829)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
-
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, -572.12, 0, -44.6938)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
-
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, -422.846, 0.756409, -49.1829)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
-
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, -220.456, 0, -44.6938)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
-
-[node name="MeshInstance3D16" type="MeshInstance3D" parent="."]
-transform = Transform3D(14.5801, 0, 0, 0, 14.5801, 0, 0, 0, 14.5801, -71.1814, 0.756409, -49.1829)
-material_override = SubResource("StandardMaterial3D_n4ud6")
-mesh = SubResource("BoxMesh_ojqea")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 433.205, -23.0205, -21.6447)
-light_color = Color(0.876935, 0.961311, 0.982714, 1)
-light_energy = 300.0
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 200.0
-light_specular = 0.0
-spot_range = 240.157
-spot_attenuation = 2.0
-spot_angle = 42.86
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.809, -23.0205, -21.6447)
-light_color = Color(0.862428, 0.974652, 0.922817, 1)
-light_energy = 300.0
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 200.0
-light_specular = 0.0
-spot_range = 240.157
-spot_attenuation = 2.0
-spot_angle = 42.86
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.2569, -23.0205, -21.6447)
-light_color = Color(0.807632, 0.917037, 0.958533, 1)
-light_energy = 300.0
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 200.0
-light_specular = 0.0
-spot_range = 240.157
-spot_attenuation = 2.0
-spot_angle = 42.86
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.4197, -23.0205, -21.6447)
-light_color = Color(0.670603, 0.963297, 0.863474, 1)
-light_energy = 300.0
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 200.0
-light_specular = 0.0
-spot_range = 240.157
-spot_attenuation = 2.0
-spot_angle = 42.86
-
-[node name="SpotLight3D5" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221.406, -23.0205, -21.6447)
-light_color = Color(0.582159, 0.832424, 0.843088, 1)
-light_energy = 300.0
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 200.0
-light_specular = 0.0
-spot_range = 240.157
-spot_attenuation = 2.0
-spot_angle = 42.86
-
-[node name="SpotLight3D6" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -454.663, -23.0205, -21.6447)
-light_color = Color(0.836071, 0.982464, 0.928644, 1)
-light_energy = 300.0
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 200.0
-light_specular = 0.0
-spot_range = 240.157
-spot_attenuation = 2.0
-spot_angle = 42.86
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95528, -3.8147e-05, -424.626)
-light_color = Color(0.815592, 0.877219, 0.94647, 1)
-light_energy = 16.0
-light_volumetric_fog_energy = 16.0
-light_specular = 0.0
-omni_range = 73.907
+[node name="fire_pit10" parent="." instance=ExtResource("8_ojqea")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 615.773, -12.569, -422.324)
 
 [editable path="beach"]
 [editable path="beach2"]
+[editable path="fire_pit"]
+[editable path="fire_pit2"]
+[editable path="fire_pit3"]
+[editable path="fire_pit4"]
+[editable path="fire_pit5"]
+[editable path="fire_pit6"]
+[editable path="fire_pit7"]
+[editable path="fire_pit8"]
+[editable path="fire_pit9"]
+[editable path="fire_pit10"]
