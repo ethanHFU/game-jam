@@ -26,4 +26,4 @@ folder_colors={
 [rendering]
 
 environment/volumetric_fog/volume_size=128
-environment/volumetric_fog/volume_depth=256
+environment/volumetric_fog/volume_depth=512

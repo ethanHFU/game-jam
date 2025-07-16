@@ -4,18 +4,25 @@
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7i7g3"]
 noise_type = 0
-frequency = 0.0053
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vcfge"]
 seamless = true
+seamless_blend_skirt = 1.0
 noise = SubResource("FastNoiseLite_7i7g3")
 
 [resource]
 shader = ExtResource("1_falkv")
-shader_parameter/density = 0.465
+shader_parameter/density = 0.365
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_vcfge")
-shader_parameter/noise_scale = 1.155
-shader_parameter/falloff = 3.59
-shader_parameter/emission_strength = 0.36
+shader_parameter/noise_scale = 1.315
+shader_parameter/falloff = 4.985
+shader_parameter/emission_strength = 0.95
 shader_parameter/fog_color = Vector3(0.715, 0.845, 1)
-shader_parameter/scroll_speed = 0.0
+shader_parameter/total_speed = 0.24
+shader_parameter/scroll_speed = 0.01
+shader_parameter/wave_amplitude = -0.015
+shader_parameter/wave_frequency = 30.0
+shader_parameter/wave_speed = 2.33
+shader_parameter/falloff_wave_amplitude = 1.17
+shader_parameter/falloff_wave_frequency = 0.1
+shader_parameter/falloff_wave_speed = 0.62
