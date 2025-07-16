@@ -3,7 +3,8 @@ render_mode unshaded;
 //render_mode wireframe;
 
 global uniform vec3 wave_origin;
-global uniform float expand_wave;
+//global uniform float expand_wave;
+instance uniform float expand_wave;
 
 uniform float debug_time = 0.0;
 
@@ -24,11 +25,13 @@ void vertex() {
 	
 	d = length(vec2(VERTEX.x, VERTEX.z))*(1./world_scaling);
 	
-	float w1 = abs(d - debug_time - expand_wave + 2.);
+	//float w1 = abs(d - debug_time - expand_wave + 2.);
+	float w1 = abs(d - expand_wave + 2.0);
 	w1 = smoothstep(0.0, 1.0, w1 * .5); // scalar makes waves more flat
 	w1 -= .6;
 	
-	float w2 = abs(d - debug_time - expand_wave + 6.5);
+	//float w2 = abs(d - debug_time - expand_wave + 6.5);
+	float w2 = abs(d - expand_wave + 6.5);
 	w2 = smoothstep(0.0, 1., w2 * .5) * 2.;
 	
 	float w = w1 * w2;
@@ -53,6 +56,7 @@ void fragment() {
 	noise2 = length(noise2) < .6 ? col_2 : col_1;
 	
 	vec3 col = noise*.5 + noise2*.5 + (noise+noise2)*foam;
+	
 	ALBEDO = col;
 	ALPHA = 1.-smoothstep(.0, 10., d);
 }
