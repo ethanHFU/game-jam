@@ -131,6 +131,7 @@ class DirectedWave:
 	var force: Vector3
 	var opening_angle: float
 	var has_impacted := false
+	var visual_instance: Node3D
 	func _init(_origin: Vector3, _radius_max: float, _speed: float, _force: Vector3, _opening_angle: float):
 		origin = _origin
 		radius_max = _radius_max

@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://etdrvcv6lf7w" path="res://Scripts/boat.gd" id="1_vhowb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6sf2h"]
-size = Vector3(1, 1.25, 3.25)
+size = Vector3(11.1682, 50.8363, 36.1678)
 
-[node name="Boat" type="CharacterBody3D"]
+[node name="Boat" type="CharacterBody3D" groups=["Boat"]]
 script = ExtResource("1_vhowb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.876343, 6.79584, 0.145355)
 shape = SubResource("BoxShape3D_6sf2h")
 
 [node name="VisualAppearance" type="Node3D" parent="."]

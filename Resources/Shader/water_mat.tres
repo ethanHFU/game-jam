@@ -22,7 +22,7 @@ noise = SubResource("FastNoiseLite_8jnxd")
 [resource]
 render_priority = 0
 shader = ExtResource("1_ceuly")
-shader_parameter/tex_scroll_speed = 0.05
+shader_parameter/tex_scroll_speed = 0.01
 shader_parameter/tex_reapeater = 1.0
 shader_parameter/col_1 = Color(0, 0.54, 1, 1)
 shader_parameter/col_2 = Color(0.21, 0.74, 1, 1)
