@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://c2swrvgwpv7l"]
+
+[ext_resource type="Shader" uid="uid://c680pdi16rytn" path="res://Resources/Shader/wave_shader.gdshader" id="1_ceuly"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_27yj0"]
+noise_type = 3
+fractal_octaves = 2
+fractal_gain = 1.6
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jxiw6"]
+seamless = true
+noise = SubResource("FastNoiseLite_27yj0")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8jnxd"]
+noise_type = 3
+offset = Vector3(101.69, 440.68, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_idqyy"]
+seamless = true
+noise = SubResource("FastNoiseLite_8jnxd")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ceuly")
+shader_parameter/debug_time = 0.0
+shader_parameter/world_scaling = 1.0
+shader_parameter/tex_scroll_speed = 0.05
+shader_parameter/tex_reapeater = 1.0
+shader_parameter/col_1 = Color(0, 0.545098, 1, 1)
+shader_parameter/col_2 = Color(0.219608, 0.74902, 1, 1)
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jxiw6")
+shader_parameter/noise_tex2 = SubResource("NoiseTexture2D_idqyy")
