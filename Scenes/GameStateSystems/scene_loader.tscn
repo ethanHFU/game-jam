@@ -14,3 +14,4 @@ scenes = {
 "settings": "res://Scenes/UI/settings.tscn"
 }
 loading_screen = ExtResource("2_awoig")
+debug_mode = true
