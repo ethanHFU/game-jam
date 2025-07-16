@@ -1,12 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwvoad7u5nm3v"]
+[gd_scene load_steps=20 format=3 uid="uid://vkhmcib2aasb"]
 
-[ext_resource type="Material" uid="uid://codoxcod7ison" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Fog.tres" id="1_in514"]
-[ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="1_p4pq6"]
-[ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/beach.glb" id="2_uu7ck"]
-[ext_resource type="ArrayMesh" uid="uid://dhciax1vn0or3" path="res://Resources/Models/Scene/AcheronOverworld/cliffs.res" id="3_in514"]
-[ext_resource type="Material" uid="uid://cpwfx2cjinhx5" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Beach.tres" id="4_hr0rx"]
-[ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="4_xher2"]
-[ext_resource type="Material" uid="uid://q2uqjcygrej5" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Cliffs.tres" id="5_3e5io"]
+[ext_resource type="Material" uid="uid://codoxcod7ison" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Fog.tres" id="1_qqxy8"]
+[ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="2_sukqu"]
+[ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/beach.glb" id="3_jd53g"]
+[ext_resource type="Material" uid="uid://cpwfx2cjinhx5" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Beach.tres" id="4_8vix4"]
+[ext_resource type="Material" uid="uid://q2uqjcygrej5" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Cliffs.tres" id="5_vfngt"]
+[ext_resource type="ArrayMesh" uid="uid://dhciax1vn0or3" path="res://Resources/Models/Scene/AcheronOverworld/cliffs.res" id="6_p8rfr"]
+[ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="7_0byig"]
+[ext_resource type="Shader" uid="uid://cwkqs771cq8oc" path="res://Resources/Models/Scene/Phlegeton/lava.gdshader" id="8_jd53g"]
+[ext_resource type="Material" uid="uid://cadqm5a2psell" path="res://Resources/Models/Scene/Phlegeton/lava.tres" id="9_8vix4"]
 
 [sub_resource type="Environment" id="Environment_7t06c"]
 glow_enabled = true
@@ -37,11 +39,31 @@ size = Vector3(30, 0.1, 6)
 [sub_resource type="BoxMesh" id="BoxMesh_aeolh"]
 size = Vector3(30, 0.1, 6)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cc7f4"]
+render_priority = 0
+shader = ExtResource("8_jd53g")
+shader_parameter/time_scale = 1.0
+shader_parameter/crack_detail = 24.435
+shader_parameter/crack_power = 5.0
+shader_parameter/crack_noise_amount = 0.3
+shader_parameter/noise_detail = 23.135
+shader_parameter/noise_power = 5.0
+shader_parameter/noise_color_multiplier = 2.5
+shader_parameter/noise_glow_rate = 2.0
+shader_parameter/noise_noise_amount = 0.3
+shader_parameter/lava_color = Color(1.5, 0.5, 0.1, 1)
+shader_parameter/rock_color = Color(0.1, 0.05, 0.02, 1)
+shader_parameter/rock_color_change_intensity = 0.1
+shader_parameter/rock_color_change_speed = 1.0
+shader_parameter/lava_falloff = 6.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4k85"]
 transparency = 1
 albedo_color = Color(0.329412, 0.388235, 0.392157, 0.580392)
 emission = Color(0.761002, 0.810746, 0.787143, 1)
 emission_energy_multiplier = 0.55
+
+[sub_resource type="BoxMesh" id="BoxMesh_1twd7"]
 
 [node name="TestLevel" type="Node3D"]
 
@@ -54,7 +76,7 @@ transform = Transform3D(0.987688, -0.156434, 3.67943e-09, -0.0391681, -0.247297,
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.597, -23.9511, -229.693)
 size = Vector3(1809.9, 29.12, 500)
-material = ExtResource("1_in514")
+material = ExtResource("1_qqxy8")
 
 [node name="Wall01" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2.5)
@@ -83,39 +105,40 @@ shape = SubResource("BoxShape3D_aeolh")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Water"]
 mesh = SubResource("BoxMesh_aeolh")
 
-[node name="Boat" parent="." instance=ExtResource("1_p4pq6")]
+[node name="Boat" parent="." instance=ExtResource("2_sukqu")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.884, 338.307, -229.693)
 
-[node name="beach" parent="." instance=ExtResource("2_uu7ck")]
+[node name="beach" parent="." instance=ExtResource("3_jd53g")]
 
 [node name="beach_mesh" parent="beach" index="0"]
-material_override = ExtResource("4_hr0rx")
+material_override = ExtResource("4_8vix4")
 
 [node name="Cliffs" type="MeshInstance3D" parent="."]
-material_override = ExtResource("5_3e5io")
-mesh = ExtResource("3_in514")
+material_override = ExtResource("5_vfngt")
+mesh = ExtResource("6_p8rfr")
 
 [node name="Mountains" type="MeshInstance3D" parent="."]
-material_override = ExtResource("5_3e5io")
-mesh = ExtResource("4_xher2")
+material_override = ExtResource("5_vfngt")
+mesh = ExtResource("7_0byig")
 
-[node name="beach2" parent="." instance=ExtResource("2_uu7ck")]
+[node name="beach2" parent="." instance=ExtResource("3_jd53g")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
 
 [node name="beach_mesh" parent="beach2" index="0"]
-material_override = ExtResource("4_hr0rx")
+material_override = ExtResource("4_8vix4")
 
 [node name="Cliffs2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
-material_override = ExtResource("5_3e5io")
-mesh = ExtResource("3_in514")
+material_override = SubResource("ShaderMaterial_cc7f4")
+mesh = ExtResource("6_p8rfr")
+metadata/_edit_group_ = true
 
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.354746, -25.9159, -225.163)
 size = Vector3(1431.43, 1, 398.826)
-material = ExtResource("4_hr0rx")
+material = ExtResource("4_8vix4")
 
 [node name="Water2" type="CSGBox3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.354746, -13.2053, -225.163)
@@ -124,8 +147,19 @@ material = SubResource("StandardMaterial3D_l4k85")
 
 [node name="Mountains2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
-material_override = ExtResource("5_3e5io")
-mesh = ExtResource("4_xher2")
+material_override = ExtResource("5_vfngt")
+mesh = ExtResource("7_0byig")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -256.76)
+size = Vector3(7.42, 7.28, 4)
+material = ExtResource("9_8vix4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(17.6906, 0, 0, 0, 4.33029, 0, 0, 0, 24.8746, 0.250434, -0.0571289, -206.324)
+material_override = ExtResource("9_8vix4")
+mesh = SubResource("BoxMesh_1twd7")
+surface_material_override/0 = ExtResource("9_8vix4")
 
 [editable path="beach"]
 [editable path="beach2"]
