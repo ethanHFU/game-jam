@@ -11,3 +11,7 @@ func _on_phlegeton_button_down():
 
 func _on_kokytus_button_down():
 	EventBus.load_scene.emit("kokytus")
+
+
+func _on_return_button_button_down():
+	EventBus.load_scene.emit("main_menu")
