@@ -1,27 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5q2figpm7n0r"]
+[gd_scene load_steps=5 format=3 uid="uid://b5q2figpm7n0r"]
 
 [ext_resource type="Script" uid="uid://ciai0u317585a" path="res://Scripts/demos/wave_test.gd" id="1_8jnxd"]
-[ext_resource type="Shader" uid="uid://c680pdi16rytn" path="res://Resources/Shader/wave_shader.gdshader" id="2_idqyy"]
-
-[sub_resource type="Gradient" id="Gradient_27yj0"]
-offsets = PackedFloat32Array(0, 0.991803)
-colors = PackedColorArray(4.11999e-05, 0.354105, 0.983004, 1, 1.09257e-05, 0.062264, 0.427586, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_27yj0"]
-noise_type = 2
-fractal_octaves = 2
-fractal_gain = 1.6
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jxiw6"]
-seamless = true
-color_ramp = SubResource("Gradient_27yj0")
-noise = SubResource("FastNoiseLite_27yj0")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_27yj0"]
-render_priority = 0
-shader = ExtResource("2_idqyy")
-shader_parameter/debug_time = 0.0
-shader_parameter/noise_tex = SubResource("NoiseTexture2D_jxiw6")
+[ext_resource type="Material" uid="uid://c2swrvgwpv7l" path="res://Resources/Shader/wave_mat.tres" id="2_8jnxd"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jxiw6"]
 size = Vector2(20, 20)
@@ -33,7 +13,7 @@ map_width = 20
 map_depth = 20
 map_data = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-[node name="Node3D" type="Node3D"]
+[node name="WaterWave" type="Node3D"]
 script = ExtResource("1_8jnxd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -41,18 +21,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323906, 0, 0)
 input_capture_on_drag = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-material_override = SubResource("ShaderMaterial_27yj0")
+material_override = ExtResource("2_8jnxd")
 mesh = SubResource("PlaneMesh_jxiw6")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("HeightMapShape3D_27yj0")
 debug_color = Color(0.446103, 0.210377, 0.148668, 0.42)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 7, 6)
 
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]
