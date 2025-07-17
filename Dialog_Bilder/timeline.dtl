@@ -1,0 +1,20 @@
+Poseidon: WER WAGT ES ?!?!
+Poseidon: DU FISCHERMANN!! DU HAST DEN SCHREIN DES POMPIDOU ZERSTÖRT??!!
+Poseidon: DER SCHREIN MEINES LIEBSTEN FISCHES !!!
+Poseidon: DAFÜR WERDE ICH DICH KIELHOLEN!!
+join Triton center [animation="Instant In"]
+Triton: Vater warte!
+Triton: Meinst du nicht das ist etwas übertrieben?
+Triton: Der Schrein wäre auch ohne ihn jeden Moment eingestürzt. Außerdem habe ich diesen doofen Fisch schon immer gehasst.
+Poseidon: TRITON!
+Poseidon: HABE ICH DIR NICHT BEFOHLEN IN DEINER DOMÄNE ZU BLEIBEN?!?!
+Poseidon: FREVEL BLEIBT FREVEL!!
+Poseidon: DIESER MENSCHLING...
+Poseidon: ....WIRD DIE FISCHE HEUTE VON UNTEN BETRACHTEN UND NIE WIEDER DAS SONNENLICHT ERBLICKEN!
+Triton: Vater!
+Triton: Das ist nicht gerecht!
+Triton: Lieber Menschling...
+Triton: Ich werde dir helfen. Mit meinen Kräften kann ich die Wellen kontrollieren und dich so sicher zum Hafen geleiten.
+Triton: Halt dich fest. Könnte etwas holprig werden.
+leave Triton [animation="Fade Out"]
+leave Poseidon [animation="Fade Out"]

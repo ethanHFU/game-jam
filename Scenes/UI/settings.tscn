@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://besnquggdnplq"]
+[gd_scene load_steps=3 format=3 uid="uid://besnquggdnplq"]
 
 [ext_resource type="Script" uid="uid://ba34qqvverfbj" path="res://Scripts/UI/settings.gd" id="1_owiy1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owiy1"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -78,6 +80,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_owiy1")
 max_value = 1.0
 step = 0.05
 value = 1.0
@@ -94,7 +97,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "Zurück zum Hauptmenü"
+text = "Hauptmenü"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/EffectSlider" to="." method="_on_effect_slider_value_changed"]

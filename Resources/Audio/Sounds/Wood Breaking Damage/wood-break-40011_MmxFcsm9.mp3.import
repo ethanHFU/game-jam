@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cglbuxgg12k3n"
+path="res://.godot/imported/wood-break-40011_MmxFcsm9.mp3-bd009acbb5bea454c9cf2beefcc562f0.mp3str"
+
+[deps]
+
+source_file="res://Resources/Audio/Sounds/Wood Breaking Damage/wood-break-40011_MmxFcsm9.mp3"
+dest_files=["res://.godot/imported/wood-break-40011_MmxFcsm9.mp3-bd009acbb5bea454c9cf2beefcc562f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
