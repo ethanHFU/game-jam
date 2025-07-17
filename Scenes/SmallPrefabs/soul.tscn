@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddmif4cf2dlyj"]
+
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_dxu7s"]
+[ext_resource type="PackedScene" uid="uid://cxewxso4652cy" path="res://Resources/Models/Small_Prefabs/geistergesicht_optimiert.blend" id="2_u34xi"]
+
+[node name="Soul" type="Node3D"]
+
+[node name="Player_Detector" parent="." instance=ExtResource("1_dxu7s")]
+obstacle = 2
+amount = 15.0
+
+[node name="geistergesicht_optimiert" parent="." instance=ExtResource("2_u34xi")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 0, 0)

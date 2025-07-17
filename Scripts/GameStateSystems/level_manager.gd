@@ -62,7 +62,14 @@ func invincibility() -> void:
 	is_invincible = false
 
 func level_intro_events() -> void:
+	# starte cutscene
+	# starte dialog nach cutscene
+	# starte level
 	pass
 
 func level_outro_events() -> void:
+	# starte event wenn steg sichtbar ist
+	# starte dialog
+	# character stirbt
+	# lade level 2
 	pass

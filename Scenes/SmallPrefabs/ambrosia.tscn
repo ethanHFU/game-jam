@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_gcsc5"]
 [ext_resource type="PackedScene" uid="uid://dmq27rk6ks0qv" path="res://Resources/Models/Small_Prefabs/ambrosia.blend" id="2_gwc25"]
-[ext_resource type="Script" uid="uid://cljugub1kcxc" path="res://Scripts/rotate_y_360_d.gd" id="3_mi3dw"]
+[ext_resource type="Script" uid="uid://cljugub1kcxc" path="res://Scripts/small_prefabs/rotate_y_360_d.gd" id="3_mi3dw"]
 
 [node name="ambrosia" type="Node3D"]
 
