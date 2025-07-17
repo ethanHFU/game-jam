@@ -306,6 +306,16 @@ mesh = SubResource("PlaneMesh_rrces")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Water_River/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_yieir")
 
+[node name="Water_River2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1.09672, 0, 1, 0, 1, 0, -4.79394e-08, 222.518, -24.393, -6187.35)
+material_override = SubResource("ShaderMaterial_1s503")
+mesh = SubResource("PlaneMesh_rrces")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Water_River2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water_River2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yieir")
+
 [node name="pepito_tornada" parent="." instance=ExtResource("12_1i10j")]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 236.509, 3.05176e-05, 1142.55)
 process_material = SubResource("ParticleProcessMaterial_7vryb")
@@ -323,6 +333,27 @@ autoplay = "move_tornado2"
 [node name="Soul" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
 transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 222.594, -9.71475, -1190.28)
 
+[node name="Soul2" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
+transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 360.819, -9.71475, -2039)
+
+[node name="Soul3" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
+transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 300.333, -9.71475, -2107.95)
+
+[node name="Soul4" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
+transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 153.439, -9.71475, -1950.81)
+
+[node name="Soul5" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
+transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 338.411, -9.71475, -2726.61)
+
+[node name="Soul6" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
+transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 201.354, -9.71475, -3105.96)
+
+[node name="Soul7" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
+transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 346.702, -9.71475, -3867.22)
+
+[node name="Soul8" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
+transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 189.837, -9.71475, -3830.85)
+
 [node name="Hammers" type="Node3D" parent="Obstacles"]
 
 [node name="Hammer2" parent="Obstacles/Hammers" instance=ExtResource("14_irte1")]
@@ -331,16 +362,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.204, -6.10352e-05, -1307.
 [node name="Ambrosias" type="Node3D" parent="Obstacles"]
 
 [node name="ambrosia" parent="Obstacles/Ambrosias" instance=ExtResource("15_nevo8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 276.776, -7.63501, -1697.47)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.765, -7.63501, -1699.6)
 
 [node name="ambrosia2" parent="Obstacles/Ambrosias" instance=ExtResource("15_nevo8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.639, -7.63501, -2141.59)
-
-[node name="ambrosia3" parent="Obstacles/Ambrosias" instance=ExtResource("15_nevo8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.202, -7.63501, -2224.61)
-
-[node name="ambrosia4" parent="Obstacles/Ambrosias" instance=ExtResource("15_nevo8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.059, -7.63501, -2108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.382, -7.63501, 322.097)
 
 [node name="Hands" type="Node3D" parent="Obstacles"]
 
@@ -349,6 +374,15 @@ transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 356.97, 
 
 [node name="Hand3" parent="Obstacles/Hands" instance=ExtResource("16_xi7fq")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 254.227, -10.5806, -1890.62)
+
+[node name="Hand4" parent="Obstacles/Hands" instance=ExtResource("16_xi7fq")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 350.805, -10.5806, -2621.3)
+
+[node name="Hand5" parent="Obstacles/Hands" instance=ExtResource("16_xi7fq")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 264.6, -10.5806, -3101.33)
+
+[node name="Hand6" parent="Obstacles/Hands" instance=ExtResource("16_xi7fq")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 271.844, -10.5806, -3834.13)
 
 [node name="Hand2" parent="Obstacles/Hands" instance=ExtResource("16_xi7fq")]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 105.97, -10.5806, -1054.53)
@@ -382,6 +416,21 @@ transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 336.16, -5.98444,
 [node name="RockObstacles9" parent="Obstacles/Rocks" instance=ExtResource("19_ahvop")]
 transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 178.439, -5.98444, -1615.16)
 
+[node name="RockObstacles10" parent="Obstacles/Rocks" instance=ExtResource("19_ahvop")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 268.146, -5.98444, -2662.17)
+
+[node name="RockObstacles11" parent="Obstacles/Rocks" instance=ExtResource("19_ahvop")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 125.951, -5.98444, -2372.64)
+
+[node name="RockObstacles12" parent="Obstacles/Rocks" instance=ExtResource("19_ahvop")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 358.615, -5.98444, -3643.7)
+
+[node name="RockObstacles13" parent="Obstacles/Rocks" instance=ExtResource("19_ahvop")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 165.644, -5.98444, -4337.98)
+
+[node name="RockObstacles14" parent="Obstacles/Rocks" instance=ExtResource("19_ahvop")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 337.836, -5.98444, -4504.47)
+
 [node name="AcheronUnderworld" parent="." instance=ExtResource("19_w036o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -4.577, 584.986)
 
@@ -394,7 +443,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.225
 [node name="AcheronUnderworld4" parent="." instance=ExtResource("19_w036o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915, -4.577, -3430.19)
 
+[node name="AcheronUnderworld5" parent="." instance=ExtResource("19_w036o")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.6884, -4.577, -4827.54)
+
 [node name="End_trigger" parent="." instance=ExtResource("4_jxos6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -3175.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -5320.74)
 
 [editable path="CanvasLayer/Level_UI"]
