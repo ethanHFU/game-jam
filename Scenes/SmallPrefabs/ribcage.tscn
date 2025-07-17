@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwlc56iq3abae"]
+
+[ext_resource type="Script" uid="uid://ccmigxpmdylpv" path="res://Scripts/small_prefabs/flow_up_and_down.gd" id="1_fl342"]
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="2_8ospx"]
+[ext_resource type="PackedScene" uid="uid://bplaruwk5rrno" path="res://Resources/Models/Small_Prefabs/fass2.blend" id="3_5gd3d"]
+[ext_resource type="ArrayMesh" uid="uid://cfhtnd3majp2j" path="res://Resources/Models/Scene/Phlegeton/ribcage.res" id="4_8ospx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5gd3d"]
+size = Vector3(125.01, 18, 183.059)
+
+[node name="Ribcage" type="Node3D"]
+script = ExtResource("1_fl342")
+
+[node name="Player_Detector" parent="." instance=ExtResource("2_8ospx")]
+obstacle = 3
+
+[node name="CollisionShape3D" parent="Player_Detector/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386719, 0, 5.11084)
+shape = SubResource("BoxShape3D_5gd3d")
+
+[node name="fass2" parent="." instance=ExtResource("3_5gd3d")]
+transform = Transform3D(160, 0, 0, 0, 160, 0, 0, 0, 160, 0, 0, 0)
+
+[node name="Mesh_0" parent="fass2" index="0"]
+transform = Transform3D(0.0498943, -0.000303521, -0.00323539, 0.0032445, 0.00186646, 0.0498597, -0.0001819, -0.0499642, 0.00188221, 0, 0, 0)
+mesh = ExtResource("4_8ospx")
+
+[editable path="Player_Detector"]
+[editable path="fass2"]

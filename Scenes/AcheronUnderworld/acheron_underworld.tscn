@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://ceqhhgn0q2xka" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Noise_Beach.tres" id="3_7ru1o"]
 [ext_resource type="Material" uid="uid://d1et1qb0j0pe4" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Noise.tres" id="4_f4v27"]
 [ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="5_ycao3"]
-[ext_resource type="PackedScene" uid="uid://cqmpumya5to07" path="res://Resources/Models/Scene/Phlegeton/fire_pit.tscn" id="6_50v4e"]
+[ext_resource type="PackedScene" uid="uid://cqmpumya5to07" path="res://Resources/Models/Scene/fire_pit.tscn" id="6_50v4e"]
 [ext_resource type="PackedScene" uid="uid://b07lbdseqit0q" path="res://Resources/Models/Scene/AcheronUnderworld/Souls/SoulWalking.tscn" id="7_3261b"]
 [ext_resource type="PackedScene" uid="uid://kd0rmh15oxf8" path="res://Resources/Models/Scene/AcheronOverworld/Cliffs/cliffs_overworld.glb" id="7_s64jn"]
 [ext_resource type="PackedScene" uid="uid://blcxipqq4k6h2" path="res://Resources/Models/Scene/AcheronUnderworld/Souls/SoulCrying.tscn" id="8_yg30d"]
@@ -86,7 +86,7 @@ transform = Transform3D(7.66979, 0, -18.4709, 0, 20, 0, 18.4709, 0, 7.66979, -14
 transform = Transform3D(7.3323, 0, 18.6075, 0, 20, 0, -18.6075, 0, 7.3323, -445.362, -13.8758, -425.41)
 
 [node name="soul_crying3" parent="Souls" instance=ExtResource("8_yg30d")]
-transform = Transform3D(13.6098, 0, 14.6551, 0, 20, 0, -14.6551, 0, 13.6098, 613.596, -12.8325, -424.263)
+transform = Transform3D(13.6098, 0, 14.6551, 0, 20, 0, -14.6551, 0, 13.6098, 606.941, -12.8325, -428.536)
 
 [node name="soul_crying6" parent="Souls" instance=ExtResource("8_yg30d")]
 transform = Transform3D(0.870995, 0, 19.981, 0, 20, 0, -19.981, 0, 0.870995, 603.925, -12.8325, -414.092)

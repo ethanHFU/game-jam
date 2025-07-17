@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://ln18ktl3pj4u"]
+
+[ext_resource type="Shader" uid="uid://853cw6w0mica" path="res://Resources/Models/Scene/Phlegeton/flame.gdshader" id="1_g5n3w"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g5n3w"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_udf54"]
+seamless = true
+noise = SubResource("FastNoiseLite_g5n3w")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_g5n3w")
+shader_parameter/time_speed = 0.2
+shader_parameter/spin = 0.0
+shader_parameter/flame_brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 1.0
+shader_parameter/vertical_frequency = 1.0
+shader_parameter/size = -0.3
+shader_parameter/core_size = 1.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_udf54")
+shader_parameter/color1 = Color(0.286, 0.22, 0.733, 1)
+shader_parameter/color2 = Color(0.98, 0.38, 0.34, 1)
+shader_parameter/color3 = Color(0.98, 0.95, 0.53, 1)
+shader_parameter/color4 = Color(1, 1, 1, 1)

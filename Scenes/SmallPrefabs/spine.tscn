@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dik82d13kukoq"]
+
+[ext_resource type="Script" uid="uid://ccmigxpmdylpv" path="res://Scripts/small_prefabs/flow_up_and_down.gd" id="1_tqmmn"]
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="2_lpm17"]
+[ext_resource type="PackedScene" uid="uid://bplaruwk5rrno" path="res://Resources/Models/Small_Prefabs/fass2.blend" id="3_43sc1"]
+[ext_resource type="ArrayMesh" uid="uid://ltoukkk103a4" path="res://Resources/Models/Scene/Phlegeton/spine.res" id="4_lpm17"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_43sc1"]
+size = Vector3(344.634, 18, 53.7701)
+
+[node name="Spine" type="Node3D"]
+script = ExtResource("1_tqmmn")
+
+[node name="Player_Detector" parent="." instance=ExtResource("2_lpm17")]
+obstacle = 3
+
+[node name="CollisionShape3D" parent="Player_Detector/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7089, 0, 0.139755)
+shape = SubResource("BoxShape3D_43sc1")
+
+[node name="fass2" parent="." instance=ExtResource("3_43sc1")]
+transform = Transform3D(160, 0, 0, 0, 160, 0, 0, 0, 160, 0, 0, 0)
+
+[node name="Mesh_0" parent="fass2" index="0"]
+transform = Transform3D(-0.00143517, -0.0499793, 0.000103524, 0.0497573, -0.00141904, 0.00471124, -0.00470635, 0.000238252, 0.0497774, 0, 0, 0)
+mesh = ExtResource("4_lpm17")
+
+[editable path="Player_Detector"]
+[editable path="fass2"]

@@ -26,5 +26,5 @@ shader_parameter/wave_speed = 2.33
 shader_parameter/falloff_wave_amplitude = 1.17
 shader_parameter/falloff_wave_frequency = 0.1
 shader_parameter/falloff_wave_speed = 0.62
-shader_parameter/color_variation_strength = 0.715
+shader_parameter/color_variation_strength = 1.225
 shader_parameter/color_noise_scale = 0.415

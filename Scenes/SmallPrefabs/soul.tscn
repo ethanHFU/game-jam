@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddmif4cf2dlyj"]
+[gd_scene load_steps=4 format=3 uid="uid://ddmif4cf2dlyj"]
 
 [ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_dxu7s"]
 [ext_resource type="PackedScene" uid="uid://cxewxso4652cy" path="res://Resources/Models/Small_Prefabs/geistergesicht_optimiert.blend" id="2_u34xi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u34xi"]
+size = Vector3(21.8745, 26.6741, 16.9546)
 
 [node name="Soul" type="Node3D"]
 
@@ -9,5 +12,11 @@
 obstacle = 2
 amount = 15.0
 
+[node name="CollisionShape3D" parent="Player_Detector/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93726, 0.207397, -0.522705)
+shape = SubResource("BoxShape3D_u34xi")
+
 [node name="geistergesicht_optimiert" parent="." instance=ExtResource("2_u34xi")]
 transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 0, 0)
+
+[editable path="Player_Detector"]

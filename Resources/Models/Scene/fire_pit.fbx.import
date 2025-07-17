@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ddgpbg8cea8ga"
-path="res://.godot/imported/fire_pit.fbx-3df9921b2034589de8ace36fb9c2093a.scn"
+path="res://.godot/imported/fire_pit.fbx-30d39eae0e57e007626d892b9f0f6a07.scn"
 
 [deps]
 
-source_file="res://Resources/Models/Scene/Phlegeton/fire_pit.fbx"
-dest_files=["res://.godot/imported/fire_pit.fbx-3df9921b2034589de8ace36fb9c2093a.scn"]
+source_file="res://Resources/Models/Scene/fire_pit.fbx"
+dest_files=["res://.godot/imported/fire_pit.fbx-30d39eae0e57e007626d892b9f0f6a07.scn"]
 
 [params]
 

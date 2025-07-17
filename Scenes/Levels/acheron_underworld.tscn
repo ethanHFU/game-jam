@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="4_xher2"]
 [ext_resource type="Material" uid="uid://d1et1qb0j0pe4" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Noise.tres" id="5_cc7f4"]
 [ext_resource type="PackedScene" uid="uid://kd0rmh15oxf8" path="res://Resources/Models/Scene/AcheronOverworld/Cliffs/cliffs_overworld.glb" id="7_n4ud6"]
-[ext_resource type="PackedScene" uid="uid://cqmpumya5to07" path="res://Resources/Models/Scene/Phlegeton/fire_pit.tscn" id="8_ojqea"]
+[ext_resource type="PackedScene" uid="uid://cqmpumya5to07" path="res://Resources/Models/Scene/fire_pit.tscn" id="8_ojqea"]
 
 [sub_resource type="Environment" id="Environment_7t06c"]
 glow_enabled = true

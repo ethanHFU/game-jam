@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cgrtid77p4gyd"]
+[gd_scene load_steps=27 format=3 uid="uid://cgrtid77p4gyd"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_hf660"]
 [ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_4iodk"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://ccuoj71q5kdch" path="res://Scenes/SmallPrefabs/barrel.tscn" id="12_1eger"]
 [ext_resource type="PackedScene" uid="uid://bbpcn3gm56ial" path="res://Scenes/SmallPrefabs/hammer.tscn" id="14_xo4qv"]
 [ext_resource type="PackedScene" uid="uid://c6qf11375ilxy" path="res://Scenes/SmallPrefabs/ambrosia.tscn" id="15_yieir"]
-[ext_resource type="PackedScene" uid="uid://f04cgv60ss8k" path="res://Scenes/SmallPrefabs/hand.tscn" id="16_nd75b"]
 [ext_resource type="PackedScene" uid="uid://bg6kjdframjpd" path="res://Scenes/SmallPrefabs/rock.tscn" id="17_c7mjv"]
 [ext_resource type="PackedScene" uid="uid://c183d6xesnglj" path="res://Scenes/AcheronOverworld/acheron_overworld.tscn" id="18_v1pjg"]
 [ext_resource type="PackedScene" uid="uid://q20qvfs81jq1" path="res://Resources/Models/Small_Prefabs/low-poly_island_dock_platform.glb" id="19_gk14i"]
@@ -161,7 +160,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.938, -17.816, 720.368)
 collision_layer = 2
 
 [node name="Water_River" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1.09672, 0, 1, 0, 1, 0, -4.79394e-08, 222.518, -24.393, -1187.12)
+transform = Transform3D(-4.37114e-08, 0, -1.09672, 0, 1, 0, 1, 0, -4.79394e-08, 223.349, -24.5242, -1186.47)
 material_override = ExtResource("9_4iodk")
 mesh = SubResource("PlaneMesh_rrces")
 
@@ -244,17 +243,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.736, 0, -1250.35)
 
 [node name="ambrosia" parent="Obstacles/Ambrosias" instance=ExtResource("15_yieir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.842, -7.63501, -2115.33)
-
-[node name="Hands" type="Node3D" parent="Obstacles"]
-
-[node name="Hand" parent="Obstacles/Hands" instance=ExtResource("16_nd75b")]
-transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 356.97, -10.5806, -1062.34)
-
-[node name="Hand3" parent="Obstacles/Hands" instance=ExtResource("16_nd75b")]
-transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 254.227, -10.5806, -1890.62)
-
-[node name="Hand2" parent="Obstacles/Hands" instance=ExtResource("16_nd75b")]
-transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 105.97, -10.5806, -1054.53)
 
 [node name="Rocks" type="Node3D" parent="Obstacles"]
 

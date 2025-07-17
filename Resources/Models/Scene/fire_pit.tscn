@@ -1,19 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqmpumya5to07"]
 
-[ext_resource type="PackedScene" uid="uid://ddgpbg8cea8ga" path="res://Resources/Models/Scene/Phlegeton/fire_pit.fbx" id="1_i8lc2"]
-[ext_resource type="Material" uid="uid://b3elu3q1ajuhm" path="res://Resources/Models/Scene/Phlegeton/fire.tres" id="2_pxhor"]
+[ext_resource type="PackedScene" uid="uid://ddgpbg8cea8ga" path="res://Resources/Models/Scene/fire_pit.fbx" id="1_i8lc2"]
+[ext_resource type="Material" uid="uid://b3elu3q1ajuhm" path="res://Resources/Models/Scene/fire.tres" id="2_pxhor"]
 
 [node name="fire_pit" instance=ExtResource("1_i8lc2")]
 
 [node name="fire pit with fire" parent="." index="0"]
-transform = Transform3D(2.55078, 0, 0, 0, 2.55078, 0, 0, 0, 2.55078, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 surface_material_override/2 = ExtResource("2_pxhor")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.956986, 0.290134, 0, -0.290134, 0.956986, 0, 16.0307, 0)
 light_color = Color(0.68532, 0.854766, 0.871903, 1)
-light_energy = 250.0
-light_volumetric_fog_energy = 500.0
+light_energy = 200.0
+light_volumetric_fog_energy = 200.0
 spot_range = 250.0
 spot_attenuation = 2.0
 spot_angle = 85.78

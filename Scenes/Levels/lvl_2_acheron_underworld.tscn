@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://3dly0omvvqwv"]
+[gd_scene load_steps=42 format=3 uid="uid://3dly0omvvqwv"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_w036o"]
 [ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_ahvop"]
@@ -15,9 +15,11 @@
 [ext_resource type="Shader" uid="uid://bihpwrwc7pnmg" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Water.gdshader" id="12_w036o"]
 [ext_resource type="PackedScene" uid="uid://ccuoj71q5kdch" path="res://Scenes/SmallPrefabs/barrel.tscn" id="13_d4e5m"]
 [ext_resource type="PackedScene" uid="uid://bbpcn3gm56ial" path="res://Scenes/SmallPrefabs/hammer.tscn" id="14_irte1"]
+[ext_resource type="PackedScene" uid="uid://ddmif4cf2dlyj" path="res://Scenes/SmallPrefabs/soul.tscn" id="15_n55nh"]
 [ext_resource type="PackedScene" uid="uid://c6qf11375ilxy" path="res://Scenes/SmallPrefabs/ambrosia.tscn" id="15_nevo8"]
 [ext_resource type="PackedScene" uid="uid://f04cgv60ss8k" path="res://Scenes/SmallPrefabs/hand.tscn" id="16_xi7fq"]
 [ext_resource type="PackedScene" uid="uid://bg6kjdframjpd" path="res://Scenes/SmallPrefabs/rock.tscn" id="17_uc82e"]
+[ext_resource type="PackedScene" uid="uid://c702fe476bgqm" path="res://Resources/Models/Scene/AcheronUnderworld/rock_obstacles.tscn" id="19_ahvop"]
 [ext_resource type="PackedScene" uid="uid://dl1ow17gfornb" path="res://Scenes/AcheronUnderworld/acheron_underworld.tscn" id="19_w036o"]
 
 [sub_resource type="Environment" id="Environment_n55nh"]
@@ -326,6 +328,9 @@ phase = 1.57
 transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 189.167, -24, -1569.26)
 phase = 3.14
 
+[node name="Soul" parent="Obstacles/Barrels" instance=ExtResource("15_n55nh")]
+transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 309.368, -9.71475, 107.392)
+
 [node name="Hammers" type="Node3D" parent="Obstacles"]
 
 [node name="Hammer" parent="Obstacles/Hammers" instance=ExtResource("14_irte1")]
@@ -375,6 +380,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 342.654, -13.1148, -2531.16)
 
 [node name="Rock8" parent="Obstacles/Rocks" instance=ExtResource("17_uc82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.948, -13.1148, -2479.55)
+
+[node name="RockObstacles" parent="Obstacles/Rocks" instance=ExtResource("19_ahvop")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 272.657, -5.98447, -25.1421)
 
 [node name="AcheronUnderworld" parent="." instance=ExtResource("19_w036o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -4.577, 584.986)

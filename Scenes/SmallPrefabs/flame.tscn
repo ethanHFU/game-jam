@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dor05jdkgregf"]
+
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_rt7t0"]
+[ext_resource type="PackedScene" uid="uid://d4ebf6ox8b6s3" path="res://Resources/Models/Small_Prefabs/fass1_optimiert.blend" id="2_8k6yu"]
+[ext_resource type="Material" uid="uid://ln18ktl3pj4u" path="res://Resources/Models/Scene/Phlegeton/flame.tres" id="3_8k6yu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1pnus"]
+
+[node name="barrel2" type="Node3D"]
+
+[node name="Player_Detector" parent="." instance=ExtResource("1_rt7t0")]
+obstacle = 3
+
+[node name="fass1_optimiert" parent="." instance=ExtResource("2_8k6yu")]
+transform = Transform3D(262.79, 0, 0, 0, 262.79, 0, 0, 0, 262.79, 0, 0, 0)
+
+[node name="Mesh_0" parent="fass1_optimiert" index="0"]
+material_override = ExtResource("3_8k6yu")
+mesh = SubResource("SphereMesh_1pnus")
+
+[editable path="fass1_optimiert"]
