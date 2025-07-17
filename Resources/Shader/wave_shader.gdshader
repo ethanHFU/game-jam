@@ -6,13 +6,16 @@ global uniform vec3 wave_origin;
 //global uniform float expand_wave;
 instance uniform float expand_wave;
 
-uniform float debug_time = 0.0;
+//uniform float debug_time = 0.0;
 
 uniform float world_scaling = 1.;
 uniform float tex_scroll_speed = .05;
 uniform float tex_reapeater = 1.;
 uniform vec3 col_1 : source_color = vec3(0.0, .54, 1.);
 uniform vec3 col_2 : source_color = vec3(.21, .74, 1.);
+uniform vec3 foam_color : source_color = vec3(1.0, 1.0, 1.0);
+uniform float foam_strength = 1.0;
+
 uniform sampler2D noise_tex;
 uniform sampler2D noise_tex2;
 
@@ -37,12 +40,14 @@ void vertex() {
 	float w = w1 * w2;
 	
 	VERTEX.y = -w +.75;
+	
+	// Foam mask based on wave crest height
 	foam = smoothstep(.0, 1., VERTEX.y);
 }
 
 void fragment() {
 	vec2 uv = fract(UV)*tex_reapeater;
-	uv.y = uv.y * 1. + sin(TIME*.5)*.25;
+	uv.y += sin(TIME*.5)*.25;
 	uv.x *= .1;
 	uv.x += TIME*tex_scroll_speed;
 	vec3 noise = texture(noise_tex, uv).rgb;
@@ -59,4 +64,5 @@ void fragment() {
 	
 	ALBEDO = col;
 	ALPHA = 1.-smoothstep(.0, 10., d);
+	
 }
