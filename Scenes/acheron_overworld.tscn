@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c183d6xesnglj"]
+[gd_scene load_steps=5 format=3 uid="uid://b3us5cwis2k73"]
 
 [ext_resource type="Script" uid="uid://cpcojf2mlb0a4" path="res://Scripts/GameStateSystems/level_manager.gd" id="1_fpps3"]
 [ext_resource type="ArrayMesh" uid="uid://dhciax1vn0or3" path="res://Resources/Models/Scene/AcheronOverworld/cliffs.res" id="1_fxlww"]
