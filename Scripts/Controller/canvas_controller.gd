@@ -70,10 +70,11 @@ func show_wave_radius(world_pos: Vector3, radius_world: float, direction = null,
 	})
 	queue_redraw()
 
-func show_disappearing_marker(world_pos: Vector3, screen_radius := 3.0):
-	var screen_center = camera.unproject_position(world_pos)
+func show_disappearing_marker(screen_pos: Vector2, screen_radius := 3.0):
+	#var 
+	#var screen_center = camera.unproject_position(world_pos)
 	origin_markers.append({
-		"center": screen_center,
+		"center": screen_pos,
 		"radius": screen_radius,
 		"time": 0.0
 	})
