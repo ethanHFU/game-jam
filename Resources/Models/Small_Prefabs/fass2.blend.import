@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bplaruwk5rrno"
-valid=false
+path="res://.godot/imported/fass2.blend-afb6b6499b0940ff0ea30ed3f881c986.scn"
 
 [deps]
 
 source_file="res://Resources/Models/Small_Prefabs/fass2.blend"
+dest_files=["res://.godot/imported/fass2.blend-afb6b6499b0940ff0ea30ed3f881c986.scn"]
 
 [params]
 

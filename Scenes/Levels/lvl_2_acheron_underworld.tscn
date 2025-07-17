@@ -1,8 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://3dly0omvvqwv"]
+[gd_scene load_steps=44 format=3 uid="uid://3dly0omvvqwv"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_w036o"]
 [ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_ahvop"]
 [ext_resource type="Script" uid="uid://cpcojf2mlb0a4" path="res://Scripts/GameStateSystems/level_manager.gd" id="3_n55nh"]
+[ext_resource type="PackedScene" uid="uid://c0lvcrcrcyr7q" path="res://Scenes/SmallPrefabs/end_trigger.tscn" id="4_jxos6"]
 [ext_resource type="Script" uid="uid://7h7c2yvx0t7r" path="res://Scripts/Controller/input_controller.gd" id="4_w876p"]
 [ext_resource type="Script" uid="uid://dkrm20h376m2x" path="res://Scripts/Controller/water_event_controller.gd" id="5_jxos6"]
 [ext_resource type="PackedScene" uid="uid://2qs2bh3hopl5" path="res://Scenes/UI/level_ui.tscn" id="6_1s503"]
@@ -202,10 +203,48 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 90)
 }
 
+[sub_resource type="Animation" id="Animation_w876p"]
+resource_name = "move_tornado2"
+length = 40.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(236.509, -0.25, 0, 0.25, 0, 236.509, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 40)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.05176e-05, -0.25, 0, 0.25, 0, 3.05176e-05, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 40)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1142.55, -0.25, 0, 0.25, 0, -3769.29, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 40)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6bsal"]
 _data = {
 &"RESET": SubResource("Animation_6bsal"),
-&"move_tornado": SubResource("Animation_rrces")
+&"move_tornado": SubResource("Animation_rrces"),
+&"move_tornado2": SubResource("Animation_w876p")
 }
 
 [node name="AcheronOverworld" type="Node3D"]
@@ -214,6 +253,9 @@ radial_wave_scene = ExtResource("2_ahvop")
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("3_n55nh")
+levels = 1
+start_dialogue_name = "Acheron_Unterwelt_Start"
+end_dialogue_name = "Ende_Acheron_Unterwelt"
 
 [node name="InputController" type="Node" parent="."]
 script = ExtResource("4_w876p")
@@ -273,7 +315,7 @@ process_material = SubResource("ParticleProcessMaterial_7vryb")
 libraries = {
 &"": SubResource("AnimationLibrary_6bsal")
 }
-autoplay = "move_tornado"
+autoplay = "move_tornado2"
 
 [node name="Obstacles" type="Node3D" parent="."]
 
@@ -395,5 +437,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.225
 
 [node name="AcheronUnderworld4" parent="." instance=ExtResource("19_w036o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915, -4.577, -3430.19)
+
+[node name="End_trigger" parent="." instance=ExtResource("4_jxos6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -3175.6)
 
 [editable path="CanvasLayer/Level_UI"]

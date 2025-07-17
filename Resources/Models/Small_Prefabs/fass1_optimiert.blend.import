@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d4ebf6ox8b6s3"
-valid=false
+path="res://.godot/imported/fass1_optimiert.blend-48689825f13b14df92117fb80bf3d978.scn"
 
 [deps]
 
 source_file="res://Resources/Models/Small_Prefabs/fass1_optimiert.blend"
+dest_files=["res://.godot/imported/fass1_optimiert.blend-48689825f13b14df92117fb80bf3d978.scn"]
 
 [params]
 
