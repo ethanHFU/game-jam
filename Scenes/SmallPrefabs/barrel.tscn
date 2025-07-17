@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccuoj71q5kdch"]
+
+[ext_resource type="Script" uid="uid://ccmigxpmdylpv" path="res://Scripts/small_prefabs/flow_up_and_down.gd" id="1_78l3q"]
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_m8rgi"]
+[ext_resource type="PackedScene" uid="uid://bplaruwk5rrno" path="res://Resources/Models/Small_Prefabs/fass2.blend" id="2_phbec"]
+
+[node name="Barrel" type="Node3D"]
+script = ExtResource("1_78l3q")
+
+[node name="Player_Detector" parent="." instance=ExtResource("1_m8rgi")]
+obstacle = 3
+
+[node name="fass2" parent="." instance=ExtResource("2_phbec")]
+transform = Transform3D(160, 0, 0, 0, 160, 0, 0, 0, 160, 0, 0, 0)

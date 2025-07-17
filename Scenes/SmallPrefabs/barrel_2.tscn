@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b804gweuuvc8j"]
+
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_i3g74"]
+[ext_resource type="PackedScene" uid="uid://d4ebf6ox8b6s3" path="res://Resources/Models/Small_Prefabs/fass1_optimiert.blend" id="2_b8cvt"]
+
+[node name="barrel2" type="Node3D"]
+
+[node name="Player_Detector" parent="." instance=ExtResource("1_i3g74")]
+obstacle = 3
+
+[node name="fass1_optimiert" parent="." instance=ExtResource("2_b8cvt")]
+transform = Transform3D(262.79, 0, 0, 0, 262.79, 0, 0, 0, 262.79, 0, 0, 0)

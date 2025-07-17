@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg6kjdframjpd"]
+
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_dc1e0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dc1e0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_edsxq"]
+size = Vector3(0.834038, 1.38684, 0.715012)
+
+[node name="Rock" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(30.12, 0, 0, 0, 30.12, 0, 0, 0, 30.12, 0, 0, 0)
+mesh = SubResource("BoxMesh_dc1e0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.0200272, 1.21582, -0.373306)
+shape = SubResource("BoxShape3D_edsxq")
+
+[node name="Player_Detector" parent="." instance=ExtResource("1_dc1e0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+amount = 20.0
+
+[editable path="Player_Detector"]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbmfs03o1here"]
+[gd_scene load_steps=15 format=3 uid="uid://bbmfs03o1here"]
+
+[ext_resource type="Script" uid="uid://dhkdrlrpa27jp" path="res://Scripts/small_prefabs/tornado.gd" id="1_lugh7"]
 
 [sub_resource type="Curve" id="Curve_uuc2j"]
 _data = [Vector2(0, 0), 0.0, 4.58802, 0, 0, Vector2(0.274286, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 1), 0.0, 0.0, 0, 0, Vector2(0.537143, 0), 0.0699925, 0.0, 0, 0]
@@ -81,9 +83,12 @@ section_length = 8.0
 section_rings = 128
 curve = SubResource("Curve_mx0s2")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fpwwo"]
+size = Vector3(33.4025, 8.07281, 14.0236)
+
 [node name="pepito_tornada" type="GPUParticles3D"]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
-amount = 512
+amount = 256
 lifetime = 6.0
 transform_align = 2
 trail_enabled = true
@@ -96,3 +101,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.8727
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.39104)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+script = ExtResource("1_lugh7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539284, 3.53641, 5.03338)
+shape = SubResource("BoxShape3D_fpwwo")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

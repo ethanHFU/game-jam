@@ -6,7 +6,7 @@
 [node name="SceneLoader" type="Node"]
 script = ExtResource("1_x463m")
 scenes = {
-"acheron": "res://Scenes/DemoScenes/wave_test.tscn",
+"acheron": "res://Scenes/Levels/lvl_1_acheron_overworld.tscn",
 "kokytus": "res://Scenes/Levels/Test.tscn",
 "level_select": "res://Scenes/UI/level_select.tscn",
 "main_menu": "res://Scenes/UI/main_menu.tscn",
