@@ -1,22 +1,31 @@
 extends Node
 
+enum level {LEVEL_1, LEVEL_2, LEVEL_3} # currently not used but might be useful
+@export var levels: level
+
 @export_group("Boat Stuff")
 @export var boat_health: float = 100.
 @export var is_invincible: bool = false
 
 @export_group("Dialogue Stuff")
-@export var dialogue_name: String = ""
+@export var start_dialogue_name: String = ""
+@export var end_dialogue_name: String = ""
 
 const MAX_HEALTH: float = 100.
 
 @onready var health_bar = $"../CanvasLayer/Level_UI/MarginContainer/HealthBar"
 @onready var pause_menu = %PauseMenu
-	
+
 
 func _ready():
 	EventBus.repair_boat.connect(gain_health)
 	EventBus.take_damage.connect(loose_health)
 	EventBus.make_invincible.connect(invincibility)
+	EventBus.trigger_level_end.connect(level_outro_events)
+	
+	preload("res://Dialog_Bilder/Textbox.tres").prepare() # prepare dialogic resource
+	Dialogic.process_mode = Node.PROCESS_MODE_ALWAYS
+	#level_intro_events()
 
 
 func _input(event):
@@ -62,14 +71,32 @@ func invincibility() -> void:
 	is_invincible = false
 
 func level_intro_events() -> void:
-	# starte cutscene
-	# starte dialog nach cutscene
-	# starte level
-	pass
+	# starte cutscene vor dem level in eigener szene
+	Dialogic.start(start_dialogue_name).process_mode = Node.PROCESS_MODE_ALWAYS
+	Dialogic.timeline_ended.connect(unpause)
+	await get_tree().create_timer(1.).timeout
+	get_tree().paused = true
+
+func unpause() -> void:
+	get_tree().paused = false
+
 
 func level_outro_events() -> void:
 	# starte event wenn steg sichtbar ist
-	# starte dialog
+	Dialogic.start(end_dialogue_name).process_mode = Node.PROCESS_MODE_ALWAYS
+	Dialogic.timeline_ended.connect(kill_player)
+	await get_tree().create_timer(1.).timeout
+
+func kill_player() -> void:
 	# character stirbt
-	# lade level 2
-	pass
+	await get_tree().create_timer(5.).timeout
+	# remember that this does not work, when debug mode is enabled in sceneloader
+	match levels:
+		level.LEVEL_1:
+			EventBus.load_scene.emit("phlegeton")
+		level.LEVEL_2:
+			EventBus.load_scene.emit("kokytus")
+		level.LEVEL_3:
+			EventBus.load_scene.emit("main_menu")
+		_:
+			print("[LevelManager] level not available")
