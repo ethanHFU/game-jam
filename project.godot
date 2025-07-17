@@ -28,19 +28,27 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Charon": "res://Charon.dch",
+"Charon": "res://Dialog_Bilder/Charon.dch",
+"Dialog_Bilder/Charon": "res://Charon.dch",
 "Hades": "res://Dialog_Bilder/Hades.dch",
 "Poseidon": "res://Dialog_Bilder/Poseidon.dch",
 "Triton": "res://Dialog_Bilder/Triton.dch"
 }
 directories/dtl_directory={
 "Acheron_Unterwelt_Start": "res://Dialog_Bilder/Acheron_Unterwelt_Start.dtl",
+"Anfang Phlegeton": "res://Dialog_Bilder/Anfang Phlegeton.dtl",
+"Ende Phlegeton": "res://Dialog_Bilder/Ende Phlegeton.dtl",
 "EndeAcheron": "res://Dialog_Bilder/EndeAcheron.dtl",
+"Ende_Acheron_Unterwelt": "res://Dialog_Bilder/Ende_Acheron_Unterwelt.dtl",
 "timeline": "res://Dialog_Bilder/timeline.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://Dialog_Bilder/Textbox.tres",
+"Textbox": "res://Dialog_Bilder/Textbox.tres"
+}
 layout/style_list=["res://Dialog_Bilder/Textbox.tres"]
 layout/default_style="res://Dialog_Bilder/Textbox.tres"
+glossary/default_case_sensitive=true
 
 [display]
 

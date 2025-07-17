@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bru4o7fm7gdsy"
-path="res://.godot/imported/Fisher_in_Boat.blend-5fcd0b1f54b1f8bdb3cb78d61703531d.scn"
+valid=false
 
 [deps]
 
 source_file="res://Resources/Models/Boat/Fisher_in_Boat.blend"
-dest_files=["res://.godot/imported/Fisher_in_Boat.blend-5fcd0b1f54b1f8bdb3cb78d61703531d.scn"]
 
 [params]
 

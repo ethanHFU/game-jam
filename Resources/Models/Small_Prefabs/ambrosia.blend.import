@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dmq27rk6ks0qv"
-path="res://.godot/imported/ambrosia.blend-667005da11ace9d2a0622e6ca40b3b17.scn"
+valid=false
 
 [deps]
 
 source_file="res://Resources/Models/Small_Prefabs/ambrosia.blend"
-dest_files=["res://.godot/imported/ambrosia.blend-667005da11ace9d2a0622e6ca40b3b17.scn"]
 
 [params]
 
