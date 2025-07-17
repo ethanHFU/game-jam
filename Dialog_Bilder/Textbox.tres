@@ -29,12 +29,16 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_16vdu"]
 script = ExtResource("2_ojd8p")
 scene = ExtResource("5_1fqhm")
-overrides = {}
+overrides = {
+"text_custom_color": "Color(0.122917, 0.585938, 0.0961304, 1)"
+}
 
 [sub_resource type="Resource" id="Resource_ifrav"]
 script = ExtResource("2_ojd8p")
 scene = ExtResource("6_yrnit")
-overrides = {}
+overrides = {
+"title_custom_color": "Color(0.146626, 0.59375, 0.132202, 1)"
+}
 
 [sub_resource type="Resource" id="Resource_qwiq1"]
 script = ExtResource("2_ojd8p")
@@ -67,4 +71,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("2_ojd8p")]([])
-metadata/_latest_layer = "16"
+metadata/_latest_layer = "12"
