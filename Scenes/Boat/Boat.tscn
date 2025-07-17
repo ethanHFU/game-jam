@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://c64cjsv4teeu8"]
 
-[ext_resource type="PackedScene" uid="uid://7h5bq2l7e6j7" path="res://Resources/Models/Boat/test_boat.blend" id="1_6sf2h"]
 [ext_resource type="Script" uid="uid://etdrvcv6lf7w" path="res://Scripts/boat.gd" id="1_vhowb"]
+[ext_resource type="PackedScene" uid="uid://bru4o7fm7gdsy" path="res://Resources/Models/Boat/Fisher_in_Boat.blend" id="3_bli1c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6sf2h"]
-size = Vector3(11.1682, 50.8363, 36.1678)
+size = Vector3(11.1682, 44.9123, 42.4687)
 
 [node name="Boat" type="CharacterBody3D" groups=["Boat"]]
 script = ExtResource("1_vhowb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.876343, 6.79584, 0.145355)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.876343, 9.75784, -3.00508)
 shape = SubResource("BoxShape3D_6sf2h")
 
 [node name="VisualAppearance" type="Node3D" parent="."]
 
-[node name="test_boat" parent="VisualAppearance" instance=ExtResource("1_6sf2h")]
-transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 0, 0, 0)
+[node name="Fisher_in_Boat" parent="VisualAppearance" instance=ExtResource("3_bli1c")]
+transform = Transform3D(-11.8682, 0, 1.77371, 0, 12, 0, -1.77371, 0, -11.8682, 1.17, 12.148, 0)
