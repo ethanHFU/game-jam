@@ -24,6 +24,7 @@ buses/default_bus_layout="res://Resources/Audio/default_bus_layout.tres"
 EventBus="*res://Scripts/GameStateSystems/EventBus.gd"
 SceneLoader="*res://Scenes/GameStateSystems/scene_loader.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalAudioManager="*res://Scenes/GameStateSystems/global_audio_manager.tscn"
 
 [dialogic]
 

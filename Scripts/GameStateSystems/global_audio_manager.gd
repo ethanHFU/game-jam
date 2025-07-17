@@ -10,5 +10,4 @@ func _ready():
 	print("audio manager is ready")
 
 func play_sound(stream: String) -> void:
-	var audiostream: AudioStreamPlayer = get_node(audiostreams[stream])
-	audiostream.play()
+	get_node(audiostreams[stream]).play()
