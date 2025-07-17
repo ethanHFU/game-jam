@@ -46,6 +46,7 @@ Boat="only for the boat"
 [gui]
 
 theme/custom="uid://cp0np0rp2fyse"
+theme/custom_font="uid://du1rl3bdpt2n4"
 
 [input]
 

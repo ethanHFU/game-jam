@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bap6vpdskv0u1"]
+[gd_scene load_steps=4 format=3 uid="uid://bap6vpdskv0u1"]
 
 [ext_resource type="Script" uid="uid://dd8ycrycc6whf" path="res://Scripts/UI/main_menu.gd" id="1_i2xx2"]
 [ext_resource type="Theme" uid="uid://cp0np0rp2fyse" path="res://Resources/UI/main_theme.tres" id="2_o14dv"]
+[ext_resource type="Texture2D" uid="uid://bnulfa4osuqj7" path="res://Resources/UI/UX Bilder/Bild1.jpg" id="2_u7lva"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_u7lva")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -28,62 +30,80 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Spacing4" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Spacing" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Spacing" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 size_flags_vertical = 3
 theme = ExtResource("2_o14dv")
-text = "Irgendwas mit Triton"
+theme_override_font_sizes/font_size = 95
+text = "Mighty Vessel"
 horizontal_alignment = 1
 
-[node name="Spacing2" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Spacing2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_o14dv")
-text = "Starte Spiel"
+text = "Spiel starten"
 
-[node name="Spacing4" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Spacing4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Einstellungen"
 
-[node name="Spacing5" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Spacing5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Spiel beenden"
 
-[node name="Spacing3" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Spacing3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[connection signal="button_down" from="MarginContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
-[connection signal="button_down" from="MarginContainer/VBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_button_down"]
-[connection signal="button_down" from="MarginContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]
+[node name="Spacing5" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.74
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]
