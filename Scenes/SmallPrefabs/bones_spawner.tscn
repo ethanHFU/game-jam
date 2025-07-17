@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp4cqxtd4qchp"]
+
+[ext_resource type="PackedScene" uid="uid://c84nlwid4gywx" path="res://Scenes/SmallPrefabs/arm.tscn" id="1_sqglh"]
+[ext_resource type="PackedScene" uid="uid://chpyqhygmttvx" path="res://Scenes/SmallPrefabs/femur.tscn" id="2_tlarn"]
+[ext_resource type="PackedScene" uid="uid://dwlc56iq3abae" path="res://Scenes/SmallPrefabs/ribcage.tscn" id="3_tp663"]
+[ext_resource type="PackedScene" uid="uid://dik82d13kukoq" path="res://Scenes/SmallPrefabs/spine.tscn" id="5_tp663"]
+
+[sub_resource type="GDScript" id="GDScript_tlarn"]
+script/source = "extends Node3D
+
+var spawn_options = [
+	preload(\"res://Scenes/SmallPrefabs/arm.tscn\"),
+	#preload(\"res://EnemyB.tscn\")
+]
+
+func _ready():
+	randomize()  # ensures different results each run
+
+	var scene = spawn_options[randi() % spawn_options.size()]
+	print(scene)
+	var instance = scene.instantiate()
+	get_parent().add_child(instance)
+
+	instance.scale = Vector3(100, 100, 100)  # Makes it 10× larger in all directions
+	instance.global_transform = global_transform
+
+	queue_free()
+"
+
+[node name="BonesSpawner" type="Node3D"]
+script = SubResource("GDScript_tlarn")
+
+[node name="Ribcage" parent="." instance=ExtResource("3_tp663")]
+
+[node name="Arm" parent="." instance=ExtResource("1_sqglh")]
+
+[node name="Femur" parent="." instance=ExtResource("2_tlarn")]
+
+[node name="Spine" parent="." instance=ExtResource("5_tp663")]

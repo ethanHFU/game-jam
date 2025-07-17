@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://cgrtid77p4gyd"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_hf660"]
-[ext_resource type="PackedScene" uid="uid://b3rq02pw3aj8b" path="res://Scenes/DemoScenes/basic_wave.tscn" id="2_v1pjg"]
+[ext_resource type="PackedScene" path="res://Scenes/DemoScenes/basic_wave.tscn" id="2_v1pjg"]
 [ext_resource type="Script" uid="uid://cpcojf2mlb0a4" path="res://Scripts/GameStateSystems/level_manager.gd" id="3_1eger"]
 [ext_resource type="Script" uid="uid://7h7c2yvx0t7r" path="res://Scripts/Controller/input_controller.gd" id="3_rrces"]
 [ext_resource type="Script" uid="uid://dkrm20h376m2x" path="res://Scripts/Controller/water_event_controller.gd" id="4_6bsal"]
@@ -119,7 +119,7 @@ _data = {
 &"move_tornado": SubResource("Animation_rrces")
 }
 
-[node name="AcheronOverworld" type="Node3D"]
+[node name="AcheronOverworld2" type="Node3D"]
 script = ExtResource("1_hf660")
 radial_wave_scene = ExtResource("2_v1pjg")
 
