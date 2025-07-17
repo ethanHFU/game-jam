@@ -12,7 +12,7 @@ var wave_radius_max = 100.0
 var wave_speed = 50.0
 # Set wave_force_fac such that wave forces are small enough to push boat along wave perimeter,
 # but not cause large jumps causing choppy look as the boat reenters the expanding wave radius.
-var wave_force_fac = 60.0  
+var wave_force_fac = 70.0  
 var wave_width = 10.0  # Tolerance for collision detection
 var force = Vector3.ZERO 
 
@@ -38,25 +38,34 @@ func _process(delta):
 func process_wave(wave, delta) -> Vector3:
 	wave.radius += wave.speed * delta
 
-	if wave.visual_instance:
-		var mesh = wave.visual_instance.get_node("Plane")
-		if mesh and mesh.material_override:
-			mesh.set_instance_shader_parameter("expand_wave", wave.radius/wave.vi_scale_fac)
-
-	if wave is DirectedWave:
-		canvas.show_wave_radius(wave.origin, wave.radius, wave.force, wave.opening_angle)
-	else:
-		canvas.show_wave_radius(wave.origin, wave.radius)
-
-	if wave.radius >= wave.radius_max:
+	if wave is not DirectedWave:  #TODO: Remove this check and use inheritance or something
 		if wave.visual_instance:
-			wave.visual_instance.queue_free()  # Delete radial wave instance
-		waves.erase(wave)
-		return Vector3.ZERO
+			var mesh = wave.visual_instance.get_node("Plane")
+			if mesh and mesh.material_override:
+				mesh.set_instance_shader_parameter("expand_wave", wave.radius/wave.vi_scale_fac)
+				#mesh.set_instance_shader_parameter("expand_wave", wave.radius)
+				
+
+	if wave.active:
+		if wave is DirectedWave:
+			canvas.show_wave_radius(wave.origin, wave.radius, wave.force, wave.opening_angle)
+		else:
+			canvas.show_wave_radius(wave.origin, wave.radius)
 
 	var wave_to_boat = boat.global_position - wave.origin
 	var distance = wave_to_boat.length()
 	if distance > wave.radius + wave_width:
+		return Vector3.ZERO
+	
+	if wave.radius >= 2*wave.radius_max:  #TODO: Replace with better logic. Only here to keep animation alive but stop collision
+		if wave is not DirectedWave:  #TODO: Remove this check and use inheritance or something
+			if wave.visual_instance:
+				wave.visual_instance.queue_free()  # Delete radial wave instance
+		waves.erase(wave)
+		return Vector3.ZERO
+
+	if wave.radius >= wave.radius_max:
+		wave.active = false 
 		return Vector3.ZERO
 
 	var angle_falloff = 1.0
@@ -113,6 +122,7 @@ class RadialWave:
 	var radius_max: float
 	var speed: float
 	var has_impacted := false
+	var active := true
 	var visual_instance: Node3D
 	var vi_scale_fac: float
 	func _init(_origin: Vector3, _radius_max: float, _speed: float, _visual_instance: Node3D, _vi_scale_fac: float):
@@ -129,6 +139,7 @@ class DirectedWave:
 	var radius_max: float
 	var speed: float
 	var force: Vector3
+	var active := true
 	var opening_angle: float
 	var has_impacted := false
 	var visual_instance: Node3D
