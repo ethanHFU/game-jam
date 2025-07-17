@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dut6cbbx44qb3"]
+[gd_scene load_steps=50 format=3 uid="uid://vkhmcib2aasb"]
 
 [ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="1_p8rfr"]
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="2_0byig"]
@@ -567,12 +567,6 @@ volumetric_fog_density = 0.0
 volumetric_fog_length = 506.94
 adjustment_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4k85"]
-transparency = 1
-albedo_color = Color(0.33, 0.00549999, 0, 0.835294)
-emission = Color(0.761002, 0.810746, 0.787143, 1)
-emission_energy_multiplier = 0.55
-
 [node name="TestLevel" type="Node3D"]
 
 [node name="Gardener" type="Node3D" parent="."]
@@ -602,9 +596,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.4968, 0)
 layers = 8
 material_override = ExtResource("6_vfngt")
 
-[node name="@StaticBody3D@30267" parent="beach" index="1"]
-collision_layer = 5
-
 [node name="Cliffs" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.435, 0)
 visible = false
@@ -629,9 +620,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -4.
 layers = 8
 material_override = ExtResource("6_vfngt")
 
-[node name="@StaticBody3D@30267" parent="beach2" index="1"]
-collision_layer = 5
-
 [node name="Cliffs2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -22.4354, -461.418)
 visible = false
@@ -644,16 +632,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -11
 material_override = ExtResource("12_0byig")
 mesh = ExtResource("6_sukqu")
 metadata/_edit_group_ = true
-
-[node name="Ground" type="CSGBox3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.354746, -25.9159, -225.163)
-size = Vector3(1431.43, 1, 398.826)
-material = ExtResource("6_vfngt")
-
-[node name="Water2" type="CSGBox3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.354747, -13.2053, -236.866)
-size = Vector3(1431.43, 0.2, 479.691)
-material = SubResource("StandardMaterial3D_l4k85")
 
 [node name="Mountains2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -20.7048, -461.418)

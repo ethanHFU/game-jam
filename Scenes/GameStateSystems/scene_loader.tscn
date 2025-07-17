@@ -7,10 +7,10 @@
 script = ExtResource("1_x463m")
 scenes = {
 "acheron": "res://Scenes/Levels/lvl_1_acheron_overworld.tscn",
-"kokytus": "res://Scenes/Levels/Test.tscn",
+"kokytus": "res://Scenes/Levels/lvl_3_phlegeton.tscn",
 "level_select": "res://Scenes/UI/level_select.tscn",
 "main_menu": "res://Scenes/UI/main_menu.tscn",
-"phlegeton": "res://Scenes/DemoScenes/blood_river_test.tscn",
+"phlegeton": "res://Scenes/Levels/lvl_2_acheron_underworld.tscn",
 "settings": "res://Scenes/UI/settings.tscn"
 }
 loading_screen = ExtResource("2_awoig")

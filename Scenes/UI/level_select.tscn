@@ -39,15 +39,15 @@ layout_mode = 2
 
 [node name="Acheron" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Acheron"
+text = "Acheron Overworld"
 
 [node name="Phlegeton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Phlegeton"
+text = "Acheron Underworld"
 
 [node name="Kokytus" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Kokytus"
+text = "Phlegeton"
 
 [node name="Spacing2" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
