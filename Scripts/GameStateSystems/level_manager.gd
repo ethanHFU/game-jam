@@ -10,13 +10,21 @@ extends Node
 const MAX_HEALTH: float = 100.
 
 @onready var health_bar = $"../CanvasLayer/Level_UI/MarginContainer/HealthBar"
-
+@onready var pause_menu = %PauseMenu
+	
 
 func _ready():
 	EventBus.repair_boat.connect(gain_health)
 	EventBus.take_damage.connect(loose_health)
 	EventBus.make_invincible.connect(invincibility)
 
+
+func _input(event):
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = true
+		pause_menu.visible = true
+		print(get_tree().paused)
+		
 
 func gain_health(amount: float) -> void:
 	# update internal state
@@ -54,7 +62,14 @@ func invincibility() -> void:
 	is_invincible = false
 
 func level_intro_events() -> void:
+	# starte cutscene
+	# starte dialog nach cutscene
+	# starte level
 	pass
 
 func level_outro_events() -> void:
+	# starte event wenn steg sichtbar ist
+	# starte dialog
+	# character stirbt
+	# lade level 2
 	pass

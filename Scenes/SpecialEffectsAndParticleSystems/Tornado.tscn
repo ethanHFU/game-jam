@@ -88,7 +88,7 @@ size = Vector3(33.4025, 8.07281, 14.0236)
 
 [node name="pepito_tornada" type="GPUParticles3D"]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
-amount = 512
+amount = 256
 lifetime = 6.0
 transform_align = 2
 trail_enabled = true

@@ -31,3 +31,5 @@ func _on_area_3d_body_entered(body):
 				EventBus.boost_boat.emit()
 			_:
 				print("missing obstacle in player detector")
+		await get_tree().create_timer(.1).timeout
+		if obstacle != obstacle_kind.ROCK: get_parent().call_deferred("queue_free")

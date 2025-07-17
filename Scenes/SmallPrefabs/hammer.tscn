@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="1_fs6da"]
 [ext_resource type="PackedScene" uid="uid://c867qc52yk3mh" path="res://Resources/Models/Small_Prefabs/hammer.blend" id="2_88ss5"]
-[ext_resource type="Script" uid="uid://cljugub1kcxc" path="res://Scripts/rotate_y_360_d.gd" id="3_cild3"]
+[ext_resource type="Script" uid="uid://cljugub1kcxc" path="res://Scripts/small_prefabs/rotate_y_360_d.gd" id="3_cild3"]
 
 [node name="Hammer" type="Node3D"]
 

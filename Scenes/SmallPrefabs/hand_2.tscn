@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkx7ndiggf5pm"]
+
+[ext_resource type="PackedScene" uid="uid://c4p5el1aad8dm" path="res://Resources/Models/Small_Prefabs/hand2.blend" id="1_2uno4"]
+[ext_resource type="Script" uid="uid://d3jxtivess4y" path="res://Scripts/small_prefabs/follow_boat.gd" id="1_8ep1q"]
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="2_8ep1q"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8ep1q"]
+height = 25.0
+radius = 130.0
+
+[node name="Hand2" type="Node3D"]
+script = ExtResource("1_8ep1q")
+speed = 30.0
+
+[node name="hand2" parent="." instance=ExtResource("1_2uno4")]
+transform = Transform3D(-6.99382e-06, 0, 160, -113.137, 113.137, -4.94538e-06, -113.137, -113.137, -4.94538e-06, 0, 5, 0)
+
+[node name="Player_Detector" parent="." instance=ExtResource("2_8ep1q")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_8ep1q")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
