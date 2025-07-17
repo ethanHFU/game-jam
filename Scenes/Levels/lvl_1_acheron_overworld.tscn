@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cgrtid77p4gyd"]
+[gd_scene load_steps=28 format=3 uid="uid://cgrtid77p4gyd"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_hf660"]
 [ext_resource type="PackedScene" path="res://Scenes/DemoScenes/basic_wave.tscn" id="2_v1pjg"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bg6kjdframjpd" path="res://Scenes/SmallPrefabs/rock.tscn" id="17_c7mjv"]
 [ext_resource type="PackedScene" uid="uid://c183d6xesnglj" path="res://Scenes/AcheronOverworld/acheron_overworld.tscn" id="18_v1pjg"]
 [ext_resource type="PackedScene" uid="uid://q20qvfs81jq1" path="res://Resources/Models/Small_Prefabs/low-poly_island_dock_platform.glb" id="19_gk14i"]
+[ext_resource type="PackedScene" uid="uid://c0lvcrcrcyr7q" path="res://Scenes/SmallPrefabs/end_trigger.tscn" id="19_gk14i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wipk"]
 sky_top_color = Color(0, 0.458139, 0.787562, 1)
@@ -125,6 +126,8 @@ radial_wave_scene = ExtResource("2_v1pjg")
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("3_1eger")
+start_dialogue_name = "timeline"
+end_dialogue_name = "EndeAcheron"
 
 [node name="InputController" type="Node" parent="."]
 script = ExtResource("3_rrces")
@@ -285,5 +288,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915
 
 [node name="Dock" parent="." instance=ExtResource("19_gk14i")]
 transform = Transform3D(-2.99204e-07, 0, 6.845, 0, 6.845, 0, -6.845, 0, -2.99204e-07, 125.993, -30.049, -3024.79)
+[node name="End_trigger" parent="." instance=ExtResource("19_gk14i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -2882.92)
 
 [editable path="CanvasLayer/Level_UI"]

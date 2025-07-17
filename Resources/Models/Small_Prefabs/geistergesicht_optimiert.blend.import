@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cxewxso4652cy"
-path="res://.godot/imported/geistergesicht_optimiert.blend-0b4d9c55a6577b3f2ddd4912d412ce96.scn"
+valid=false
 
 [deps]
 
 source_file="res://Resources/Models/Small_Prefabs/geistergesicht_optimiert.blend"
-dest_files=["res://.godot/imported/geistergesicht_optimiert.blend-0b4d9c55a6577b3f2ddd4912d412ce96.scn"]
 
 [params]
 

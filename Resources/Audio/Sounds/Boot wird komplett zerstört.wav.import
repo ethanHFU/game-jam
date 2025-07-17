@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dln3jlcgw4waw"
+path="res://.godot/imported/Boot wird komplett zerstört.wav-2e6eba96179c6fbfffce5134802c263e.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/Sounds/Boot wird komplett zerstört.wav"
+dest_files=["res://.godot/imported/Boot wird komplett zerstört.wav-2e6eba96179c6fbfffce5134802c263e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://by6gr5d4eem6q"
+path="res://.godot/imported/Cerberus Geheule im Hintergrund.wav-048a01986efd39ee48892e0e6f81a73a.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/Sounds/Cerberus Geheule im Hintergrund.wav"
+dest_files=["res://.godot/imported/Cerberus Geheule im Hintergrund.wav-048a01986efd39ee48892e0e6f81a73a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

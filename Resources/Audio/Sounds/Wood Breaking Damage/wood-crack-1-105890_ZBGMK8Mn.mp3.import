@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drf4rq73lgbbo"
+path="res://.godot/imported/wood-crack-1-105890_ZBGMK8Mn.mp3-7174ab0a30ad7bed32eabf62449d7d89.mp3str"
+
+[deps]
+
+source_file="res://Resources/Audio/Sounds/Wood Breaking Damage/wood-crack-1-105890_ZBGMK8Mn.mp3"
+dest_files=["res://.godot/imported/wood-crack-1-105890_ZBGMK8Mn.mp3-7174ab0a30ad7bed32eabf62449d7d89.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

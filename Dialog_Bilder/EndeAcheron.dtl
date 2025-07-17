@@ -1,0 +1,21 @@
+Triton: Menschling! Sieh mal!
+Triton: Das muss der sichere Hafen sein, von dem ich so viel gehört habe!
+Triton: Bin ich froh, dass du das heil überstanden hast.
+Triton: Jetzt musst du nur noch dort anleg-
+join Poseidon center [animation="Instant In"]
+Poseidon: HAHAHA!!
+Poseidon: DACHTET IHR WIRKLICH IHR KÖNNT MEINEM ZORN ENTFLIEHEN??
+Triton: Vater!
+Triton: Das hätte ich nicht von dir gedacht!
+Triton: Dieser Menschling hat diesen grauenvollen Tod nicht verdient! Hol ihn zurü-
+Poseidon: ICH WILL NICHTS MEHR HÖREN!!
+Poseidon: DIESER MENSCHLING MUSSTE BESTRAFT WERDEN!!
+Poseidon: ABER WENN ER DIR SO WICHTIG IST...DANN FOLGE IHM DOCH....
+Poseidon: ...IN DIE UNTERWELT! RICHTE MEINEM BRUDER GRÜßE AUS.
+Poseidon: HAHAHAHA!
+leave Poseidon [animation="Instant Out"]
+Triton: Grrrrrr...
+Triton: Na warte Vater. So leicht gebe ich nicht auf.
+Triton: Du wirst schon sehen, wie stur ich sein kann.
+Triton: Ich werde den armen Fischermann retten.
+leave Triton [animation="Fade Out"]
