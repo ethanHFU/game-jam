@@ -25,7 +25,7 @@ func _ready():
 	
 	preload("res://Dialog_Bilder/Textbox.tres").prepare() # prepare dialogic resource
 	Dialogic.process_mode = Node.PROCESS_MODE_ALWAYS
-	#level_intro_events()
+	level_intro_events()
 
 
 func _input(event):
@@ -72,6 +72,10 @@ func invincibility() -> void:
 
 func level_intro_events() -> void:
 	# starte cutscene vor dem level in eigener szene
+	# starte main theme
+	EventBus.play_sound.emit("MainTheme")
+	EventBus.play_sound.emit("Ruderboot")
+	
 	Dialogic.start(start_dialogue_name).process_mode = Node.PROCESS_MODE_ALWAYS
 	Dialogic.timeline_ended.connect(unpause)
 	await get_tree().create_timer(1.).timeout
