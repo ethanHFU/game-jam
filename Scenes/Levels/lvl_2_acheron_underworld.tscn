@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://3dly0omvvqwv"]
+[gd_scene load_steps=40 format=3 uid="uid://3dly0omvvqwv"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_w036o"]
 [ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_ahvop"]
@@ -63,6 +63,69 @@ size = Vector2(5000, 400)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yieir"]
 data = PackedVector3Array(2500, 0, 200, -2500, 0, 200, 2500, 0, -200, -2500, 0, 200, -2500, 0, -200, 2500, 0, -200)
+
+[sub_resource type="Curve" id="Curve_w036o"]
+_data = [Vector2(0, 0), 0.0, 4.58802, 0, 0, Vector2(0.274286, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 1), 0.0, 0.0, 0, 0, Vector2(0.537143, 0), 0.0699925, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ahvop"]
+curve = SubResource("Curve_w036o")
+
+[sub_resource type="Gradient" id="Gradient_n55nh"]
+colors = PackedColorArray(0.446641, 0.80099, 0.692831, 1, 0.158323, 0.3255, 0.800409, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w876p"]
+gradient = SubResource("Gradient_n55nh")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_jxos6"]
+_data = [Vector2(0, 0), 0.0, 0.279971, 0, 0, Vector2(0.509138, 0.230263), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.279971, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1s503"]
+curve = SubResource("Curve_jxos6")
+
+[sub_resource type="Curve" id="Curve_16ccy"]
+_data = [Vector2(0, 0.505618), 0.0, 7.78828, 0, 0, Vector2(0.203655, 1), 0.0, 0.0, 0, 0, Vector2(0.804178, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.467105), -7.27923, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_phds6"]
+curve = SubResource("Curve_16ccy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7vryb"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, -1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.5
+emission_ring_cone_angle = 60.0
+angle_min = -720.0
+angle_max = 720.0
+inherit_velocity_ratio = 1.0
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 4.0
+initial_velocity_max = 5.0
+radial_velocity_min = 9.99998
+radial_velocity_max = 20.0
+gravity = Vector3(0, 30, 0)
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+tangential_accel_min = 80.0
+tangential_accel_max = 80.0
+damping_min = 10.0
+damping_max = 10.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_phds6")
+color = Color(0.536644, 0.517152, 0.505563, 1)
+color_ramp = SubResource("GradientTexture1D_w876p")
+alpha_curve = SubResource("CurveTexture_ahvop")
+hue_variation_min = -0.01
+hue_variation_max = 0.00999998
+hue_variation_curve = SubResource("CurveTexture_1s503")
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 1.0
 
 [sub_resource type="Animation" id="Animation_6bsal"]
 length = 0.001
@@ -202,6 +265,7 @@ shape = SubResource("ConcavePolygonShape3D_yieir")
 
 [node name="pepito_tornada" parent="." instance=ExtResource("12_1i10j")]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 236.509, 3.05176e-05, 1142.55)
+process_material = SubResource("ParticleProcessMaterial_7vryb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="pepito_tornada"]
 libraries = {

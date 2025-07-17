@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cm5r06aejc053"]
+[gd_scene load_steps=72 format=3 uid="uid://cm5r06aejc053"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_2ois7"]
 [ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_v3ka3"]
@@ -32,6 +32,69 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_length = 506.94
 adjustment_enabled = true
+
+[sub_resource type="Curve" id="Curve_j08ft"]
+_data = [Vector2(0, 0), 0.0, 4.58802, 0, 0, Vector2(0.274286, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 1), 0.0, 0.0, 0, 0, Vector2(0.537143, 0), 0.0699925, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_s8as4"]
+curve = SubResource("Curve_j08ft")
+
+[sub_resource type="Gradient" id="Gradient_ktilv"]
+colors = PackedColorArray(0.0856845, 0.0483958, 0.00554282, 1, 0.448597, 0.296033, 0.117401, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_48o5j"]
+gradient = SubResource("Gradient_ktilv")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_grh70"]
+_data = [Vector2(0, 0), 0.0, 0.279971, 0, 0, Vector2(0.509138, 0.230263), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.279971, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_7f0m1"]
+curve = SubResource("Curve_grh70")
+
+[sub_resource type="Curve" id="Curve_4eagx"]
+_data = [Vector2(0, 0.505618), 0.0, 7.78828, 0, 0, Vector2(0.203655, 1), 0.0, 0.0, 0, 0, Vector2(0.804178, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.467105), -7.27923, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5fhg8"]
+curve = SubResource("Curve_4eagx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_axdt2"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, -1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.5
+emission_ring_cone_angle = 60.0
+angle_min = -720.0
+angle_max = 720.0
+inherit_velocity_ratio = 1.0
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 4.0
+initial_velocity_max = 5.0
+radial_velocity_min = 9.99998
+radial_velocity_max = 20.0
+gravity = Vector3(0, 30, 0)
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+tangential_accel_min = 80.0
+tangential_accel_max = 80.0
+damping_min = 10.0
+damping_max = 10.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_5fhg8")
+color = Color(0.777699, 0.242412, 0.166131, 1)
+color_ramp = SubResource("GradientTexture1D_48o5j")
+alpha_curve = SubResource("CurveTexture_s8as4")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.12
+hue_variation_curve = SubResource("CurveTexture_7f0m1")
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 1.0
 
 [sub_resource type="Animation" id="Animation_6bsal"]
 length = 0.001
@@ -697,6 +760,7 @@ collision_layer = 2
 
 [node name="pepito_tornada" parent="." instance=ExtResource("13_qii8w")]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 236.509, 3.05176e-05, 1142.55)
+process_material = SubResource("ParticleProcessMaterial_axdt2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="pepito_tornada"]
 libraries = {
