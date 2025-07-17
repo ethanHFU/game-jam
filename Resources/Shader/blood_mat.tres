@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cqftqsqe8ul6u"]
+
+[ext_resource type="Shader" uid="uid://dgd17k5nvvclf" path="res://Resources/Shader/blood.gdshader" id="1_kosx6"]
+
+[sub_resource type="Gradient" id="Gradient_gksfk"]
+colors = PackedColorArray(0.159073, 5.6771e-05, 3.11075e-05, 1, 0.0760206, 1.74568e-05, 9.56899e-06, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2t33t"]
+fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_er862"]
+seamless = true
+color_ramp = SubResource("Gradient_gksfk")
+noise = SubResource("FastNoiseLite_2t33t")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kosx6")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_er862")

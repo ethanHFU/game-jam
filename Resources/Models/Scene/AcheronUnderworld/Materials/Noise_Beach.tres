@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c52lyc4xnb81y" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/beach_normal.png" id="2_ul7dc"]
 
 [resource]
-albedo_color = Color(0.650128, 0.650128, 0.650128, 1)
+albedo_color = Color(0.226708, 0.226707, 0.226707, 1)
 albedo_texture = ExtResource("1_6l6m0")
 emission_enabled = true
 normal_enabled = true

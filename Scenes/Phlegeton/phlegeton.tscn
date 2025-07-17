@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://vkhmcib2aasb"]
+[gd_scene load_steps=49 format=3 uid="uid://vkhmcib2aasb"]
 
 [ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="1_p8rfr"]
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="2_0byig"]
@@ -556,17 +556,6 @@ script = ExtResource("4_wjcdm")
 octree_managers = [SubResource("Resource_putu1"), SubResource("Resource_o672a"), SubResource("Resource_3ph0d"), SubResource("Resource_objbx"), SubResource("Resource_ycwhs"), SubResource("Resource_x33ah"), SubResource("Resource_6w0gn"), SubResource("Resource_wxh4g"), SubResource("Resource_vgiwc"), SubResource("Resource_u20t8")]
 metadata/class = "Arborist"
 
-[sub_resource type="Environment" id="Environment_7t06c"]
-glow_enabled = true
-glow_intensity = 0.72
-glow_strength = 0.34
-glow_bloom = 1.0
-glow_blend_mode = 0
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
-volumetric_fog_length = 506.94
-adjustment_enabled = true
-
 [node name="TestLevel" type="Node3D"]
 
 [node name="Gardener" type="Node3D" parent="."]
@@ -579,15 +568,6 @@ plugin_version = "1.4.1"
 storage_version = 4
 metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_7t06c")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.987688, -0.156434, 3.67943e-09, -0.0391681, -0.247297, 0.968148, -0.151452, -0.956228, -0.25038, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.884, 338.307, -229.693)
 
 [node name="beach" parent="." instance=ExtResource("3_jd53g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.4968, 0)
@@ -649,6 +629,7 @@ material_override = ExtResource("12_0byig")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -22.435, -461.418)
 
 [node name="cliffs_overworld" parent="cliffs_overworld3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20668, 0.199615, 0.0467529)
 material_override = ExtResource("12_0byig")
 
 [editable path="beach"]
