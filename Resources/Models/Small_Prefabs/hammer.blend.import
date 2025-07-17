@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c867qc52yk3mh"
-path="res://.godot/imported/hammer.blend-68f6fbba59a8f6ae459ee94eb5ea5396.scn"
+valid=false
 
 [deps]
 
 source_file="res://Resources/Models/Small_Prefabs/hammer.blend"
-dest_files=["res://.godot/imported/hammer.blend-68f6fbba59a8f6ae459ee94eb5ea5396.scn"]
 
 [params]
 
