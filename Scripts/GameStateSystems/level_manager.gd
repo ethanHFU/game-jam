@@ -25,7 +25,7 @@ func _ready():
 	
 	preload("res://Dialog_Bilder/Textbox.tres").prepare() # prepare dialogic resource
 	Dialogic.process_mode = Node.PROCESS_MODE_ALWAYS
-	level_intro_events()
+	#level_intro_events()
 
 
 func _input(event):

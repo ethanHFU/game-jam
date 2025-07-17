@@ -13,9 +13,6 @@
 
 [node name="TestLevel" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.884, 338.307, -229.693)
-
 [node name="beach" parent="." instance=ExtResource("2_yg30d")]
 
 [node name="beach_mesh" parent="beach" index="0"]

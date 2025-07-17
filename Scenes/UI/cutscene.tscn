@@ -14,6 +14,10 @@ func _on_video_finished():
 
 func _on_video_stream_player_finished() -> void:
 	EventBus.load_scene.emit(\"acheron\")
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		EventBus.load_scene.emit(\"acheron\")
 "
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_pn5dx"]
