@@ -12,7 +12,7 @@ var wave_radius_max = 100.0
 var wave_speed = 50.0
 # Set wave_force_fac such that wave forces are small enough to push boat along wave perimeter,
 # but not cause large jumps causing choppy look as the boat reenters the expanding wave radius.
-var wave_force_fac = 60.0  
+var wave_force_fac = 70.0  
 var wave_width = 10.0  # Tolerance for collision detection
 var force = Vector3.ZERO 
 
@@ -43,6 +43,8 @@ func process_wave(wave, delta) -> Vector3:
 			var mesh = wave.visual_instance.get_node("Plane")
 			if mesh and mesh.material_override:
 				mesh.set_instance_shader_parameter("expand_wave", wave.radius/wave.vi_scale_fac)
+				#mesh.set_instance_shader_parameter("expand_wave", wave.radius)
+				
 
 	if wave.active:
 		if wave is DirectedWave:

@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://fmg1twj86522"]
+[gd_scene load_steps=8 format=3 uid="uid://fmg1twj86522"]
 
 [ext_resource type="Script" path="res://Scripts/GameStateSystems/level_manager.gd" id="1_fpps3"]
 [ext_resource type="ArrayMesh" uid="uid://dhciax1vn0or3" path="res://Resources/Models/Scene/AcheronOverworld/cliffs.res" id="1_fxlww"]
 [ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="2_sxhid"]
-[ext_resource type="PackedScene" uid="uid://b5q2figpm7n0r" path="res://Scenes/DemoScenes/wave_test.tscn" id="4_pmyky"]
 [ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/beach.glb" id="4_sxhid"]
 [ext_resource type="Material" uid="uid://did5jrj8sc7wm" path="res://Resources/Shader/water_mat.tres" id="5_pmyky"]
 
@@ -34,9 +33,6 @@ mesh = ExtResource("2_sxhid")
 
 [node name="beach2" parent="." instance=ExtResource("4_sxhid")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
-
-[node name="WaterWave" parent="." instance=ExtResource("4_pmyky")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -18.8988, -230)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -24.3931, -240.965)
