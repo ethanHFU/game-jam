@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cgrtid77p4gyd"]
+[gd_scene load_steps=27 format=3 uid="uid://cgrtid77p4gyd"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_hf660"]
 [ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_4iodk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dkrm20h376m2x" path="res://Scripts/Controller/water_event_controller.gd" id="4_6bsal"]
 [ext_resource type="Script" uid="uid://btfb7d3vyclnk" path="res://Scripts/Controller/canvas_controller.gd" id="5_1eger"]
 [ext_resource type="Script" uid="uid://c47w15kn1oxio" path="res://Scripts/Controller/camera_controller.gd" id="6_sme2a"]
+[ext_resource type="PackedScene" uid="uid://chj31s2snd6ma" path="res://Scenes/UI/pause_menu.tscn" id="6_v1pjg"]
 [ext_resource type="PackedScene" uid="uid://2qs2bh3hopl5" path="res://Scenes/UI/level_ui.tscn" id="7_sme2a"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="7_xo4qv"]
 [ext_resource type="PackedScene" uid="uid://c183d6xesnglj" path="res://Scenes/AcheronOverworld/acheron_overworld.tscn" id="8_yieir"]
@@ -139,6 +140,9 @@ mouse_filter = 2
 
 [node name="Canvas" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("5_1eger")
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_v1pjg")]
+unique_name_in_owner = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 script = ExtResource("6_sme2a")

@@ -1,12 +1,18 @@
-[gd_scene format=3 uid="uid://chj31s2snd6ma"]
+[gd_scene load_steps=2 format=3 uid="uid://chj31s2snd6ma"]
+
+[ext_resource type="Script" uid="uid://iuvckeig4kd1" path="res://Scripts/UI/pause_game.gd" id="1_rrvs5"]
 
 [node name="PauseMenu" type="Control"]
+process_mode = 2
+visible = false
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rrvs5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -15,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.420816, 0.664818, 1, 0.0588235)
+color = Color(0, 0.414466, 0.860334, 0.513726)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -35,7 +41,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="PlayOn" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 3
@@ -45,7 +51,7 @@ text = "Weiterspielen"
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Level Beenden"
@@ -53,3 +59,6 @@ text = "Level Beenden"
 [node name="Spacing3" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+
+[connection signal="button_down" from="MarginContainer/VBoxContainer/PlayOn" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
