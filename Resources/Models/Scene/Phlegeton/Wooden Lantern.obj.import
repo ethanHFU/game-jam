@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cr84radnulg2t"
+path="res://.godot/imported/Wooden Lantern.obj-ef2d618b8b393c4e71bb2c6db4e1f095.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wooden Lantern.obj-ef2d618b8b393c4e71bb2c6db4e1f095.mesh"]
+
+source_file="res://Resources/Models/Scene/Phlegeton/Wooden Lantern.obj"
+dest_files=["res://.godot/imported/Wooden Lantern.obj-ef2d618b8b393c4e71bb2c6db4e1f095.mesh", "res://.godot/imported/Wooden Lantern.obj-ef2d618b8b393c4e71bb2c6db4e1f095.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -50,6 +50,14 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/beach_collision.res"
 },
+"clay8_BezierCurve_0062": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/cliffs.res"
+},
 "clay8_BezierCurve_008": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -65,6 +73,270 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
 "save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/cliffs.res"
+},
+"clay8_Cone_086": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Flowers/grass.res"
+},
+"clay8_Cube_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Pillars/pillar2.res"
+},
+"clay8_Cube_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Pillars/pillar2_90.res"
+},
+"clay8_Cylinder": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Flowers/starfish1.res"
+},
+"clay8_Cylinder_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Flowers/daisies.res"
+},
+"clay8_Cylinder_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Flowers/starfish2.res"
+},
+"clay8_Cylinder_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Flowers/starfish3.res"
+},
+"clay8_Cylinder_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Flowers/daisy.res"
+},
+"clay8_Cylinder_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock4.res"
+},
+"clay8_Cylinder_012": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock5.res"
+},
+"clay8_Cylinder_017": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock8.res"
+},
+"clay8_Cylinder_018": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock9.res"
+},
+"clay8_Cylinder_019": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock10.res"
+},
+"clay8_Cylinder_068": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock3.res"
+},
+"clay8_Cylinder_143": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock2.res"
+},
+"clay8_Cylinder_200": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock1.res"
+},
+"clay8_Cylinder_223": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock6.res"
+},
+"clay8_Cylinder_364": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock7.res"
+},
+"clay8_Landscape_038": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Flowers/pebbles.res"
+},
+"clay8_Mesh_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Flowers/barrel.res"
+},
+"clay8_Mesh_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Pillars/pillar1.res"
+},
+"clay8_Mesh_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Pillars/pillar1_90.res"
+},
+"clay8_Plane_014": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree1.res"
+},
+"clay8_Plane_015": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree2.res"
+},
+"clay8_Plane_017": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree3.res"
+},
+"clay8_Plane_018": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree4.res"
+},
+"clay8_Plane_019": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree5.res"
+},
+"clay8_Plane_020": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree6.res"
+},
+"clay8_Plane_021": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree7.res"
+},
+"clay8_Plane_022": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree8.res"
+},
+"clay8_Plane_023": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree9.res"
+},
+"clay8_Plane_024": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree10.res"
+},
+"clay8_Plane_025": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Trees/tree11.res"
 }
 }
 }
