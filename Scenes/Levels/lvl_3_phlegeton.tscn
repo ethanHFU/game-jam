@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cm5r06aejc053"]
+[gd_scene load_steps=73 format=3 uid="uid://cm5r06aejc053"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_2ois7"]
 [ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_v3ka3"]
@@ -19,8 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://vkhmcib2aasb" path="res://Scenes/Phlegeton/phlegeton.tscn" id="19_2ois7"]
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="19_j08ft"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="20_s8as4"]
-[ext_resource type="PackedScene" uid="uid://cpk6id5yudpwn" path="res://Scenes/Phlegeton/blood_river_test.tscn" id="21_j08ft"]
+[ext_resource type="PackedScene" path="res://Scenes/Phlegeton/blood_river.tscn" id="21_j08ft"]
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="21_ktilv"]
+[ext_resource type="PackedScene" path="res://Scenes/SmallPrefabs/end_trigger.tscn" id="22_s8as4"]
 
 [sub_resource type="Environment" id="Environment_w0x7f"]
 glow_enabled = true
@@ -731,6 +732,9 @@ transform = Transform3D(0.987688, -0.156435, 7.4959e-09, -0.0391681, -0.247297, 
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("3_j08ft")
+levels = 2
+start_dialogue_name = "Anfang Phlegeton"
+end_dialogue_name = "Ende Phlegeton"
 
 [node name="InputController" type="Node" parent="."]
 script = ExtResource("4_s8as4")
@@ -886,8 +890,11 @@ arborist = SubResource("Resource_7epss")
 [node name="Phlegeton4" parent="." instance=ExtResource("19_2ois7")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915, -4.577, -3430.19)
 
-[node name="blood_river_test" parent="." instance=ExtResource("21_j08ft")]
-transform = Transform3D(1.10818, 0, 0, 0, 1, 0, 0, 0, 1, -10.0407, -14.7645, 169.773)
+[node name="Water_River" parent="." instance=ExtResource("21_j08ft")]
+transform = Transform3D(-0.000121591, 0, 239.602, 0, 1, 0, -2781.68, 0, -1.04733e-05, 240.459, -14.9716, -1459.34)
+
+[node name="End_trigger" parent="." instance=ExtResource("22_s8as4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.413, -14.7645, -3005.83)
 
 [editable path="CanvasLayer/Level_UI"]
 [editable path="Phlegeton3"]
@@ -895,3 +902,4 @@ transform = Transform3D(1.10818, 0, 0, 0, 1, 0, 0, 0, 1, -10.0407, -14.7645, 169
 [editable path="Phlegeton3/beach2"]
 [editable path="Phlegeton3/cliffs_overworld2"]
 [editable path="Phlegeton3/cliffs_overworld3"]
+[editable path="Water_River"]
