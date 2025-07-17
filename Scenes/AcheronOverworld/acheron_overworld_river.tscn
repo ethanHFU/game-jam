@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://fmg1twj86522"]
 
-[ext_resource type="Script" path="res://Scripts/GameStateSystems/level_manager.gd" id="1_fpps3"]
+[ext_resource type="Script" uid="uid://cpcojf2mlb0a4" path="res://Scripts/GameStateSystems/level_manager.gd" id="1_fpps3"]
 [ext_resource type="ArrayMesh" uid="uid://dhciax1vn0or3" path="res://Resources/Models/Scene/AcheronOverworld/cliffs.res" id="1_fxlww"]
 [ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="2_sxhid"]
 [ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/beach.glb" id="4_sxhid"]

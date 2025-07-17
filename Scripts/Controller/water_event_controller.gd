@@ -4,6 +4,7 @@ extends Node
 var camera: Camera3D = null
 var boat: Node3D = null
 var canvas: Node = null 
+var water_plane_y: float
 var radial_wave_scene: PackedScene = null
 
 # All of these factors are NOT invariant to scene size. Must be adjusted
@@ -12,7 +13,7 @@ var wave_radius_max = 100.0
 var wave_speed = 50.0
 # Set wave_force_fac such that wave forces are small enough to push boat along wave perimeter,
 # but not cause large jumps causing choppy look as the boat reenters the expanding wave radius.
-var wave_force_fac = 70.0  
+var wave_force_fac = 200.0  
 var wave_width = 10.0  # Tolerance for collision detection
 var force = Vector3.ZERO 
 
@@ -24,7 +25,7 @@ var angle_margin = 0.1
 
 func _process(delta):
 	canvas.wave_arcs.clear()
-	force = Vector3(0.0, 0.0, -10.0)  # river current force
+	force = Vector3(0.0, 0.0, -100.0)  # river current force
 	
 	var wave_force
 	for wave in waves:
@@ -43,8 +44,6 @@ func process_wave(wave, delta) -> Vector3:
 			var mesh = wave.visual_instance.get_node("Plane")
 			if mesh and mesh.material_override:
 				mesh.set_instance_shader_parameter("expand_wave", wave.radius/wave.vi_scale_fac)
-				#mesh.set_instance_shader_parameter("expand_wave", wave.radius)
-				
 
 	if wave.active:
 		if wave is DirectedWave:
@@ -79,11 +78,11 @@ func process_wave(wave, delta) -> Vector3:
 		angle_falloff = clamp(1.0 - (angle / max_angle), 0.0, 1.0)
 	
 	var wave_force = wave_to_boat.normalized() * wave_force_fac * (1 - wave.radius / wave.radius_max) * angle_falloff
+	wave_force.y = 0;
 	return wave_force if wave_force.length() >= 0.01 else Vector3.ZERO
 
-func spawn_radial_wave(pos: Vector2):
-	var world_pos = get_mouse_click_position_boat_plane(pos)
-	canvas.show_disappearing_marker(world_pos)
+func spawn_radial_wave(screen_pos: Vector2, world_pos: Vector3):
+	canvas.show_disappearing_marker(screen_pos)
 	var visual_instance = radial_wave_scene.instantiate()
 	var plane_mesh_size = visual_instance.get_node("Plane").mesh.size
 	var scale_factor = wave_radius_max / (plane_mesh_size.x / 2.0)
@@ -95,8 +94,8 @@ func spawn_geyser(pos: Vector2, time: float):
 	print("Geyser")
 
 func spawn_directed_wave(start: Vector2, end: Vector2):
-	var start_pos = get_mouse_click_position_boat_plane(start)
-	var end_pos = get_mouse_click_position_boat_plane(end)
+	var start_pos = get_mouse_click_position_on_plane(boat.global_position.y, start)
+	var end_pos = get_mouse_click_position_on_plane(boat.global_position.y, end)
 	var drag_vector = start_pos - end_pos
 	drag_vector.y = 0  # Flatten to XZ if needed
 	var drag_length = drag_vector.length()
@@ -108,7 +107,7 @@ func spawn_directed_wave(start: Vector2, end: Vector2):
 	var opening_radians = deg_to_rad(opening_angle)
 	waves.append(DirectedWave.new(start_pos, wave_radius_max, wave_speed, force_vec, opening_radians))
 
-func get_mouse_click_position_boat_plane(mouse_pos: Vector2) -> Vector3:
+func get_mouse_click_position_on_plane(y_pos: float, mouse_pos: Vector2) -> Vector3:
 	var ray_origin = camera.project_ray_origin(mouse_pos)
 	var ray_dir = camera.project_ray_normal(mouse_pos)
 	if abs(ray_dir.y) < 0.001:

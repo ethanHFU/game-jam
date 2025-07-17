@@ -29,3 +29,5 @@ mesh = ExtResource("2_sxhid")
 
 [node name="beach2" parent="." instance=ExtResource("4_sxhid")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
+
+[editable path="beach"]

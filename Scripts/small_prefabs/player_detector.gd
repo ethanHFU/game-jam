@@ -5,6 +5,7 @@ enum obstacle_kind {ROCK, HAND, SOUL, BARREL, AMBROSIA, HAMMER, PADDLE}
 @export var obstacle : obstacle_kind
 @export var amount: float = 10.
 
+
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("Boat"):
 		match obstacle:
