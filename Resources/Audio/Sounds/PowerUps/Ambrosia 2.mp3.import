@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://l0iqrc2pqgjk"
+path="res://.godot/imported/Ambrosia 2.mp3-469006c44df76f06844d76e96d444d66.mp3str"
+
+[deps]
+
+source_file="res://Resources/Audio/Sounds/PowerUps/Ambrosia 2.mp3"
+dest_files=["res://.godot/imported/Ambrosia 2.mp3-469006c44df76f06844d76e96d444d66.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

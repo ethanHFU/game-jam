@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wfdqo1tvmcol"
+path="res://.godot/imported/Sturm und Donner bei Poseidons erscheinen.wav-92aa483ddad7da802bd3c296064541f7.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/Sounds/Sturm und Donner bei Poseidons erscheinen.wav"
+dest_files=["res://.godot/imported/Sturm und Donner bei Poseidons erscheinen.wav-92aa483ddad7da802bd3c296064541f7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
