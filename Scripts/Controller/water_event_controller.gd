@@ -13,7 +13,7 @@ var wave_radius_max = 100.0
 var wave_speed = 50.0
 # Set wave_force_fac such that wave forces are small enough to push boat along wave perimeter,
 # but not cause large jumps causing choppy look as the boat reenters the expanding wave radius.
-var wave_force_fac = 200.0  
+var wave_force_fac = 115.0  
 var wave_width = 10.0  # Tolerance for collision detection
 var force = Vector3.ZERO 
 
