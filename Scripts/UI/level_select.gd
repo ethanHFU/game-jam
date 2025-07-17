@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_acheron_button_down():
-	EventBus.load_scene.emit("acheron")
+	EventBus.load_scene.emit("cutscene")
 
 
 func _on_phlegeton_button_down():
