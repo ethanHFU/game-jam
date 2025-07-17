@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://chj31s2snd6ma" path="res://Scenes/UI/pause_menu.tscn" id="6_v1pjg"]
 [ext_resource type="PackedScene" uid="uid://2qs2bh3hopl5" path="res://Scenes/UI/level_ui.tscn" id="7_sme2a"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="7_xo4qv"]
-[ext_resource type="PackedScene" uid="uid://c183d6xesnglj" path="res://Scenes/AcheronOverworld/acheron_overworld.tscn" id="8_yieir"]
 [ext_resource type="Material" uid="uid://did5jrj8sc7wm" path="res://Resources/Shader/water_mat.tres" id="9_4iodk"]
 [ext_resource type="PackedScene" uid="uid://bbmfs03o1here" path="res://Scenes/SpecialEffectsAndParticleSystems/Tornado.tscn" id="10_rrces"]
 [ext_resource type="PackedScene" uid="uid://ccuoj71q5kdch" path="res://Scenes/SmallPrefabs/barrel.tscn" id="12_1eger"]
@@ -18,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c6qf11375ilxy" path="res://Scenes/SmallPrefabs/ambrosia.tscn" id="15_yieir"]
 [ext_resource type="PackedScene" uid="uid://f04cgv60ss8k" path="res://Scenes/SmallPrefabs/hand.tscn" id="16_nd75b"]
 [ext_resource type="PackedScene" uid="uid://bg6kjdframjpd" path="res://Scenes/SmallPrefabs/rock.tscn" id="17_c7mjv"]
+[ext_resource type="PackedScene" uid="uid://c183d6xesnglj" path="res://Scenes/AcheronOverworld/acheron_overworld.tscn" id="18_v1pjg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wipk"]
 sky_top_color = Color(0, 0.458139, 0.787562, 1)
@@ -159,18 +159,6 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.938, -17.816, 720.368)
 collision_layer = 2
 
-[node name="AcheronOverworldRiver" parent="." instance=ExtResource("8_yieir")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 584.986)
-
-[node name="AcheronOverworldRiver2" parent="." instance=ExtResource("8_yieir")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.33472, 0, -735.603)
-
-[node name="AcheronOverworldRiver3" parent="." instance=ExtResource("8_yieir")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.2246, 0, -2067.32)
-
-[node name="AcheronOverworldRiver4" parent="." instance=ExtResource("8_yieir")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.9147, 0, -3430.19)
-
 [node name="Water_River" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 216.678, -24.393, -1187.12)
 material_override = ExtResource("9_4iodk")
@@ -292,5 +280,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 342.654, -13.1148, -2531.16)
 
 [node name="Rock8" parent="Obstacles/Rocks" instance=ExtResource("17_c7mjv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.948, -13.1148, -2479.55)
+
+[node name="AcheronOverworld" parent="." instance=ExtResource("18_v1pjg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -4.57697, 584.986)
+
+[node name="AcheronOverworld2" parent="." instance=ExtResource("18_v1pjg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.335, -4.57697, -735.603)
+
+[node name="AcheronOverworld3" parent="." instance=ExtResource("18_v1pjg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.225, -4.57697, -2067.32)
+
+[node name="AcheronOverworld4" parent="." instance=ExtResource("18_v1pjg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915, -4.57697, -3430.19)
 
 [editable path="CanvasLayer/Level_UI"]

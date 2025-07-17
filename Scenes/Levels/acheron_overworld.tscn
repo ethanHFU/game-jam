@@ -705,14 +705,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.883
 
 [node name="beach" parent="." instance=ExtResource("4_sxhid")]
 
-[node name="@StaticBody3D@30267" parent="beach" index="1"]
-collision_layer = 5
-
 [node name="beach2" parent="." instance=ExtResource("4_sxhid")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
-
-[node name="@StaticBody3D@30267" parent="beach2" index="1"]
-collision_layer = 5
 
 [node name="floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.354767, -25.9159, -236.255)

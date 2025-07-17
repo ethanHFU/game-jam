@@ -34,30 +34,6 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"clay8_BezierCurve_0012": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/beach.res"
-},
-"clay8_BezierCurve_0022": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/beach_collision.res"
-},
-"clay8_BezierCurve_0062": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://Resources/Models/Scene/Phlegeton/cliffs.res"
-},
 "clay8_BezierCurve_008": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -177,6 +153,14 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": false,
 "save_to_file/path": "res://Resources/Models/Scene/Phlegeton/rock10.res"
+},
+"clay8_Cylinder_027": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Resources/Models/Scene/AcheronOverworld/Cliffs/rock.res"
 },
 "clay8_Cylinder_068": {
 "generate/lightmap_uv": 0,

@@ -30,6 +30,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dreadpon.spatial_gardener/plugin.cfg")
@@ -63,6 +64,11 @@ pause={
 ]
 }
 
+[rendering]
+
+environment/volumetric_fog/volume_size=128
+environment/volumetric_fog/volume_depth=512
+
 [shader_globals]
 
 wave_origin={
@@ -73,7 +79,3 @@ expand_wave={
 "type": "float",
 "value": 0.0
 }
-[rendering]
-
-environment/volumetric_fog/volume_size=128
-environment/volumetric_fog/volume_depth=512
