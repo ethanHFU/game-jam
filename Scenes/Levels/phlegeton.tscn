@@ -664,19 +664,13 @@ mesh = ExtResource("7_0byig")
 [node name="cliffs_overworld2" parent="." instance=ExtResource("11_vfngt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.435, 0)
 
-[node name="@StaticBody3D@104744" parent="cliffs_overworld2" index="0"]
-collision_layer = 5
-
-[node name="cliffs_overworld" parent="cliffs_overworld2" index="1"]
+[node name="cliffs_overworld" parent="cliffs_overworld2" index="0"]
 material_override = ExtResource("12_0byig")
 
 [node name="cliffs_overworld3" parent="." instance=ExtResource("11_vfngt")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -22.435, -461.418)
 
-[node name="@StaticBody3D@104744" parent="cliffs_overworld3" index="0"]
-collision_layer = 5
-
-[node name="cliffs_overworld" parent="cliffs_overworld3" index="1"]
+[node name="cliffs_overworld" parent="cliffs_overworld3" index="0"]
 material_override = ExtResource("12_0byig")
 
 [editable path="beach"]

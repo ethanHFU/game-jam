@@ -2,10 +2,10 @@
 
 [ext_resource type="Material" uid="uid://codoxcod7ison" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Fog.tres" id="1_in514"]
 [ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/Beach/beach.glb" id="2_uu7ck"]
-[ext_resource type="ArrayMesh" uid="uid://dhciax1vn0or3" path="res://Resources/Models/Scene/AcheronOverworld/cliffs.res" id="3_in514"]
 [ext_resource type="Material" uid="uid://ceqhhgn0q2xka" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Noise_Beach.tres" id="4_ojqea"]
 [ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="4_xher2"]
 [ext_resource type="Material" uid="uid://d1et1qb0j0pe4" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Noise.tres" id="5_cc7f4"]
+[ext_resource type="PackedScene" uid="uid://kd0rmh15oxf8" path="res://Resources/Models/Scene/AcheronOverworld/Cliffs/cliffs_overworld.glb" id="7_n4ud6"]
 [ext_resource type="PackedScene" uid="uid://cqmpumya5to07" path="res://Resources/Models/Scene/Phlegeton/fire_pit.tscn" id="8_ojqea"]
 
 [sub_resource type="Environment" id="Environment_7t06c"]
@@ -51,11 +51,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.884
 [node name="beach_mesh" parent="beach" index="0"]
 material_override = ExtResource("4_ojqea")
 
-[node name="Cliffs" type="MeshInstance3D" parent="."]
-layers = 3
-material_override = ExtResource("5_cc7f4")
-mesh = ExtResource("3_in514")
-
 [node name="Mountains" type="MeshInstance3D" parent="."]
 material_override = ExtResource("5_cc7f4")
 mesh = ExtResource("4_xher2")
@@ -65,11 +60,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="beach_mesh" parent="beach2" index="0"]
 material_override = ExtResource("4_ojqea")
-
-[node name="Cliffs2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
-material_override = ExtResource("5_cc7f4")
-mesh = ExtResource("3_in514")
 
 [node name="Water2" type="CSGBox3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.354745, -13.2053, -212.028)
@@ -116,6 +106,17 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -435.5
 [node name="fire_pit10" parent="." instance=ExtResource("8_ojqea")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 615.773, -12.569, -422.324)
 
+[node name="cliffs_overworld2" parent="." instance=ExtResource("7_n4ud6")]
+
+[node name="cliffs_overworld" parent="cliffs_overworld2" index="0"]
+material_override = ExtResource("5_cc7f4")
+
+[node name="cliffs_overworld3" parent="." instance=ExtResource("7_n4ud6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -461.418)
+
+[node name="cliffs_overworld" parent="cliffs_overworld3" index="0"]
+material_override = ExtResource("5_cc7f4")
+
 [editable path="beach"]
 [editable path="beach2"]
 [editable path="fire_pit"]
@@ -128,3 +129,5 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 615.77
 [editable path="fire_pit8"]
 [editable path="fire_pit9"]
 [editable path="fire_pit10"]
+[editable path="cliffs_overworld2"]
+[editable path="cliffs_overworld3"]
