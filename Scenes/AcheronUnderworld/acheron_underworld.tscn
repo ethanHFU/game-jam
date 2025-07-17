@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl1ow17gfornb"]
+[gd_scene load_steps=11 format=3 uid="uid://dl1ow17gfornb"]
 
 [ext_resource type="PackedScene" uid="uid://6cng7hpdy1qn" path="res://Resources/Models/Scene/AcheronOverworld/Beach/beach.glb" id="2_yg30d"]
 [ext_resource type="Material" uid="uid://ceqhhgn0q2xka" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Noise_Beach.tres" id="3_7ru1o"]
 [ext_resource type="Material" uid="uid://d1et1qb0j0pe4" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Noise.tres" id="4_f4v27"]
 [ext_resource type="ArrayMesh" uid="uid://bhct2tia4jigj" path="res://Resources/Models/Scene/AcheronOverworld/mountains.res" id="5_ycao3"]
 [ext_resource type="PackedScene" uid="uid://cqmpumya5to07" path="res://Resources/Models/Scene/Phlegeton/fire_pit.tscn" id="6_50v4e"]
+[ext_resource type="PackedScene" uid="uid://b07lbdseqit0q" path="res://Resources/Models/Scene/AcheronUnderworld/Souls/SoulWalking.tscn" id="7_3261b"]
 [ext_resource type="PackedScene" uid="uid://kd0rmh15oxf8" path="res://Resources/Models/Scene/AcheronOverworld/Cliffs/cliffs_overworld.glb" id="7_s64jn"]
+[ext_resource type="PackedScene" uid="uid://blcxipqq4k6h2" path="res://Resources/Models/Scene/AcheronUnderworld/Souls/SoulCrying.tscn" id="8_yg30d"]
+[ext_resource type="PackedScene" uid="uid://cyf3dthbnorac" path="res://Resources/Models/Scene/AcheronUnderworld/Souls/SoulLying.tscn" id="9_7ru1o"]
+[ext_resource type="PackedScene" uid="uid://dbnjorx6xmxid" path="res://Resources/Models/Scene/AcheronUnderworld/Souls/SoulCrawling.tscn" id="10_f4v27"]
 
 [node name="TestLevel" type="Node3D"]
 
@@ -35,9 +39,6 @@ mesh = ExtResource("5_ycao3")
 [node name="fire_pit" parent="." instance=ExtResource("6_50v4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.2606, -12.569, -25.1101)
 
-[node name="fire_pit2" parent="." instance=ExtResource("6_50v4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -268.625, -12.569, -40.1417)
-
 [node name="fire_pit3" parent="." instance=ExtResource("6_50v4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -509.054, -12.569, -40.1417)
 
@@ -47,11 +48,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.231, -12.569, -39.8843)
 [node name="fire_pit5" parent="." instance=ExtResource("6_50v4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 573.906, -12.569, -40.014)
 
+[node name="fire pit with fire" parent="fire_pit5" index="0"]
+transform = Transform3D(2.55078, 0, 0, 0, 2.55078, 0, 0, 0, 2.55078, -4.06244, 0, -7.02484)
+
 [node name="fire_pit6" parent="." instance=ExtResource("6_50v4e")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -154.06, -12.569, -408.228)
-
-[node name="fire_pit7" parent="." instance=ExtResource("6_50v4e")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 68.3045, -12.569, -439.197)
 
 [node name="fire_pit8" parent="." instance=ExtResource("6_50v4e")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 300.733, -12.569, -437.197)
@@ -73,15 +74,83 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="cliffs_overworld" parent="cliffs_overworld3" index="0"]
 material_override = ExtResource("4_f4v27")
 
+[node name="Souls" type="Node3D" parent="."]
+
+[node name="soul_crying" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(16.9982, 0, 10.5385, 0, 20, 0, -10.5385, 0, 16.9982, -163.001, -12.7017, -409.885)
+
+[node name="soul_crying4" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(7.66979, 0, -18.4709, 0, 20, 0, 18.4709, 0, 7.66979, -142.498, -12.7017, -406.615)
+
+[node name="soul_crying2" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(7.3323, 0, 18.6075, 0, 20, 0, -18.6075, 0, 7.3323, -445.362, -13.8758, -425.41)
+
+[node name="soul_crying3" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(13.6098, 0, 14.6551, 0, 20, 0, -14.6551, 0, 13.6098, 613.596, -12.8325, -424.263)
+
+[node name="soul_crying6" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(0.870995, 0, 19.981, 0, 20, 0, -19.981, 0, 0.870995, 603.925, -12.8325, -414.092)
+
+[node name="soul_crying5" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(8.57302, 0, -18.0694, 0, 20, 0, 18.0694, 0, 8.57302, 625.429, -12.8325, -420.581)
+
+[node name="soul_walking" parent="Souls" instance=ExtResource("7_3261b")]
+transform = Transform3D(-0.954331, 0, -19.9772, 0, 20, 0, 19.9772, 0, -0.954331, -355.269, -12.4535, -441.312)
+script = null
+
+[node name="soul_lying" parent="Souls" instance=ExtResource("9_7ru1o")]
+transform = Transform3D(-4.92645, 0, -19.3838, 0, 20, 0, 19.3838, 0, -4.92645, -23.97, -24.0658, -432.755)
+
+[node name="soul_lying2" parent="Souls" instance=ExtResource("9_7ru1o")]
+transform = Transform3D(-13.9433, 0, 14.3382, 0, 20, 0, -14.3382, 0, -13.9433, -468.225, 5.44359, -478.52)
+
+[node name="soul_crawling" parent="Souls" instance=ExtResource("10_f4v27")]
+transform = Transform3D(-0.459679, 0, 19.9947, 0, 20, 0, -19.9947, 0, -0.459679, -243.714, -10.4484, -426.414)
+
+[node name="soul_crawling2" parent="Souls" instance=ExtResource("10_f4v27")]
+transform = Transform3D(7.33295, 0, -18.6072, 0, 20, 0, 18.6072, 0, 7.33295, 369.647, -10.4484, -431.754)
+
+[node name="soul_crawling3" parent="Souls" instance=ExtResource("10_f4v27")]
+transform = Transform3D(7.33295, 0, -18.6072, 0, 20, 0, 18.6072, 0, 7.33295, 121.907, 26.3447, -456.411)
+
+[node name="soul_crying7" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(-5.89148, 0, -19.1126, 0, 20, 0, 19.1126, 0, -5.89148, -34.0379, -12.7017, -26.7405)
+
+[node name="soul_crying8" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(-12.7272, 0, 15.4278, 0, 20, 0, -15.4278, 0, -12.7272, -55.5085, -12.7017, -32.5166)
+
+[node name="soul_crying9" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(-16.9979, 0, -10.5391, 0, 20, 0, 10.5391, 0, -16.9979, -493.813, -13.8758, -46.2992)
+
+[node name="soul_crying10" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(-5.68834, 0, -19.174, 0, 20, 0, 19.174, 0, -5.68834, 589.138, -12.8325, -51.8044)
+
+[node name="soul_crying11" parent="Souls" instance=ExtResource("8_yg30d")]
+transform = Transform3D(0.0558491, 0, 19.9999, 0, 20, 0, -19.9999, 0, 0.0558491, 567.273, -12.8325, -46.8629)
+
+[node name="soul_walking2" parent="Souls" instance=ExtResource("7_3261b")]
+transform = Transform3D(-16.9979, 0, -10.5391, 0, 20, 0, 10.5391, 0, -16.9979, -311.644, -12.4535, -46.6276)
+script = null
+
+[node name="soul_lying3" parent="Souls" instance=ExtResource("9_7ru1o")]
+transform = Transform3D(-7.29494, 0, -18.6221, 0, 20, 0, 18.6221, 0, -7.29494, 47.0945, -24.0658, -47.8133)
+
+[node name="soul_lying4" parent="Souls" instance=ExtResource("9_7ru1o")]
+transform = Transform3D(-11.9752, 0, -16.0186, 0, 20, 0, 16.0186, 0, -11.9752, -421.168, 2.7424, 5.78621)
+
+[node name="soul_crawling4" parent="Souls" instance=ExtResource("10_f4v27")]
+transform = Transform3D(-2.70497, 0, -19.8162, 0, 20, 0, 19.8162, 0, -2.70497, -211.115, 19.3574, -5.95461)
+
+[node name="soul_crawling5" parent="Souls" instance=ExtResource("10_f4v27")]
+transform = Transform3D(12.4857, 0.257792, -15.6218, 1.02864, 19.9403, 1.15119, 15.5901, -1.52214, 12.4351, 440.624, 15.5352, 9.96921)
+
 [editable path="beach"]
 [editable path="beach2"]
 [editable path="fire_pit"]
-[editable path="fire_pit2"]
 [editable path="fire_pit3"]
 [editable path="fire_pit4"]
 [editable path="fire_pit5"]
 [editable path="fire_pit6"]
-[editable path="fire_pit7"]
 [editable path="fire_pit8"]
 [editable path="fire_pit9"]
 [editable path="fire_pit10"]
