@@ -2,6 +2,7 @@ Triton: Menschling! Sieh mal!
 Triton: Das muss der sichere Hafen sein, von dem ich so viel gehört habe!
 Triton: Bin ich froh, dass du das heil überstanden hast.
 Triton: Jetzt musst du nur noch dort anleg-
+do EventBus.trigger_sink_from_inside_dialogic()
 join Poseidon center [animation="Instant In"]
 [sound path="res://Resources/Audio/Sounds/Sturm und Donner bei Poseidons erscheinen.wav" volume="0.0"]
 Poseidon: HAHAHA!!

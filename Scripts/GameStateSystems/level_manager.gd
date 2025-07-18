@@ -29,6 +29,7 @@ func _ready():
 	EventBus.take_damage.connect(loose_health)
 	EventBus.make_invincible.connect(invincibility)
 	EventBus.trigger_level_end.connect(level_outro_events)
+	EventBus.trigger_boat_sink_in_dialog.connect(trigger_sinking)
 	
 	preload("res://Dialog_Bilder/Textbox.tres").prepare() # prepare dialogic resource
 	Dialogic.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -71,7 +72,6 @@ func loose_health(amount: float) -> void:
 		sink_boat()
 
 func sink_boat() -> void:
-	# start animation
 	EventBus.play_sound.emit("Bubbles")
 	EventBus.play_sound.emit("Explosion")
 	EventBus.play_sound.emit("Submerge")
@@ -124,3 +124,10 @@ func transition_to_next_level() -> void:
 			EventBus.load_scene.emit("main_menu")
 		_:
 			print("[LevelManager] level not available")
+
+# special case for level 1 ending that has to get triggered from inside dialogue
+func trigger_sinking() -> void:
+	EventBus.play_sound.emit("Bubbles")
+	EventBus.play_sound.emit("Explosion")
+	EventBus.play_sound.emit("Submerge")
+	EventBus.sink_boat.emit()

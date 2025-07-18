@@ -21,3 +21,7 @@ signal trigger_level_end
 
 ### anim stuff ###
 signal sink_boat # notify boat mesh to start its anim
+signal trigger_boat_sink_in_dialog # special case for level 1 ending
+
+func trigger_sink_from_inside_dialogic():
+	trigger_boat_sink_in_dialog.emit()
