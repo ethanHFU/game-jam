@@ -927,9 +927,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.225
 [node name="AcheronOverworld4" parent="." instance=ExtResource("18_v1pjg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915, -4.57697, -3430.19)
 
-[node name="Dock" parent="." instance=ExtResource("19_gk14i")]
-transform = Transform3D(-2.99204e-07, 0, 6.845, 0, 6.845, 0, -6.845, 0, -2.99204e-07, 125.993, -30.049, -3024.79)
-
 [node name="End_trigger" parent="." instance=ExtResource("19_gk14i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -2857.58)
 
@@ -937,11 +934,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -2857.58)
 transform = Transform3D(-3.49691e-07, 0, -8, 0, 8, 0, 8, 0, -3.49691e-07, -91.374, -17.328, -102.493)
 
 [node name="pepito_tornada2" parent="." instance=ExtResource("10_rrces")]
-transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 221.549, -24.5242, 1040.05)
-visible = false
+transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 221.549, -24.5242, 1361.53)
 process_material = SubResource("ParticleProcessMaterial_kl4al")
 use_this_feature = true
-speed = 100.0
+speed = 80.0
 stop_point = -2300.0
 
 [node name="Gardener" type="Node3D" parent="."]

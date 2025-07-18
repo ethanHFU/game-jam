@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://3dly0omvvqwv"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_w036o"]
-[ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_ahvop"]
+[ext_resource type="PackedScene" uid="uid://b3rq02pw3aj8b" path="res://Scenes/DemoScenes/basic_wave.tscn" id="2_n55nh"]
 [ext_resource type="Script" uid="uid://cpcojf2mlb0a4" path="res://Scripts/GameStateSystems/level_manager.gd" id="3_n55nh"]
 [ext_resource type="PackedScene" uid="uid://c0lvcrcrcyr7q" path="res://Scenes/SmallPrefabs/end_trigger.tscn" id="4_jxos6"]
 [ext_resource type="Script" uid="uid://7h7c2yvx0t7r" path="res://Scripts/Controller/input_controller.gd" id="4_w876p"]
@@ -68,7 +68,7 @@ data = PackedVector3Array(2500, 0, 200, -2500, 0, 200, 2500, 0, -200, -2500, 0, 
 
 [node name="AcheronOverworld" type="Node3D"]
 script = ExtResource("1_w036o")
-radial_wave_scene = ExtResource("2_ahvop")
+radial_wave_scene = ExtResource("2_n55nh")
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("3_n55nh")
@@ -122,7 +122,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.938, -17.816, 720.368)
 collision_layer = 2
 
 [node name="Water_River" type="MeshInstance3D" parent="."]
-transform = Transform3D(-5.88021e-08, 0, -1.09672, 0, 1, 0, 1.34523, 0, -4.79394e-08, 222.518, -24.393, -2218)
+transform = Transform3D(-5.88021e-08, 0, -1.09672, 0, 1, 0, 1.34523, 0, -4.79394e-08, 222.518, -24.393, -2076.33)
 material_override = SubResource("ShaderMaterial_1s503")
 mesh = SubResource("PlaneMesh_rrces")
 
@@ -258,7 +258,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.688
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -5320.74)
 
 [node name="pepito_tornada" parent="." instance=ExtResource("12_1i10j")]
-transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 255.668, -24.393, 1024.84)
+transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 217.497, -24.393, 1154.97)
 use_this_feature = true
 speed = 105.0
 stop_point = -3900.0

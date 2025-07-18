@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c64cjsv4teeu8"]
 
 [ext_resource type="Script" uid="uid://etdrvcv6lf7w" path="res://Scripts/boat.gd" id="1_vhowb"]
-[ext_resource type="Script" uid="uid://cfiywtxvvt4gd" path="res://Scripts/sinking_anim.gd" id="3_2vnwy"]
+[ext_resource type="Script" path="res://Scripts/sinking_anim.gd" id="3_2vnwy"]
 [ext_resource type="PackedScene" uid="uid://bru4o7fm7gdsy" path="res://Resources/Models/Boat/Fisher_in_Boat.blend" id="3_bli1c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6sf2h"]

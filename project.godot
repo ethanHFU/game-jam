@@ -29,8 +29,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Charon": "res://Charon.dch",
-"Dialog_Bilder/Charon": "res://Dialog_Bilder/Charon.dch",
+"Charon": "res://Dialog_Bilder/Charon.dch",
+"Dialog_Bilder/Charon": "res://Charon.dch",
 "Hades": "res://Dialog_Bilder/Hades.dch",
 "Poseidon": "res://Dialog_Bilder/Poseidon.dch",
 "Triton": "res://Dialog_Bilder/Triton.dch"

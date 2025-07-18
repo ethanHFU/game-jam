@@ -20,6 +20,7 @@ amount = 15.0
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.25491, 0)

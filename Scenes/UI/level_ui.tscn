@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://2qs2bh3hopl5"]
+[gd_scene load_steps=2 format=3 uid="uid://2qs2bh3hopl5"]
 
 [ext_resource type="Script" uid="uid://dhvhylusm5hie" path="res://Scenes/UI/wave_count.gd" id="1_xjiw8"]
-[ext_resource type="Texture2D" uid="uid://d4hrdglwymb00" path="res://Resources/UI/UX Bilder/wave_icon.png" id="2_pkx18"]
 
 [node name="Level_UI" type="Control"]
 layout_mode = 3
@@ -39,7 +38,3 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_xjiw8")
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/WaveIconBar"]
-layout_mode = 2
-texture = ExtResource("2_pkx18")
