@@ -43,12 +43,13 @@ func handle_mouse_release(release_screen_pos: Vector2, release_water_pos: Vector
 	var time_held = mouse_press_time
 	var move_distance = press_screen_pos.distance_to(release_screen_pos)
 	if time_held < hold_threshold and move_distance < drag_threshold:
+		print("Clicked")
 		emit_signal("click_performed", release_screen_pos, release_water_pos)
 	elif time_held >= hold_threshold and move_distance < drag_threshold:
-		return
+		return  # Not implemented
 		#emit_signal("hold_performed", release_screen_pos, time_held)
-	elif move_distance >= drag_threshold:
-		return
+	elif move_distance >= drag_threshold:  
+		return  # Not implemented
 		#canvas.hide_drag_line()
 		#emit_signal("drag_performed", press_screen_pos, release_screen_pos)
 	
