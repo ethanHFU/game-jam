@@ -1,26 +1,32 @@
 extends HBoxContainer
 
+var initialized := false
+
+func _ready():
+	return
+	#var icon = TextureRect.new()
+	#icon.texture = preload("res://Resources/UI/UX Bilder/wave_icon.png")
+	#icon.set_expand_mode(TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL)
+	#icon.set_stretch_mode(TextureRect.STRETCH_SCALE)
+	#icon.set_custom_minimum_size(Vector2(32, 32))
+	#add_child(icon)
 func add_wave_icon():
-	print("added image")
 	var icon = TextureRect.new()
 	icon.texture = preload("res://Resources/UI/UX Bilder/wave_icon.png")
-	
-	# Set desired size
-	#icon.scale = Vector2(0.25, 0.25)
-	icon.custom_minimum_size = Vector2(32, 32)
-	icon.set_v_size_flags(Control.SIZE_SHRINK_BEGIN)
-	icon.set_h_size_flags(Control.SIZE_SHRINK_BEGIN)
-	
-	
-	#icon.set_anchors_preset(Control.PRESET_CENTER)
-	#icon.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	#icon.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	
-	# Prevent stretching
-	#icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	
+	icon.set_expand_mode(TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL)
+	icon.set_stretch_mode(TextureRect.STRETCH_SCALE)
+	icon.set_custom_minimum_size(Vector2(32, 32))
 	add_child(icon)
 
+func init(wave_budget: float):
+	if initialized: 
+		return
+	for i in range(wave_budget):
+		add_wave_icon()
+	initialized = true
+	
+
 func remove_wave_icon():
+	print("Trying to remove")
 	if get_child_count() > 0:
 		get_child(0).queue_free()  # Or remove the last, depending on your preference

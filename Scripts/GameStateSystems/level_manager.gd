@@ -5,6 +5,8 @@ enum level {LEVEL_1, LEVEL_2, LEVEL_3}
 
 @export_group("Wave Stuff")
 @export var wave_budget = 3
+var available_waves = wave_budget
+var wave_cooldown = 3.0  # in seconds
 
 @export_group("Boat Stuff")
 @export var boat_health: float = 100.
@@ -15,7 +17,6 @@ enum level {LEVEL_1, LEVEL_2, LEVEL_3}
 @export var end_dialogue_name: String = ""
 
 const MAX_HEALTH: float = 100.
-var available_waves = 3
 
 @onready var health_bar = $"../CanvasLayer/Level_UI/MarginContainer/VBoxContainer/HealthBar"
 @onready var wave_icon_bar = $"../CanvasLayer/Level_UI/MarginContainer/VBoxContainer/WaveIconBar"
@@ -33,8 +34,8 @@ func _ready():
 	
 	preload("res://Dialog_Bilder/Textbox.tres").prepare() # prepare dialogic resource
 	Dialogic.process_mode = Node.PROCESS_MODE_ALWAYS
+	wave_icon_bar.init(wave_budget)
 	#level_intro_events()
-
 
 func _input(event):
 	if Input.is_action_just_pressed("pause"):
@@ -45,7 +46,7 @@ func subtract_wave() -> void:
 	if available_waves > 0:
 		available_waves -= 1
 		wave_icon_bar.remove_wave_icon()
-		var timer = get_tree().create_timer(1.0)
+		var timer = get_tree().create_timer(wave_cooldown)
 		timer.timeout.connect(add_wave)
 
 func add_wave() -> void:
