@@ -18,6 +18,7 @@ transform = Transform3D(-6.99382e-06, 0, 160, -113.137, 113.137, -4.94538e-06, -
 [node name="Player_Detector" parent="." instance=ExtResource("2_8ep1q")]
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_8ep1q")

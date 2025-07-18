@@ -297,23 +297,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.938, -17.816, 720.368)
 collision_layer = 2
 
 [node name="Water_River" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1.09672, 0, 1, 0, 1, 0, -4.79394e-08, 222.518, -24.393, -1187.12)
+transform = Transform3D(-5.88021e-08, 0, -1.09672, 0, 1, 0, 1.34523, 0, -4.79394e-08, 222.518, -24.393, -2218)
 material_override = SubResource("ShaderMaterial_1s503")
 mesh = SubResource("PlaneMesh_rrces")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Water_River"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Water_River/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_yieir")
-
-[node name="Water_River2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1.09672, 0, 1, 0, 1, 0, -4.79394e-08, 222.518, -24.393, -6187.35)
-material_override = SubResource("ShaderMaterial_1s503")
-mesh = SubResource("PlaneMesh_rrces")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Water_River2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Water_River2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_yieir")
 
 [node name="pepito_tornada" parent="." instance=ExtResource("12_1i10j")]
@@ -346,7 +336,7 @@ transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.04
 transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 338.411, -9.71475, -2726.61)
 
 [node name="Soul6" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
-transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 201.354, -9.71475, -3105.96)
+transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 201.354, -9.71475, -3035.72)
 
 [node name="Soul7" parent="Obstacles/Souls" instance=ExtResource("15_n55nh")]
 transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.0423723, 1.23057, -0.397901, 0.131793, 346.702, -9.71475, -3867.22)
@@ -358,6 +348,9 @@ transform = Transform3D(0.138437, 2.17929e-08, -1.29261, 0.395638, 1.23761, 0.04
 
 [node name="Hammer2" parent="Obstacles/Hammers" instance=ExtResource("14_irte1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.204, -6.10352e-05, -1307.46)
+
+[node name="Hammer3" parent="Obstacles/Hammers" instance=ExtResource("14_irte1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.582, -6.10352e-05, -3276.66)
 
 [node name="Ambrosias" type="Node3D" parent="Obstacles"]
 
@@ -450,3 +443,4 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.688
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -5320.74)
 
 [editable path="CanvasLayer/Level_UI"]
+[editable path="End_trigger"]

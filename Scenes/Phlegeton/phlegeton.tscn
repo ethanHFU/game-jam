@@ -576,6 +576,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.4968, 0)
 layers = 8
 material_override = ExtResource("6_vfngt")
 
+[node name="CollisionShape3D" parent="beach/@StaticBody3D@21998" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.2269, 0)
+
 [node name="Cliffs" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.435, 0)
 visible = false
@@ -599,6 +602,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -4.
 [node name="beach_mesh" parent="beach2" index="0"]
 layers = 8
 material_override = ExtResource("6_vfngt")
+
+[node name="CollisionShape3D" parent="beach2/@StaticBody3D@21998" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.2269, 0)
 
 [node name="Cliffs2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -22.4354, -461.418)
