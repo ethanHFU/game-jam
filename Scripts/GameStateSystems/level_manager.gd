@@ -3,6 +3,9 @@ extends Node
 enum level {LEVEL_1, LEVEL_2, LEVEL_3} # currently not used but might be useful
 @export var levels: level
 
+@export_group("Wave Stuff")
+@export var wave_budget = 3
+
 @export_group("Boat Stuff")
 @export var boat_health: float = 100.
 @export var is_invincible: bool = false
@@ -12,8 +15,10 @@ enum level {LEVEL_1, LEVEL_2, LEVEL_3} # currently not used but might be useful
 @export var end_dialogue_name: String = ""
 
 const MAX_HEALTH: float = 100.
+var available_waves = 3
 
-@onready var health_bar = $"../CanvasLayer/Level_UI/MarginContainer/HealthBar"
+@onready var health_bar = $"../CanvasLayer/Level_UI/MarginContainer/VBoxContainer/HealthBar"
+@onready var wave_icon_bar = $"../CanvasLayer/Level_UI/MarginContainer/VBoxContainer/WaveIconBar"
 @onready var pause_menu = %PauseMenu
 
 
@@ -25,7 +30,7 @@ func _ready():
 	
 	preload("res://Dialog_Bilder/Textbox.tres").prepare() # prepare dialogic resource
 	Dialogic.process_mode = Node.PROCESS_MODE_ALWAYS
-	level_intro_events()
+	#level_intro_events()
 
 
 func _input(event):
@@ -33,8 +38,19 @@ func _input(event):
 		get_tree().paused = true
 		pause_menu.visible = true
 		print(get_tree().paused)
-		
 
+func subtract_wave() -> void:
+	if available_waves > 0:
+		available_waves -= 1
+		wave_icon_bar.remove_wave_icon()
+		var timer = get_tree().create_timer(1.0)
+		timer.timeout.connect(add_wave)
+
+func add_wave() -> void:
+	if available_waves < wave_budget:
+		available_waves += 1
+		wave_icon_bar.add_wave_icon()
+		
 func gain_health(amount: float) -> void:
 	# update internal state
 	boat_health += amount

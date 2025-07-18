@@ -11,8 +11,14 @@ script = ExtResource("1_fpps3")
 [node name="beach3" parent="." instance=ExtResource("4_sxhid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.4913, 4.11554, 0)
 
+[node name="@StaticBody3D@32977" parent="beach3" index="1"]
+input_ray_pickable = false
+
 [node name="beach4" parent="." instance=ExtResource("4_sxhid")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34.4913, 4.11554, -461.418)
+
+[node name="@StaticBody3D@32977" parent="beach4" index="1"]
+input_ray_pickable = false
 
 [node name="cliffs_overworld2" parent="." instance=ExtResource("3_sxhid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.4913, 4.11554, 0)

@@ -23,8 +23,8 @@ buses/default_bus_layout="res://Resources/Audio/default_bus_layout.tres"
 
 EventBus="*res://Scripts/GameStateSystems/EventBus.gd"
 SceneLoader="*res://Scenes/GameStateSystems/scene_loader.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GlobalAudioManager="*res://Scenes/GameStateSystems/global_audio_manager.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -60,8 +60,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dreadpon.spatial_gardener/plugin.cfg")
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/dreadpon.spatial_gardener/plugin.cfg")
 
 [file_customization]
 

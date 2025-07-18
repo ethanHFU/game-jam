@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://crxn22gdgjm7p"
-valid=false
+path="res://.godot/imported/hand1.blend-ee2d4ffc32ae22aee223c540bc09c146.scn"
 
 [deps]
 
 source_file="res://Resources/Models/Small_Prefabs/hand1.blend"
+dest_files=["res://.godot/imported/hand1.blend-ee2d4ffc32ae22aee223c540bc09c146.scn"]
 
 [params]
 

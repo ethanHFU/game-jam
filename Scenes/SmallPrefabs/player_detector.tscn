@@ -10,6 +10,7 @@ script = ExtResource("1_sf3oe")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_rauf0")

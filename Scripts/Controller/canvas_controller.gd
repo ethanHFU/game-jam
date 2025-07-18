@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func _draw():
+	return
 	# Draw wave arcs
 	for arc in wave_arcs:
 		draw_arc(arc.center, arc.radius, 0, TAU, 64, Color.RED)
@@ -47,9 +48,9 @@ func _draw():
 	# Draw temporary origin markers
 	for marker in origin_markers:
 		draw_circle(marker.center, marker.radius, Color.RED)
-	## Draw force line if set
-	#if show_force:
-		#draw_line(force_screen_start, force_screen_end, Color.RED, 3)
+	# Draw force line if set
+	if show_force:
+		draw_line(force_screen_start, force_screen_end, Color.RED, 3)
 	# Draw drag line
 	if show_drag:
 		draw_line(drag_line_start, drag_line_end, Color.DARK_ORANGE, 3)
@@ -71,8 +72,6 @@ func show_wave_radius(world_pos: Vector3, radius_world: float, direction = null,
 	queue_redraw()
 
 func show_disappearing_marker(screen_pos: Vector2, screen_radius := 3.0):
-	#var 
-	#var screen_center = camera.unproject_position(world_pos)
 	origin_markers.append({
 		"center": screen_pos,
 		"radius": screen_radius,

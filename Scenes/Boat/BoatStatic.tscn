@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhi7wefph0t4a"]
+
+[ext_resource type="Script" uid="uid://cb0dlcm1g8i3q" path="res://Scripts/boat_static.gd" id="1_1y8a8"]
+[ext_resource type="PackedScene" uid="uid://bru4o7fm7gdsy" path="res://Resources/Models/Boat/Fisher_in_Boat.blend" id="2_oy6x7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6sf2h"]
+size = Vector3(11.1682, 44.9123, 42.4687)
+
+[node name="Boat" type="RigidBody3D" groups=["Boat"]]
+script = ExtResource("1_1y8a8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.876343, 9.75784, -3.00508)
+shape = SubResource("BoxShape3D_6sf2h")
+
+[node name="VisualAppearance" type="Node3D" parent="."]
+
+[node name="Fisher_in_Boat" parent="VisualAppearance" instance=ExtResource("2_oy6x7")]
+transform = Transform3D(-11.8682, 0, 1.77371, 0, 12, 0, -1.77371, 0, -11.8682, 1.17, 12.148, 0)

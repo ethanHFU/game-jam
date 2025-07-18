@@ -9,11 +9,12 @@ var radial_wave_scene: PackedScene = null
 
 # All of these factors are NOT invariant to scene size. Must be adjusted
 var waves = []
+var max_active_waves = 5
 var wave_radius_max = 100.0
-var wave_speed = 50.0
+var wave_speed = 60.0
 # Set wave_force_fac such that wave forces are small enough to push boat along wave perimeter,
 # but not cause large jumps causing choppy look as the boat reenters the expanding wave radius.
-var wave_force_fac = 115.0  
+var wave_force_fac = 100.0  
 var wave_width = 10.0  # Tolerance for collision detection
 var force = Vector3.ZERO 
 
@@ -23,15 +24,30 @@ var force_mag_cap = 50.0
 var opening_angle = 30.0
 var angle_margin = 0.1
 
-func _process(delta):
+var startup_force_multiplier := 0.0
+var startup_ramp_duration: float = 5.0  # seconds
+var force_bool = 1.0
+
+func _ready():
+	EventBus.trigger_level_end.connect(func():force_bool = 0.0)
+
+func _physics_process(delta):
 	canvas.wave_arcs.clear()
-	force = Vector3(0.0, 0.0, -100.0)  # river current force
 	
-	var wave_force
+	if startup_force_multiplier < 1.0:
+		startup_force_multiplier += delta / startup_ramp_duration
+		startup_force_multiplier = clamp(startup_force_multiplier, 0.0, 1.0)
+	
+	var t = startup_force_multiplier
+	var eased = t * t * (3.0 - 2.0 * t)  # Smoothstep easing
+
+	var river_force = Vector3(0.0, 0.0, -115.0) * eased
+	force = river_force
+
 	for wave in waves:
-		wave_force = process_wave(wave, delta)
+		var wave_force = process_wave(wave, delta)
 		force += wave_force
-	
+		force *= force_bool
 	canvas.show_force_line(boat.global_position, boat.global_position + force)
 
 	boat.move_force = force
@@ -82,21 +98,19 @@ func process_wave(wave, delta) -> Vector3:
 	return wave_force if wave_force.length() >= 0.01 else Vector3.ZERO
 
 func spawn_radial_wave(screen_pos: Vector2, world_pos: Vector3):
+	var timer := Timer.new()
+	add_child(timer)
 	canvas.show_disappearing_marker(screen_pos)
 	var visual_instance = radial_wave_scene.instantiate()
 	var plane_mesh_size = visual_instance.get_node("Plane").mesh.size
 	var scale_factor = wave_radius_max / (plane_mesh_size.x / 2.0)
 	visual_instance.scale = Vector3(scale_factor, 1.0, scale_factor)
 	self.add_child(visual_instance)
+	EventBus.play_sound.emit("BigWave")
 	waves.append(RadialWave.new(world_pos, wave_radius_max, wave_speed, visual_instance, scale_factor))
-
-func spawn_geyser(pos: Vector2, time: float):
-	print("Geyser")
-
-func spawn_directed_wave(start: Vector2, end: Vector2):
-	var start_pos = get_mouse_click_position_on_plane(boat.global_position.y, start)
-	var end_pos = get_mouse_click_position_on_plane(boat.global_position.y, end)
-	var drag_vector = start_pos - end_pos
+	
+func spawn_directed_wave(world_start_pos: Vector3, world_end_pos: Vector3):
+	var drag_vector = world_start_pos - world_end_pos
 	drag_vector.y = 0  # Flatten to XZ if needed
 	var drag_length = drag_vector.length()
 	if drag_length < 0.1:
@@ -105,15 +119,11 @@ func spawn_directed_wave(start: Vector2, end: Vector2):
 	var force_magnitude = clamp(drag_length * drag_multiplier, 0.0, force_mag_cap)  # Adjust scale and cap
 	var force_vec = force_dir * force_magnitude
 	var opening_radians = deg_to_rad(opening_angle)
-	waves.append(DirectedWave.new(start_pos, wave_radius_max, wave_speed, force_vec, opening_radians))
+	waves.append(DirectedWave.new(world_start_pos, wave_radius_max, wave_speed, force_vec, opening_radians))
+	
+func spawn_geyser(pos: Vector2, time: float):
+	print("Geyser")
 
-func get_mouse_click_position_on_plane(y_pos: float, mouse_pos: Vector2) -> Vector3:
-	var ray_origin = camera.project_ray_origin(mouse_pos)
-	var ray_dir = camera.project_ray_normal(mouse_pos)
-	if abs(ray_dir.y) < 0.001:
-		return Vector3.ZERO
-	var distance = (boat.global_position.y - ray_origin.y) / ray_dir.y
-	return ray_origin + ray_dir * distance
 
 class RadialWave:
 	var origin: Vector3

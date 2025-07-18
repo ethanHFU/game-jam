@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://did5jrj8sc7wm"]
 
-[ext_resource type="Shader" uid="uid://bihpwrwc7pnmg" path="res://Resources/Models/Scene/AcheronUnderworld/Materials/Water.gdshader" id="1_ceuly"]
+[ext_resource type="Shader" uid="uid://bb5vts6y5vo1e" path="res://Resources/Shader/water_shader.gdshader" id="1_ceuly"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_27yj0"]
 noise_type = 3

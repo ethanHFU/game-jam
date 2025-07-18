@@ -17,3 +17,5 @@ shape = SubResource("BoxShape3D_6sf2h")
 
 [node name="Fisher_in_Boat" parent="VisualAppearance" instance=ExtResource("3_bli1c")]
 transform = Transform3D(-11.8682, 0, 1.77371, 0, 12, 0, -1.77371, 0, -11.8682, 1.17, 12.148, 0)
+
+[editable path="VisualAppearance/Fisher_in_Boat"]
