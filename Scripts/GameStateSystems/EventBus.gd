@@ -18,3 +18,6 @@ signal repair_boat(amount: float)
 signal make_invincible
 signal boost_boat
 signal trigger_level_end
+
+### anim stuff ###
+signal sink_boat # notify boat mesh to start its anim

@@ -58,11 +58,12 @@ func sink_boat() -> void:
 	EventBus.play_sound.emit("Bubbles")
 	EventBus.play_sound.emit("Explosion")
 	EventBus.play_sound.emit("Submerge")
+	EventBus.sink_boat.emit()
 	# send event to deactivate mechanics
-	await get_tree().create_timer(2.).timeout # wait until anim is finished 
+	await get_tree().create_timer(1.).timeout # wait until anim is finished 
 	game_over.show()
 	health_bar.hide()
-	await get_tree().create_timer(2.).timeout # leave game over message on screen for a second
+	await get_tree().create_timer(5.).timeout # leave game over message on screen for a second
 	EventBus.stop_all_sounds.emit()
 	EventBus.load_scene.emit("level_select") # go back to level select
 
@@ -89,7 +90,6 @@ func unpause() -> void:
 func level_outro_events() -> void:
 	# starte event wenn steg sichtbar ist
 	if levels == level.LEVEL_1: 
-		print("level 1 or something")
 		EventBus.play_sound.emit("HafenAmbiente")
 	Dialogic.start(end_dialogue_name).process_mode = Node.PROCESS_MODE_ALWAYS
 	Dialogic.timeline_ended.connect(transition_to_next_level)
