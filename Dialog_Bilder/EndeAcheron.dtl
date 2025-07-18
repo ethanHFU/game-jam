@@ -3,6 +3,7 @@ Triton: Das muss der sichere Hafen sein, von dem ich so viel gehört habe!
 Triton: Bin ich froh, dass du das heil überstanden hast.
 Triton: Jetzt musst du nur noch dort anleg-
 join Poseidon center [animation="Instant In"]
+[sound path="res://Resources/Audio/Sounds/Sturm und Donner bei Poseidons erscheinen.wav" volume="0.0"]
 Poseidon: HAHAHA!!
 Poseidon: DACHTET IHR WIRKLICH IHR KÖNNT MEINEM ZORN ENTFLIEHEN??
 Triton: Vater!

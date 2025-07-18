@@ -1,9 +1,11 @@
 join Hades center
+[sound path="res://Resources/Audio/Sounds/Gefahr Sound Poseidon taucht auf.wav" volume="0.0"]
 Hades: Huiuiui...
 Hades: Sieh mal einer an wer da ist.
 Hades: Hätte nich gedacht, dass ihr so weit kommt.
 Hades: Naja.
 Hades: Hier endet eure Reise.
+[sound path="res://Resources/Audio/Sounds/Tritons Horn bei seinem Erscheinen.wav" volume="0.0"]
 Triton: Aber...aber..
 Triton: Das ist doch Schwachsinn!
 Triton: Er hat es so weit geschafft! Fast wäre er wieder in der Oberwelt gewesen!

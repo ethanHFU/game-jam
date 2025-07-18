@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbmfs03o1here"]
+[gd_scene load_steps=16 format=3 uid="uid://bbmfs03o1here"]
 
+[ext_resource type="Script" uid="uid://cyutwsuvq8jmo" path="res://Scripts/small_prefabs/constant_movement.gd" id="1_8xhqk"]
 [ext_resource type="Script" uid="uid://dhkdrlrpa27jp" path="res://Scripts/small_prefabs/tornado.gd" id="1_lugh7"]
 
 [sub_resource type="Curve" id="Curve_uuc2j"]
-_data = [Vector2(0, 0), 0.0, 4.58802, 0, 0, Vector2(0.274286, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 1), 0.0, 0.0, 0, 0, Vector2(0.537143, 0), 0.0699925, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 4.58802, 0, 0, Vector2(0.274286, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 1), 0.0, 0.0, 0, 0, Vector2(0.605714, 0), 0.0699925, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_m86jh"]
@@ -45,22 +46,20 @@ direction = Vector3(0, 1, 0)
 spread = 90.0
 initial_velocity_min = 4.0
 initial_velocity_max = 5.0
-radial_velocity_min = 9.99998
-radial_velocity_max = 20.0
-gravity = Vector3(0, 30, 0)
-radial_accel_min = -100.0
-radial_accel_max = -100.0
-tangential_accel_min = 80.0
-tangential_accel_max = 80.0
+gravity = Vector3(0, 8, 0)
+radial_accel_min = -10.0
+radial_accel_max = -7.0
+tangential_accel_min = 13.0
+tangential_accel_max = 18.0
 damping_min = 10.0
 damping_max = 10.0
-scale_max = 2.0
+scale_min = 0.5
 scale_curve = SubResource("CurveTexture_uuc2j")
 color = Color(0.536644, 0.517152, 0.505563, 1)
 color_ramp = SubResource("GradientTexture1D_rprln")
 alpha_curve = SubResource("CurveTexture_m86jh")
-hue_variation_min = -0.01
-hue_variation_max = 0.00999998
+hue_variation_min = -0.05
+hue_variation_max = 0.05
 hue_variation_curve = SubResource("CurveTexture_h3lki")
 turbulence_noise_strength = 0.1
 turbulence_noise_scale = 1.0
@@ -76,31 +75,27 @@ use_particle_trails = true
 
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_okoew"]
 material = SubResource("StandardMaterial3D_bxlpb")
-radius = 10.0
+radius = 1.5
 radial_steps = 16
 sections = 12
-section_length = 8.0
+section_length = 2.0
 section_rings = 128
 curve = SubResource("Curve_mx0s2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fpwwo"]
-size = Vector3(33.4025, 8.07281, 14.0236)
+size = Vector3(33.4025, 8.07281, 16.3038)
 
 [node name="pepito_tornada" type="GPUParticles3D"]
-transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 amount = 256
 lifetime = 6.0
+local_coords = true
 transform_align = 2
 trail_enabled = true
-trail_lifetime = 2.0
+trail_lifetime = 3.0
 process_material = SubResource("ParticleProcessMaterial_hrarn")
 draw_pass_1 = SubResource("TubeTrailMesh_okoew")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.87277, 2.73955, -0.0769875)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.39104)
+script = ExtResource("1_8xhqk")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2
@@ -108,7 +103,7 @@ input_ray_pickable = false
 script = ExtResource("1_lugh7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539284, 3.53641, 5.03338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539283, 3.53641, -5.1067)
 shape = SubResource("BoxShape3D_fpwwo")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

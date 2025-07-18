@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://besnquggdnplq"]
+[gd_scene load_steps=4 format=3 uid="uid://besnquggdnplq"]
 
 [ext_resource type="Script" uid="uid://ba34qqvverfbj" path="res://Scripts/UI/settings.gd" id="1_owiy1"]
+[ext_resource type="Texture2D" uid="uid://q23pkly0v30j" path="res://Resources/UI/UX Bilder/muscheln.jpg" id="2_ma1v7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owiy1"]
 
@@ -20,6 +21,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_ma1v7")
+flip_h = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

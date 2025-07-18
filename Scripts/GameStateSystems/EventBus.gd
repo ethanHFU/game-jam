@@ -10,10 +10,11 @@ signal load_scene(scene: String)
 
 ### audio stuff ###
 signal play_sound(stream: String)
+signal stop_all_sounds
 
 ### level stuff ###
 signal take_damage(amount: float)
 signal repair_boat(amount: float)
-signal make_invincible()
-signal boost_boat()
-signal trigger_level_end()
+signal make_invincible
+signal boost_boat
+signal trigger_level_end

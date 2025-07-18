@@ -1,8 +1,10 @@
+[sound path="res://Resources/Audio/Sounds/Sturm und Donner bei Poseidons erscheinen.wav" volume="0.0"]
 Poseidon: WER WAGT ES ?!?!
 Poseidon: DU FISCHERMANN!! DU HAST DEN SCHREIN DES POMPIDOU ZERSTÖRT??!!
 Poseidon: DER SCHREIN MEINES LIEBSTEN FISCHES !!!
 Poseidon: DAFÜR WERDE ICH DICH KIELHOLEN!!
 join Triton center [animation="Instant In"]
+[sound path="res://Resources/Audio/Sounds/Tritons Horn bei seinem Erscheinen.wav" volume="0.0"]
 Triton: Vater warte!
 Triton: Meinst du nicht das ist etwas übertrieben?
 Triton: Der Schrein wäre auch ohne ihn jeden Moment eingestürzt. Außerdem habe ich diesen doofen Fisch schon immer gehasst.
