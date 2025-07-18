@@ -94,7 +94,16 @@ func invincibility() -> void:
 func level_intro_events() -> void:
 	# starte cutscene vor dem level in eigener szene
 	# starte main theme
-	EventBus.play_sound.emit("MainTheme")
+	match levels:
+		level.LEVEL_1:
+			EventBus.play_sound.emit("MainTheme")
+		level.LEVEL_2:
+			EventBus.play_sound.emit("MainTheme")
+		level.LEVEL_3:
+			EventBus.play_sound.emit("Acheron_U")
+		_:
+			print("[LevelManager] level not available")
+	
 	EventBus.play_sound.emit("Ruderboot")
 	
 	Dialogic.start(start_dialogue_name).process_mode = Node.PROCESS_MODE_ALWAYS
@@ -107,8 +116,7 @@ func unpause() -> void:
 
 func level_outro_events() -> void:
 	# starte event wenn steg sichtbar ist
-	if levels == level.LEVEL_1: 
-		EventBus.play_sound.emit("HafenAmbiente")
+	if levels == level.LEVEL_1: EventBus.play_sound.emit("HafenAmbiente")
 	Dialogic.start(end_dialogue_name).process_mode = Node.PROCESS_MODE_ALWAYS
 	Dialogic.timeline_ended.connect(transition_to_next_level)
 
