@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://psuixl55teac"]
+
+[ext_resource type="Script" uid="uid://d3y8gkixxh3cs" path="res://Scripts/small_prefabs/cerberus_sound_spawner.gd" id="1_13yya"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_13yya"]
+size = Vector3(400, 400, 5)
+
+[node name="CerberusSoundSpawner" type="Node3D"]
+script = ExtResource("1_13yya")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_13yya")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
