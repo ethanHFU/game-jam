@@ -7,7 +7,12 @@ func _init():
 	
 func _ready():
 	EventBus.play_sound.connect(play_sound)
+	EventBus.stop_all_sounds.connect(stop_all_sounds)
 	print("audio manager is ready")
 
 func play_sound(stream: String) -> void:
 	get_node(audiostreams[stream]).play()
+
+func stop_all_sounds() -> void:
+	for stream in audiostreams.keys():
+		get_node(audiostreams[stream]).stop()
