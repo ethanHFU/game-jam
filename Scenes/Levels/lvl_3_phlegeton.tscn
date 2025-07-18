@@ -590,11 +590,11 @@ point_count = 4
 [sub_resource type="CurveTexture" id="CurveTexture_m86jh"]
 curve = SubResource("Curve_uuc2j")
 
-[sub_resource type="Gradient" id="Gradient_h3lki"]
-colors = PackedColorArray(0.113017, 0.0116434, 0.0135117, 1, 0.35, 0, 0.0116667, 1)
+[sub_resource type="Gradient" id="Gradient_4eagx"]
+colors = PackedColorArray(0, 0, 0, 1, 0.27, 0, 0.00899999, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_rprln"]
-gradient = SubResource("Gradient_h3lki")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5fhg8"]
+gradient = SubResource("Gradient_4eagx")
 use_hdr = true
 
 [sub_resource type="Curve" id="Curve_m86jh"]
@@ -638,7 +638,7 @@ damping_max = 10.0
 scale_min = 0.5
 scale_curve = SubResource("CurveTexture_uuc2j")
 color = Color(0.536644, 0.517152, 0.505563, 1)
-color_ramp = SubResource("GradientTexture1D_rprln")
+color_ramp = SubResource("GradientTexture1D_5fhg8")
 alpha_curve = SubResource("CurveTexture_m86jh")
 hue_variation_min = -0.05
 hue_variation_max = 0.05
