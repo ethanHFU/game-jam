@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cm5r06aejc053"]
+[gd_scene load_steps=75 format=3 uid="uid://cm5r06aejc053"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_2ois7"]
 [ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_v3ka3"]
@@ -11,16 +11,22 @@
 [ext_resource type="Script" uid="uid://c47w15kn1oxio" path="res://Scripts/Controller/camera_controller.gd" id="9_4eagx"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="11_axdt2"]
 [ext_resource type="PackedScene" uid="uid://bbmfs03o1here" path="res://Scenes/SpecialEffectsAndParticleSystems/Tornado.tscn" id="13_qii8w"]
-[ext_resource type="PackedScene" uid="uid://ccuoj71q5kdch" path="res://Scenes/SmallPrefabs/barrel.tscn" id="14_bv6up"]
+[ext_resource type="PackedScene" uid="uid://bkx7ndiggf5pm" path="res://Scenes/SmallPrefabs/hand_2.tscn" id="15_48o5j"]
 [ext_resource type="PackedScene" uid="uid://bbpcn3gm56ial" path="res://Scenes/SmallPrefabs/hammer.tscn" id="15_wx7mh"]
 [ext_resource type="PackedScene" uid="uid://c6qf11375ilxy" path="res://Scenes/SmallPrefabs/ambrosia.tscn" id="16_0omc5"]
+[ext_resource type="PackedScene" uid="uid://dik82d13kukoq" path="res://Scenes/SmallPrefabs/spine.tscn" id="17_4eagx"]
 [ext_resource type="PackedScene" uid="uid://f04cgv60ss8k" path="res://Scenes/SmallPrefabs/hand.tscn" id="17_no78o"]
-[ext_resource type="PackedScene" uid="uid://bg6kjdframjpd" path="res://Scenes/SmallPrefabs/rock.tscn" id="18_moq2v"]
 [ext_resource type="PackedScene" uid="uid://vkhmcib2aasb" path="res://Scenes/Phlegeton/phlegeton.tscn" id="19_2ois7"]
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="19_j08ft"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="20_s8as4"]
-[ext_resource type="PackedScene" uid="uid://cpk6id5yudpwn" path="res://Scenes/Phlegeton/blood_river_test.tscn" id="21_j08ft"]
+[ext_resource type="PackedScene" uid="uid://cqfjblavvdd4n" path="res://Scenes/Phlegeton/blood_river.tscn" id="21_j08ft"]
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="21_ktilv"]
+[ext_resource type="PackedScene" uid="uid://dvnnksxqhdw03" path="res://Resources/Models/Scene/Phlegeton/rock_obstacles.tscn" id="21_s8as4"]
+[ext_resource type="PackedScene" uid="uid://c0lvcrcrcyr7q" path="res://Scenes/SmallPrefabs/end_trigger.tscn" id="22_s8as4"]
+[ext_resource type="PackedScene" uid="uid://ddmif4cf2dlyj" path="res://Scenes/SmallPrefabs/soul.tscn" id="23_grh70"]
+[ext_resource type="PackedScene" uid="uid://c84nlwid4gywx" path="res://Scenes/SmallPrefabs/arm.tscn" id="24_7f0m1"]
+[ext_resource type="PackedScene" uid="uid://dwlc56iq3abae" path="res://Scenes/SmallPrefabs/ribcage.tscn" id="26_5fhg8"]
+[ext_resource type="PackedScene" uid="uid://chpyqhygmttvx" path="res://Scenes/SmallPrefabs/femur.tscn" id="27_axdt2"]
 
 [sub_resource type="Environment" id="Environment_w0x7f"]
 glow_enabled = true
@@ -32,148 +38,6 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_length = 506.94
 adjustment_enabled = true
-
-[sub_resource type="Curve" id="Curve_j08ft"]
-_data = [Vector2(0, 0), 0.0, 4.58802, 0, 0, Vector2(0.274286, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 1), 0.0, 0.0, 0, 0, Vector2(0.537143, 0), 0.0699925, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_s8as4"]
-curve = SubResource("Curve_j08ft")
-
-[sub_resource type="Gradient" id="Gradient_ktilv"]
-colors = PackedColorArray(0.0856845, 0.0483958, 0.00554282, 1, 0.448597, 0.296033, 0.117401, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_48o5j"]
-gradient = SubResource("Gradient_ktilv")
-use_hdr = true
-
-[sub_resource type="Curve" id="Curve_grh70"]
-_data = [Vector2(0, 0), 0.0, 0.279971, 0, 0, Vector2(0.509138, 0.230263), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.279971, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_7f0m1"]
-curve = SubResource("Curve_grh70")
-
-[sub_resource type="Curve" id="Curve_4eagx"]
-_data = [Vector2(0, 0.505618), 0.0, 7.78828, 0, 0, Vector2(0.203655, 1), 0.0, 0.0, 0, 0, Vector2(0.804178, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.467105), -7.27923, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_5fhg8"]
-curve = SubResource("Curve_4eagx")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_axdt2"]
-emission_shape = 6
-emission_ring_axis = Vector3(0, -1, 0)
-emission_ring_height = 1.0
-emission_ring_radius = 1.0
-emission_ring_inner_radius = 0.5
-emission_ring_cone_angle = 60.0
-angle_min = -720.0
-angle_max = 720.0
-inherit_velocity_ratio = 1.0
-velocity_pivot = Vector3(0, 1, 0)
-direction = Vector3(0, 1, 0)
-spread = 90.0
-initial_velocity_min = 4.0
-initial_velocity_max = 5.0
-radial_velocity_min = 9.99998
-radial_velocity_max = 20.0
-gravity = Vector3(0, 30, 0)
-radial_accel_min = -100.0
-radial_accel_max = -100.0
-tangential_accel_min = 80.0
-tangential_accel_max = 80.0
-damping_min = 10.0
-damping_max = 10.0
-scale_max = 2.0
-scale_curve = SubResource("CurveTexture_5fhg8")
-color = Color(0.777699, 0.242412, 0.166131, 1)
-color_ramp = SubResource("GradientTexture1D_48o5j")
-alpha_curve = SubResource("CurveTexture_s8as4")
-hue_variation_min = -2.23517e-08
-hue_variation_max = 0.12
-hue_variation_curve = SubResource("CurveTexture_7f0m1")
-turbulence_noise_strength = 0.1
-turbulence_noise_scale = 1.0
-
-[sub_resource type="Animation" id="Animation_6bsal"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(236.509, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(3.05176e-05, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1142.55, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_rrces"]
-resource_name = "move_tornado"
-length = 90.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(236.509, -0.25, 0, 0.25, 0, 236.509, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 90)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(3.05176e-05, -0.25, 0, 0.25, 0, 3.05176e-05, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 90)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1142.55, -0.25, 0, 0.25, 0, -2044.91, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 90)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6bsal"]
-_data = {
-&"RESET": SubResource("Animation_6bsal"),
-&"move_tornado": SubResource("Animation_rrces")
-}
 
 [sub_resource type="Resource" id="Resource_48o5j"]
 resource_local_to_scene = true
@@ -719,7 +583,70 @@ script = ExtResource("21_ktilv")
 octree_managers = [SubResource("Resource_grh70"), SubResource("Resource_4eagx"), SubResource("Resource_axdt2"), SubResource("Resource_qii8w"), SubResource("Resource_wx7mh"), SubResource("Resource_tl77h"), SubResource("Resource_1vnxo"), SubResource("Resource_gbwy1"), SubResource("Resource_np8jb"), SubResource("Resource_fpeag")]
 metadata/class = "Arborist"
 
-[node name="AcheronOverworld" type="Node3D"]
+[sub_resource type="Curve" id="Curve_uuc2j"]
+_data = [Vector2(0, 0), 0.0, 4.58802, 0, 0, Vector2(0.274286, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 1), 0.0, 0.0, 0, 0, Vector2(0.605714, 0), 0.0699925, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_m86jh"]
+curve = SubResource("Curve_uuc2j")
+
+[sub_resource type="Gradient" id="Gradient_4eagx"]
+colors = PackedColorArray(0, 0, 0, 1, 0.27, 0, 0.00899999, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5fhg8"]
+gradient = SubResource("Gradient_4eagx")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_m86jh"]
+_data = [Vector2(0, 0), 0.0, 0.279971, 0, 0, Vector2(0.509138, 0.230263), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.279971, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_h3lki"]
+curve = SubResource("Curve_m86jh")
+
+[sub_resource type="Curve" id="Curve_5nkuc"]
+_data = [Vector2(0, 0.505618), 0.0, 7.78828, 0, 0, Vector2(0.203655, 1), 0.0, 0.0, 0, 0, Vector2(0.804178, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.467105), -7.27923, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_uuc2j"]
+curve = SubResource("Curve_5nkuc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4eagx"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, -1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.5
+emission_ring_cone_angle = 60.0
+angle_min = -720.0
+angle_max = 720.0
+inherit_velocity_ratio = 1.0
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 4.0
+initial_velocity_max = 5.0
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+gravity = Vector3(0, 8, 0)
+radial_accel_min = -10.0
+radial_accel_max = -7.0
+tangential_accel_min = 13.0
+tangential_accel_max = 18.0
+damping_min = 10.0
+damping_max = 10.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_uuc2j")
+color = Color(0.536644, 0.517152, 0.505563, 1)
+color_ramp = SubResource("GradientTexture1D_5fhg8")
+alpha_curve = SubResource("CurveTexture_m86jh")
+hue_variation_min = -0.05
+hue_variation_max = 0.05
+hue_variation_curve = SubResource("CurveTexture_h3lki")
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 1.0
+
+[node name="Phlegeton" type="Node3D"]
 script = ExtResource("1_2ois7")
 radial_wave_scene = ExtResource("2_v3ka3")
 
@@ -731,6 +658,9 @@ transform = Transform3D(0.987688, -0.156435, 7.4959e-09, -0.0391681, -0.247297, 
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("3_j08ft")
+levels = 2
+start_dialogue_name = "Anfang Phlegeton"
+end_dialogue_name = "Ende Phlegeton"
 
 [node name="InputController" type="Node" parent="."]
 script = ExtResource("4_s8as4")
@@ -758,118 +688,172 @@ boat_path = NodePath("../Boat")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.938, -17.816, 720.368)
 collision_layer = 2
 
-[node name="pepito_tornada" parent="." instance=ExtResource("13_qii8w")]
-transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 236.509, 3.05176e-05, 1142.55)
-process_material = SubResource("ParticleProcessMaterial_axdt2")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="pepito_tornada"]
-libraries = {
-&"": SubResource("AnimationLibrary_6bsal")
-}
-autoplay = "move_tornado"
-
 [node name="Obstacles" type="Node3D" parent="."]
 
-[node name="Barrels" type="Node3D" parent="Obstacles"]
+[node name="Bones" type="Node3D" parent="Obstacles"]
 
-[node name="Barrel" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 234.121, -24, 296.634)
-flow_strength = 1.0
-phase = 1.57
+[node name="Arm" parent="Obstacles/Bones" instance=ExtResource("24_7f0m1")]
+transform = Transform3D(-0.0234843, 0, -0.373793, 0, 0.37453, 0, 0.373793, 0, -0.0234843, 146.107, -9.94529, -2377.58)
 
-[node name="Barrel2" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 120.121, -24, -576.366)
+[node name="Arm2" parent="Obstacles/Bones" instance=ExtResource("24_7f0m1")]
+transform = Transform3D(-0.0234843, 0, -0.373793, 0, 0.37453, 0, 0.373793, 0, -0.0234843, 362.099, -9.94529, -4351.71)
 
-[node name="Barrel3" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 180.121, -24, -632.366)
+[node name="Ribcage" parent="Obstacles/Bones" instance=ExtResource("26_5fhg8")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 156.071, -12.3631, -3760.09)
 
-[node name="Barrel4" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 246.121, -24, -700.366)
+[node name="Ribcage2" parent="Obstacles/Bones" instance=ExtResource("26_5fhg8")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 321.528, -12.3631, -5019.94)
 
-[node name="Barrel5" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 276.937, -24, -1516.11)
+[node name="Femur" parent="Obstacles/Bones" instance=ExtResource("27_axdt2")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 349.133, -13.7392, -1980.58)
 
-[node name="Barrel7" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 109.914, -24, -2236.91)
-flow_strength = 0.8
+[node name="Femur3" parent="Obstacles/Bones" instance=ExtResource("27_axdt2")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 318.968, -13.7392, -546.837)
 
-[node name="Barrel10" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 148.914, -24, -2282.91)
+[node name="Femur2" parent="Obstacles/Bones" instance=ExtResource("27_axdt2")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 271.89, -13.7392, -3031.84)
 
-[node name="Barrel11" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 167.045, -24, -2343.4)
-phase = 1.57
+[node name="Spine" parent="Obstacles/Bones" instance=ExtResource("17_4eagx")]
+transform = Transform3D(0.0647325, 0, -0.292933, 0, 0.3, 0, 0.292933, 0, 0.0647325, 367.082, -15.4497, -3117.4)
 
-[node name="Barrel8" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 369.914, -24, -2236.91)
-flow_strength = 0.8
-phase = 3.14
+[node name="Spine2" parent="Obstacles/Bones" instance=ExtResource("17_4eagx")]
+transform = Transform3D(0.0647325, 0, -0.292933, 0, 0.3, 0, 0.292933, 0, 0.0647325, 195.786, -15.4497, -4025.53)
 
-[node name="Barrel9" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 329.914, -24, -2283.62)
-phase = 3.14
-
-[node name="Barrel12" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 307.288, -24, -2345.51)
-phase = 1.57
-
-[node name="Barrel13" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 239.31, -24, -2345.51)
-phase = 1.57
-
-[node name="Barrel6" parent="Obstacles/Barrels" instance=ExtResource("14_bv6up")]
-transform = Transform3D(-0.0158644, 0, -0.999874, 0, 1, 0, 0.999874, 0, -0.0158644, 189.167, -24, -1569.26)
-phase = 3.14
+[node name="Spine3" parent="Obstacles/Bones" instance=ExtResource("17_4eagx")]
+transform = Transform3D(-0.0896473, 0, -0.286292, 0, 0.3, 0, 0.286292, 0, -0.0896473, 229.87, -15.4497, -5332.72)
 
 [node name="Hammers" type="Node3D" parent="Obstacles"]
 
 [node name="Hammer" parent="Obstacles/Hammers" instance=ExtResource("15_wx7mh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.736, 0, -389.767)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.335, 0, -848.637)
 
 [node name="Hammer2" parent="Obstacles/Hammers" instance=ExtResource("15_wx7mh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.736, 0, -1250.35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 253.707, 0.00012207, -3419.81)
 
 [node name="Ambrosias" type="Node3D" parent="Obstacles"]
 
 [node name="ambrosia" parent="Obstacles/Ambrosias" instance=ExtResource("16_0omc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.842, -7.63501, -2115.33)
 
+[node name="ambrosia2" parent="Obstacles/Ambrosias" instance=ExtResource("16_0omc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.57, -7.63507, -2975.54)
+
+[node name="ambrosia3" parent="Obstacles/Ambrosias" instance=ExtResource("16_0omc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 372.83, -7.63513, -4603.1)
+
 [node name="Hands" type="Node3D" parent="Obstacles"]
 
 [node name="Hand" parent="Obstacles/Hands" instance=ExtResource("17_no78o")]
-transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 356.97, -10.5806, -1062.34)
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 364.48, -10.5806, -143.468)
 
 [node name="Hand3" parent="Obstacles/Hands" instance=ExtResource("17_no78o")]
-transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 254.227, -10.5806, -1890.62)
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 176.172, -10.5806, -1097.79)
 
 [node name="Hand2" parent="Obstacles/Hands" instance=ExtResource("17_no78o")]
-transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 105.97, -10.5806, -1054.53)
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 113.48, -10.5806, -135.658)
+
+[node name="Hand4" parent="Obstacles/Hands" instance=ExtResource("15_48o5j")]
+transform = Transform3D(-0.857086, 0, -0.515173, 0, 1, 0, 0.515173, 0, -0.857086, 293.089, -1.08324, -1357.47)
+
+[node name="Hand5" parent="Obstacles/Hands" instance=ExtResource("15_48o5j")]
+transform = Transform3D(-0.857086, 0, -0.515173, 0, 1, 0, 0.515173, 0, -0.857086, 146.939, -1.08321, -2246.55)
+
+[node name="Hand6" parent="Obstacles/Hands" instance=ExtResource("15_48o5j")]
+transform = Transform3D(-0.857086, 0, -0.515173, 0, 1, 0, 0.515173, 0, -0.857086, 330.293, -1.08321, -2808.16)
+
+[node name="Hand7" parent="Obstacles/Hands" instance=ExtResource("15_48o5j")]
+transform = Transform3D(-0.857086, 0, -0.515173, 0, 1, 0, 0.515173, 0, -0.857086, 163.564, -1.08321, -3278.99)
+
+[node name="Hand8" parent="Obstacles/Hands" instance=ExtResource("15_48o5j")]
+transform = Transform3D(-0.857086, 0, -0.515173, 0, 1, 0, 0.515173, 0, -0.857086, 371.432, -1.08321, -3902.78)
+
+[node name="Hand9" parent="Obstacles/Hands" instance=ExtResource("15_48o5j")]
+transform = Transform3D(-0.857086, 0, -0.515173, 0, 1, 0, 0.515173, 0, -0.857086, 284.101, -1.08321, -3894.28)
+
+[node name="Hand10" parent="Obstacles/Hands" instance=ExtResource("15_48o5j")]
+transform = Transform3D(-0.857086, 0, -0.515173, 0, 1, 0, 0.515173, 0, -0.857086, 191, -1.08321, -4700.77)
+
+[node name="Hand11" parent="Obstacles/Hands" instance=ExtResource("15_48o5j")]
+transform = Transform3D(-0.857086, 0, -0.515173, 0, 1, 0, 0.515173, 0, -0.857086, 352.322, -1.08321, -5501.89)
 
 [node name="Rocks" type="Node3D" parent="Obstacles"]
 
-[node name="Rock" parent="Obstacles/Rocks" instance=ExtResource("18_moq2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.659, -13.1148, -38.0817)
+[node name="RockObstacles" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 104.56, 2.95585, 230.878)
 
-[node name="Rock2" parent="Obstacles/Rocks" instance=ExtResource("18_moq2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 317.659, -13.1148, 34.3832)
+[node name="RockObstacles2" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 371.982, 2.95585, 113.585)
 
-[node name="Rock3" parent="Obstacles/Rocks" instance=ExtResource("18_moq2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.659, -13.1148, -195.045)
+[node name="RockObstacles3" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 281.546, 2.95585, 43.7987)
 
-[node name="Rock4" parent="Obstacles/Rocks" instance=ExtResource("18_moq2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.659, -13.1148, -1409.55)
+[node name="RockObstacles4" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 391.213, 2.95585, -231.771)
 
-[node name="Rock5" parent="Obstacles/Rocks" instance=ExtResource("18_moq2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.654, -13.1148, -1726.04)
+[node name="RockObstacles5" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 106.143, 2.95585, -377.248)
 
-[node name="Rock6" parent="Obstacles/Rocks" instance=ExtResource("18_moq2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 342.654, -13.1148, -1753.93)
+[node name="RockObstacles6" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 346.878, 2.95585, -1490.22)
 
-[node name="Rock7" parent="Obstacles/Rocks" instance=ExtResource("18_moq2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 342.654, -13.1148, -2531.16)
+[node name="RockObstacles7" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 140.35, 2.95585, -1342.32)
 
-[node name="Rock8" parent="Obstacles/Rocks" instance=ExtResource("18_moq2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.948, -13.1148, -2479.55)
+[node name="RockObstacles8" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 364.153, 2.95585, -2671.05)
+
+[node name="RockObstacles9" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 158.577, 2.95585, -3427.47)
+
+[node name="RockObstacles10" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 262.668, 2.95585, -3560.38)
+
+[node name="RockObstacles11" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 381.397, 2.95585, -4505.97)
+
+[node name="RockObstacles12" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 171.063, 2.95585, -4340.15)
+
+[node name="RockObstacles13" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 163.137, 2.95585, -4894.65)
+
+[node name="RockObstacles14" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 208.532, 2.95585, -5022.92)
+
+[node name="RockObstacles15" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 147.369, 2.95591, -5854.78)
+
+[node name="RockObstacles16" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
+transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 365.334, 2.95591, -6214.93)
+
+[node name="Souls" type="Node3D" parent="Obstacles"]
+
+[node name="Soul" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.027, -0.293408, -543.584)
+
+[node name="Soul2" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 352.869, -0.293408, -649.653)
+
+[node name="Soul3" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.339, -0.293408, -787.117)
+
+[node name="Soul4" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255.751, -0.293408, -926.455)
+
+[node name="Soul6" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.664, -0.293408, -3616.67)
+
+[node name="Soul7" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 352.869, -0.293408, -3287.04)
+
+[node name="Soul8" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.776, -0.293408, -3039.58)
+
+[node name="Soul9" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 316.066, -0.293408, -3810.73)
+
+[node name="Soul5" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 332.206, -0.293408, -1086.51)
 
 [node name="Phlegeton" parent="." instance=ExtResource("19_2ois7")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -4.577, 584.986)
@@ -886,8 +870,24 @@ arborist = SubResource("Resource_7epss")
 [node name="Phlegeton4" parent="." instance=ExtResource("19_2ois7")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915, -4.577, -3430.19)
 
-[node name="blood_river_test" parent="." instance=ExtResource("21_j08ft")]
-transform = Transform3D(1.10818, 0, 0, 0, 1, 0, 0, 0, 1, -10.0407, -14.7645, 169.773)
+[node name="Phlegeton5" parent="." instance=ExtResource("19_2ois7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915, -4.577, -4861.71)
+
+[node name="Phlegeton6" parent="." instance=ExtResource("19_2ois7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915, -4.577, -6228.93)
+
+[node name="Water_River" parent="." instance=ExtResource("21_j08ft")]
+transform = Transform3D(-0.000173802, 0, 239.602, 0, 1, 0, -3976.12, 0, -1.04733e-05, 240.459, -14.9716, -2647.17)
+
+[node name="End_trigger" parent="." instance=ExtResource("22_s8as4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.413, -14.7645, -5921.21)
+
+[node name="pepito_tornada" parent="." instance=ExtResource("13_qii8w")]
+transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 221.129, -14.9716, 1213.06)
+process_material = SubResource("ParticleProcessMaterial_4eagx")
+use_this_feature = true
+speed = 100.0
+stop_point = -5000.0
 
 [editable path="CanvasLayer/Level_UI"]
 [editable path="Phlegeton3"]
@@ -895,3 +895,4 @@ transform = Transform3D(1.10818, 0, 0, 0, 1, 0, 0, 0, 1, -10.0407, -14.7645, 169
 [editable path="Phlegeton3/beach2"]
 [editable path="Phlegeton3/cliffs_overworld2"]
 [editable path="Phlegeton3/cliffs_overworld3"]
+[editable path="Water_River"]

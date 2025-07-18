@@ -8,6 +8,7 @@ script = ExtResource("1_x463m")
 debug_mode = true
 scenes = {
 "acheron": "res://Scenes/Levels/lvl_1_acheron_overworld.tscn",
+"cutscene": "res://Scenes/UI/cutscene.tscn",
 "kokytus": "res://Scenes/Levels/lvl_3_phlegeton.tscn",
 "level_select": "res://Scenes/UI/level_select.tscn",
 "main_menu": "res://Scenes/UI/main_menu.tscn",

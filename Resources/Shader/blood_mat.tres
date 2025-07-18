@@ -9,6 +9,7 @@ colors = PackedColorArray(0.159073, 5.6771e-05, 3.11075e-05, 1, 0.0760206, 1.745
 fractal_octaves = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_er862"]
+width = 1500
 seamless = true
 color_ramp = SubResource("Gradient_gksfk")
 noise = SubResource("FastNoiseLite_2t33t")

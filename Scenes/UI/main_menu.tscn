@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd8ycrycc6whf" path="res://Scripts/UI/main_menu.gd" id="1_i2xx2"]
 [ext_resource type="Theme" uid="uid://cp0np0rp2fyse" path="res://Resources/UI/main_theme.tres" id="2_o14dv"]
-[ext_resource type="Texture2D" uid="uid://bnulfa4osuqj7" path="res://Resources/UI/UX Bilder/Bild1.jpg" id="2_u7lva"]
+[ext_resource type="Texture2D" uid="uid://d4f2gaw4kfsri" path="res://Resources/UI/UX Bilder/main_menu_background.png" id="2_u7lva"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjnspkce36142"]
 
 [ext_resource type="Script" uid="uid://brnh4atjc0fjc" path="res://Scripts/UI/level_select.gd" id="1_xqnso"]
-[ext_resource type="Texture2D" uid="uid://cs23fr05qtle5" path="res://Resources/UI/UX Bilder/Acheron oberwelt.jpg" id="2_xptg4"]
-[ext_resource type="Texture2D" uid="uid://bb6wtc38hdjkw" path="res://Resources/UI/UX Bilder/Acheron unterwelt.jpg" id="3_2wnai"]
-[ext_resource type="Texture2D" uid="uid://dlh5uyvdpjmbt" path="res://Resources/UI/UX Bilder/Phlegethon.jpg" id="4_2wnai"]
+[ext_resource type="Texture2D" uid="uid://chdei1cvox1n2" path="res://Resources/UI/UX Bilder/acheron_overworld_v2.png" id="2_2wnai"]
+[ext_resource type="Texture2D" uid="uid://d211feifdsoh0" path="res://Resources/UI/UX Bilder/acheron_underworld_v2.png" id="3_1i34c"]
+[ext_resource type="Texture2D" uid="uid://tuiliu1byr0" path="res://Resources/UI/UX Bilder/phlegethon_v2.png" id="4_40fl8"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -23,45 +23,39 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 360)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 6.0
-offset_bottom = -736.0
 grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_xptg4")
+texture = ExtResource("2_2wnai")
 expand_mode = 2
 stretch_mode = 1
 flip_h = true
 
 [node name="TextureRect3" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 360)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 344.0
-offset_right = 3.0
-offset_bottom = -392.0
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_2wnai")
+texture = ExtResource("3_1i34c")
 expand_mode = 2
 stretch_mode = 1
 
 [node name="TextureRect4" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 360)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 688.0
-offset_right = 3.0
-offset_bottom = 3.0
 grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_2wnai")
+grow_vertical = 0
+texture = ExtResource("4_40fl8")
 expand_mode = 2
 stretch_mode = 1
 

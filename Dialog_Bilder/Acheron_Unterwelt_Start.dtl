@@ -1,10 +1,12 @@
 join Triton center [animation="Fade In"]
+[sound path="res://Resources/Audio/Sounds/Tritons Horn bei seinem Erscheinen.wav" volume="0.0"]
 Triton: Wow....Hier sieht es ziemlich...
 Triton: ...tot aus.
 join Hades center [animation="Fade In"]
+[sound path="res://Resources/Audio/Sounds/Gefahr Sound Poseidon taucht auf.wav" volume="0.0"]
 Hades: Aaaaah....Triton!
 Hades: Wenn das mal nicht mein Lieblingsneffe ist!
-Hades: Womit verdiene ich diesen...erfreulichen...Familienbesuch? Der letzte war, wenn ich mich richtig erinnere 500 Jahre her. 
+Hades: Womit verdiene ich diesen...erfreulichen...Familienbesuch? Der letzte war, wenn ich mich richtig erinnere 500 Jahre her.
 Hades: Was machst du in meinem Reich?
 Hades: Müsstest du nicht irgendwo...ne Welle schieben?
 Triton: Onkel Hades! Was freue ich mich dich zu sehen, haha…

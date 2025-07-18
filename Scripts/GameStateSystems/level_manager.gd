@@ -1,6 +1,6 @@
 extends Node
 
-enum level {LEVEL_1, LEVEL_2, LEVEL_3} # currently not used but might be useful
+enum level {LEVEL_1, LEVEL_2, LEVEL_3}
 @export var levels: level
 
 @export_group("Wave Stuff")
@@ -20,6 +20,8 @@ var available_waves = 3
 @onready var health_bar = $"../CanvasLayer/Level_UI/MarginContainer/VBoxContainer/HealthBar"
 @onready var wave_icon_bar = $"../CanvasLayer/Level_UI/MarginContainer/VBoxContainer/WaveIconBar"
 @onready var pause_menu = %PauseMenu
+@onready var game_over = %GameOver
+
 
 
 func _ready():
@@ -37,7 +39,6 @@ func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = true
 		pause_menu.visible = true
-		print(get_tree().paused)
 
 func subtract_wave() -> void:
 	if available_waves > 0:
@@ -55,34 +56,37 @@ func gain_health(amount: float) -> void:
 	# update internal state
 	boat_health += amount
 	boat_health = min(MAX_HEALTH, boat_health)
-	
 	# update ui
 	health_bar.value = boat_health
 
 func loose_health(amount: float) -> void:
 	if is_invincible and amount <= 100.: return # no damage when invincible, except for tornado
-	
 	# update internal state
 	boat_health -= amount
 	boat_health = max(0.0, boat_health)
-	
 	# update ui
 	health_bar.set_value_no_signal(boat_health) 
-	
+	# die
 	if boat_health <= 0.0:
 		sink_boat()
 
 func sink_boat() -> void:
 	# start animation
+	EventBus.play_sound.emit("Bubbles")
+	EventBus.play_sound.emit("Explosion")
+	EventBus.play_sound.emit("Submerge")
+	EventBus.sink_boat.emit()
 	# send event to deactivate mechanics
-	await get_tree().create_timer(2.).timeout # wait until anim is finished 
-	# game over screen or something
-	await get_tree().create_timer(1.).timeout # leave game over message on screen for a second
+	await get_tree().create_timer(1.).timeout # wait until anim is finished 
+	game_over.show()
+	health_bar.hide()
+	await get_tree().create_timer(5.).timeout # leave game over message on screen for a second
+	EventBus.stop_all_sounds.emit()
 	EventBus.load_scene.emit("level_select") # go back to level select
 
 func invincibility() -> void:
 	is_invincible = true
-	# activate some kind of visual or auditory clue for invincibility
+	# activate some kind of visual clue for invincibility
 	await get_tree().create_timer(10.).timeout # make timer node so that i-frames can easily stack
 	is_invincible = false
 
@@ -100,17 +104,17 @@ func level_intro_events() -> void:
 func unpause() -> void:
 	get_tree().paused = false
 
-
 func level_outro_events() -> void:
 	# starte event wenn steg sichtbar ist
+	if levels == level.LEVEL_1: 
+		EventBus.play_sound.emit("HafenAmbiente")
 	Dialogic.start(end_dialogue_name).process_mode = Node.PROCESS_MODE_ALWAYS
-	Dialogic.timeline_ended.connect(kill_player)
-	await get_tree().create_timer(1.).timeout
+	Dialogic.timeline_ended.connect(transition_to_next_level)
 
-func kill_player() -> void:
-	# character stirbt
-	await get_tree().create_timer(5.).timeout
+func transition_to_next_level() -> void:
 	# remember that this does not work, when debug mode is enabled in sceneloader
+	await get_tree().create_timer(1.).timeout
+	EventBus.stop_all_sounds.emit()
 	match levels:
 		level.LEVEL_1:
 			EventBus.load_scene.emit("phlegeton")

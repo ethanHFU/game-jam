@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/small_prefabs/trigger_level_ending.gd" id="1_w0wtm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v1pjg"]
-size = Vector3(600, 200, 5)
+size = Vector3(600, 200, 72.3574)
 
 [node name="End_trigger" type="Area3D"]
 collision_mask = 2

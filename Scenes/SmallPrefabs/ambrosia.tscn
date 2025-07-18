@@ -13,3 +13,5 @@ amount = 0.0
 [node name="ambrosia" parent="." instance=ExtResource("2_gwc25")]
 transform = Transform3D(60, 0, 0, 0, 56.5585, 20.0284, 0, -20.0284, 56.5585, 0, 0.13, 0)
 script = ExtResource("3_mi3dw")
+
+[editable path="ambrosia"]
