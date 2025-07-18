@@ -1,7 +1,7 @@
-[gd_scene load_steps=114 format=3 uid="uid://cm5r06aejc053"]
+[gd_scene load_steps=115 format=3 uid="uid://cm5r06aejc053"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_2ois7"]
-[ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_v3ka3"]
+[ext_resource type="PackedScene" path="res://Scenes/DemoScenes/basic_blood_wave.tscn" id="2_am0lo"]
 [ext_resource type="Script" uid="uid://cpcojf2mlb0a4" path="res://Scripts/GameStateSystems/level_manager.gd" id="3_j08ft"]
 [ext_resource type="Script" uid="uid://7h7c2yvx0t7r" path="res://Scripts/Controller/input_controller.gd" id="4_s8as4"]
 [ext_resource type="Script" uid="uid://dkrm20h376m2x" path="res://Scripts/Controller/water_event_controller.gd" id="5_ktilv"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bkx7ndiggf5pm" path="res://Scenes/SmallPrefabs/hand_2.tscn" id="15_48o5j"]
 [ext_resource type="PackedScene" uid="uid://bbpcn3gm56ial" path="res://Scenes/SmallPrefabs/hammer.tscn" id="15_wx7mh"]
 [ext_resource type="PackedScene" uid="uid://c6qf11375ilxy" path="res://Scenes/SmallPrefabs/ambrosia.tscn" id="16_0omc5"]
-[ext_resource type="PackedScene" path="res://Scenes/SmallPrefabs/femur_shifted.tscn" id="16_axdt2"]
+[ext_resource type="PackedScene" uid="uid://gg2j0nct0vov" path="res://Scenes/SmallPrefabs/femur_shifted.tscn" id="16_axdt2"]
 [ext_resource type="PackedScene" uid="uid://dik82d13kukoq" path="res://Scenes/SmallPrefabs/spine.tscn" id="17_4eagx"]
 [ext_resource type="PackedScene" uid="uid://f04cgv60ss8k" path="res://Scenes/SmallPrefabs/hand.tscn" id="17_no78o"]
 [ext_resource type="PackedScene" uid="uid://vkhmcib2aasb" path="res://Scenes/Phlegeton/phlegeton.tscn" id="19_2ois7"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cqfjblavvdd4n" path="res://Scenes/Phlegeton/blood_river.tscn" id="21_j08ft"]
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="21_ktilv"]
 [ext_resource type="PackedScene" uid="uid://dvnnksxqhdw03" path="res://Resources/Models/Scene/Phlegeton/rock_obstacles.tscn" id="21_s8as4"]
+[ext_resource type="PackedScene" path="res://Scenes/SmallPrefabs/cerberus_sound_spawner.tscn" id="22_am0lo"]
 [ext_resource type="PackedScene" uid="uid://c0lvcrcrcyr7q" path="res://Scenes/SmallPrefabs/end_trigger.tscn" id="22_s8as4"]
 [ext_resource type="PackedScene" uid="uid://ddmif4cf2dlyj" path="res://Scenes/SmallPrefabs/soul.tscn" id="23_grh70"]
 [ext_resource type="PackedScene" uid="uid://c84nlwid4gywx" path="res://Scenes/SmallPrefabs/arm.tscn" id="24_7f0m1"]
@@ -1194,7 +1195,7 @@ turbulence_noise_scale = 1.0
 
 [node name="Phlegeton" type="Node3D"]
 script = ExtResource("1_2ois7")
-radial_wave_scene = ExtResource("2_v3ka3")
+radial_wave_scene = ExtResource("2_am0lo")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w0x7f")
@@ -1416,6 +1417,12 @@ transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 147.369, 2.95591,
 [node name="RockObstacles16" parent="Obstacles/Rocks" instance=ExtResource("21_s8as4")]
 transform = Transform3D(2.105, 0, 0, 0, 2.105, 0, 0, 0, 2.105, 365.334, 2.95591, -6214.93)
 
+[node name="CerberusSoundSpawner" parent="Obstacles/Rocks" instance=ExtResource("22_am0lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.59, -14.4328, -120.099)
+
+[node name="CerberusSoundSpawner2" parent="Obstacles/Rocks" instance=ExtResource("22_am0lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 267.008, -14.4329, -2531.69)
+
 [node name="Souls" type="Node3D" parent="Obstacles"]
 
 [node name="Soul" parent="Obstacles/Souls" instance=ExtResource("23_grh70")]
@@ -1476,10 +1483,9 @@ transform = Transform3D(-0.000173802, 0, 252.278, 0, 1, 0, -3976.12, 0, -1.10274
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.413, -14.7645, -5921.21)
 
 [node name="pepito_tornada" parent="." instance=ExtResource("13_qii8w")]
-transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 221.129, -14.9716, 1213.06)
+transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 221.129, -14.9716, 1357.19)
 process_material = SubResource("ParticleProcessMaterial_4eagx")
 use_this_feature = true
-speed = 100.0
 stop_point = -5000.0
 
 [editable path="CanvasLayer/Level_UI"]

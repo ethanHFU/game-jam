@@ -1,7 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://3dly0omvvqwv"]
+[gd_scene load_steps=31 format=3 uid="uid://3dly0omvvqwv"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_w036o"]
-[ext_resource type="PackedScene" uid="uid://b3rq02pw3aj8b" path="res://Scenes/DemoScenes/basic_wave.tscn" id="2_n55nh"]
+[ext_resource type="PackedScene" path="res://Scenes/DemoScenes/basic_shadow_wave.tscn" id="2_w876p"]
 [ext_resource type="Script" uid="uid://cpcojf2mlb0a4" path="res://Scripts/GameStateSystems/level_manager.gd" id="3_n55nh"]
 [ext_resource type="PackedScene" uid="uid://c0lvcrcrcyr7q" path="res://Scenes/SmallPrefabs/end_trigger.tscn" id="4_jxos6"]
 [ext_resource type="Script" uid="uid://7h7c2yvx0t7r" path="res://Scripts/Controller/input_controller.gd" id="4_w876p"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://f04cgv60ss8k" path="res://Scenes/SmallPrefabs/hand.tscn" id="16_xi7fq"]
 [ext_resource type="PackedScene" uid="uid://c702fe476bgqm" path="res://Resources/Models/Scene/AcheronUnderworld/rock_obstacles.tscn" id="19_ahvop"]
 [ext_resource type="PackedScene" uid="uid://dl1ow17gfornb" path="res://Scenes/AcheronUnderworld/acheron_underworld.tscn" id="19_w036o"]
+[ext_resource type="PackedScene" path="res://Scenes/SmallPrefabs/cerberus_sound_spawner.tscn" id="22_w876p"]
 
 [sub_resource type="Environment" id="Environment_n55nh"]
 glow_enabled = true
@@ -68,7 +69,7 @@ data = PackedVector3Array(2500, 0, 200, -2500, 0, 200, 2500, 0, -200, -2500, 0, 
 
 [node name="AcheronOverworld" type="Node3D"]
 script = ExtResource("1_w036o")
-radial_wave_scene = ExtResource("2_n55nh")
+radial_wave_scene = ExtResource("2_w876p")
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("3_n55nh")
@@ -258,10 +259,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.688
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -4817.68)
 
 [node name="pepito_tornada" parent="." instance=ExtResource("12_1i10j")]
-transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 218.384, -25.307, 1154.95)
+transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 218.384, -25.307, 1332.19)
 use_this_feature = true
-speed = 100.0
 stop_point = -3900.0
+
+[node name="CerberusSoundSpawner" parent="." instance=ExtResource("22_w876p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243.308, -24.393, 99.9239)
+
+[node name="CerberusSoundSpawner2" parent="." instance=ExtResource("22_w876p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 258.785, -24.3931, -2926.77)
 
 [editable path="CanvasLayer/Level_UI"]
 [editable path="End_trigger"]

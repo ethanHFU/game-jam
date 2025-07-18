@@ -7,6 +7,7 @@ func _on_button_button_down():
 
 
 func _on_quit_button_down():
+	EventBus.stop_all_sounds.emit()
 	self.visible = false
 	get_tree().paused = false
 	EventBus.load_scene.emit("level_select")

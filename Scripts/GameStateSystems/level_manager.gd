@@ -35,7 +35,7 @@ func _ready():
 	preload("res://Dialog_Bilder/Textbox.tres").prepare() # prepare dialogic resource
 	Dialogic.process_mode = Node.PROCESS_MODE_ALWAYS
 	wave_icon_bar.init(wave_budget)
-	#level_intro_events()
+	level_intro_events()
 
 func _input(event):
 	if Input.is_action_just_pressed("pause"):
@@ -81,6 +81,7 @@ func sink_boat() -> void:
 	await get_tree().create_timer(1.).timeout # wait until anim is finished 
 	game_over.show()
 	health_bar.hide()
+	wave_icon_bar.hide()
 	await get_tree().create_timer(5.).timeout # leave game over message on screen for a second
 	EventBus.stop_all_sounds.emit()
 	EventBus.load_scene.emit("level_select") # go back to level select

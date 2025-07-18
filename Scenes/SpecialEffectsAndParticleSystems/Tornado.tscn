@@ -98,6 +98,7 @@ trail_lifetime = 3.0
 process_material = SubResource("ParticleProcessMaterial_hrarn")
 draw_pass_1 = SubResource("TubeTrailMesh_okoew")
 script = ExtResource("1_8xhqk")
+speed = 110.0
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2
