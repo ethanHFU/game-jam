@@ -42,6 +42,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ylyc0")
 
 [node name="RockObstacles" type="StaticBody3D"]
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.0200272, 1.21582, -0.373306)

@@ -1,57 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c84nlwid4gywx"]
+[gd_scene load_steps=5 format=3 uid="uid://c84nlwid4gywx"]
 
 [ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="2_3jgne"]
 [ext_resource type="PackedScene" uid="uid://bplaruwk5rrno" path="res://Resources/Models/Small_Prefabs/fass2.blend" id="3_nhyi5"]
 [ext_resource type="ArrayMesh" uid="uid://cnhu3liss5n3g" path="res://Resources/Models/Scene/Phlegeton/arm.res" id="4_nhyi5"]
 
-[sub_resource type="Gradient" id="Gradient_3jgne"]
-offsets = PackedFloat32Array(0.230159, 1)
-colors = PackedColorArray(0.526793, 1.2153e-06, 3.85046e-07, 1, 0.151673, 1.56425e-07, 1.50409e-08, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_dfbkk"]
-gradient = SubResource("Gradient_3jgne")
-
-[sub_resource type="Curve" id="Curve_sbdq3"]
-_data = [Vector2(0, 0), 0.0, 0.317742, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_gksfk"]
-curve = SubResource("Curve_sbdq3")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7xhb6"]
-emission_shape = 1
-emission_sphere_radius = 1.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.25
-scale_max = 0.75
-scale_curve = SubResource("CurveTexture_gksfk")
-color_ramp = SubResource("GradientTexture1D_dfbkk")
-sub_emitter_mode = 2
-sub_emitter_amount_at_end = 8
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfbkk"]
-transparency = 1
-vertex_color_use_as_albedo = true
-roughness = 0.2
-
-[sub_resource type="SphereMesh" id="SphereMesh_a28tj"]
-material = SubResource("StandardMaterial3D_dfbkk")
-radius = 5.0
-height = 10.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbdq3"]
 size = Vector3(56.7849, 18, 222.966)
 
 [node name="Arm" type="Node3D"]
-
-[node name="ParticleNode" type="GPUParticles3D" parent="."]
-transform = Transform3D(3.85633, 0, 50.4559, 0, 14.795, 0, -148.157, 0, 1.3133, 5.65503, 0, 0)
-amount = 100
-amount_ratio = 0.6952
-sub_emitter = NodePath("../BloodDrops")
-lifetime = 2.0
-process_material = SubResource("ParticleProcessMaterial_7xhb6")
-draw_pass_1 = SubResource("SphereMesh_a28tj")
 
 [node name="Player_Detector" parent="." instance=ExtResource("2_3jgne")]
 obstacle = 3

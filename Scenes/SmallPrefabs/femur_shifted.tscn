@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://chpyqhygmttvx"]
+[gd_scene load_steps=13 format=3 uid="uid://gg2j0nct0vov"]
 
-[ext_resource type="Script" uid="uid://c3pekgtkq0py8" path="res://Scripts/small_prefabs/flow_y_up_and_down.gd" id="1_u6aps"]
-[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="2_u6aps"]
-[ext_resource type="PackedScene" uid="uid://bplaruwk5rrno" path="res://Resources/Models/Small_Prefabs/fass2.blend" id="3_66pqm"]
-[ext_resource type="ArrayMesh" uid="uid://byin0wpl7wq4f" path="res://Resources/Models/Scene/Phlegeton/femur.res" id="4_u6aps"]
+[ext_resource type="Script" uid="uid://c3pekgtkq0py8" path="res://Scripts/small_prefabs/flow_y_up_and_down.gd" id="1_pbf8t"]
+[ext_resource type="PackedScene" uid="uid://bplaruwk5rrno" path="res://Resources/Models/Small_Prefabs/fass2.blend" id="2_scw2m"]
+[ext_resource type="ArrayMesh" uid="uid://byin0wpl7wq4f" path="res://Resources/Models/Scene/Phlegeton/femur.res" id="3_ov268"]
+[ext_resource type="PackedScene" uid="uid://dvjci4pl3r672" path="res://Scenes/SmallPrefabs/player_detector.tscn" id="4_4uxkc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u6aps"]
 size = Vector3(50.0347, 41.7289, 241.1)
@@ -44,19 +44,20 @@ radius = 5.0
 height = 10.0
 
 [node name="Femur" type="Node3D"]
-script = ExtResource("1_u6aps")
+script = ExtResource("1_pbf8t")
 stay_time = 2.0
+phase_shift = 180.0
 
 [node name="MoverNode" type="Node3D" parent="."]
 
-[node name="fass2" parent="MoverNode" instance=ExtResource("3_66pqm")]
+[node name="fass2" parent="MoverNode" instance=ExtResource("2_scw2m")]
 transform = Transform3D(160, 0, 0, 0, 160, 0, 0, 0, 160, 0, 0, 0)
 
 [node name="Mesh_0" parent="MoverNode/fass2" index="0"]
 transform = Transform3D(0.0482857, -0.00804182, 0.0101894, -0.0106205, -0.0019092, 0.0488217, -0.00746323, -0.0493121, -0.0035519, 0, 0, 0)
-mesh = ExtResource("4_u6aps")
+mesh = ExtResource("3_ov268")
 
-[node name="Player_Detector" parent="MoverNode" instance=ExtResource("2_u6aps")]
+[node name="Player_Detector" parent="MoverNode" instance=ExtResource("4_4uxkc")]
 obstacle = 3
 
 [node name="CollisionShape3D" parent="MoverNode/Player_Detector/Area3D" index="0"]

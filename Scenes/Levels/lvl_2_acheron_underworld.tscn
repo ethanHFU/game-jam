@@ -255,12 +255,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.6884, -4.577, -4827.54)
 
 [node name="End_trigger" parent="." instance=ExtResource("4_jxos6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -5320.74)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.762, 0, -4817.68)
 
 [node name="pepito_tornada" parent="." instance=ExtResource("12_1i10j")]
-transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 217.497, -24.393, 1154.97)
+transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 218.384, -25.307, 1154.95)
 use_this_feature = true
-speed = 105.0
+speed = 100.0
 stop_point = -3900.0
 
 [editable path="CanvasLayer/Level_UI"]

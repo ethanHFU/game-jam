@@ -13,3 +13,6 @@ amount = 20.0
 [node name="hammer" parent="." instance=ExtResource("2_88ss5")]
 transform = Transform3D(120, 0, 0, 0, 93.2575, 75.5184, 0, -75.5184, 93.2575, 0, 4.00287, -2.19977)
 script = ExtResource("3_cild3")
+
+[editable path="Player_Detector"]
+[editable path="hammer"]

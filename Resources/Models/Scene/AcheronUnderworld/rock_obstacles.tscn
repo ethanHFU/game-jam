@@ -183,6 +183,7 @@ shader_parameter/lava_falloff = 0.0
 shader_parameter/emission_strength = 35.65
 
 [node name="RockObstacles" type="StaticBody3D"]
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.0200272, 1.21582, -0.373306)
