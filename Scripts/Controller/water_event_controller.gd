@@ -4,8 +4,8 @@ extends Node
 var camera: Camera3D = null
 var boat: Node3D = null
 var canvas: Node = null 
-var water_plane_y: float
 var radial_wave_scene: PackedScene = null
+var level_manager: Node = null  # Quick fix
 
 # All of these factors are NOT invariant to scene size. Must be adjusted
 var waves = []
@@ -98,16 +98,15 @@ func process_wave(wave, delta) -> Vector3:
 	return wave_force if wave_force.length() >= 0.01 else Vector3.ZERO
 
 func spawn_radial_wave(screen_pos: Vector2, world_pos: Vector3):
-	var timer := Timer.new()
-	add_child(timer)
-	canvas.show_disappearing_marker(screen_pos)
-	var visual_instance = radial_wave_scene.instantiate()
-	var plane_mesh_size = visual_instance.get_node("Plane").mesh.size
-	var scale_factor = wave_radius_max / (plane_mesh_size.x / 2.0)
-	visual_instance.scale = Vector3(scale_factor, 1.0, scale_factor)
-	self.add_child(visual_instance)
-	EventBus.play_sound.emit("BigWave")
-	waves.append(RadialWave.new(world_pos, wave_radius_max, wave_speed, visual_instance, scale_factor))
+	if level_manager.available_waves > 0:
+		canvas.show_disappearing_marker(screen_pos)
+		var visual_instance = radial_wave_scene.instantiate()
+		var plane_mesh_size = visual_instance.get_node("Plane").mesh.size
+		var scale_factor = wave_radius_max / (plane_mesh_size.x / 2.0)
+		visual_instance.scale = Vector3(scale_factor, 1.0, scale_factor)
+		self.add_child(visual_instance)
+		EventBus.play_sound.emit("BigWave")
+		waves.append(RadialWave.new(world_pos, wave_radius_max, wave_speed, visual_instance, scale_factor))
 	
 func spawn_directed_wave(world_start_pos: Vector3, world_end_pos: Vector3):
 	var drag_vector = world_start_pos - world_end_pos

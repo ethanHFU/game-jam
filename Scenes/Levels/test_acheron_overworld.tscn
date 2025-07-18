@@ -168,7 +168,9 @@ mesh = SubResource("PlaneMesh_rrces")
 shape = SubResource("ConcavePolygonShape3D_yieir")
 
 [node name="pepito_tornada" parent="." instance=ExtResource("12_h2vu8")]
-transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 236.509, 3.05176e-05, 1142.55)
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, 236.509, 3.05176e-05, 1142.55)
+use_this_feature = true
+speed = 80.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="pepito_tornada"]
 libraries = {
