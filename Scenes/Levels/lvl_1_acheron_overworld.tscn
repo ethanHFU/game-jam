@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://2qs2bh3hopl5" path="res://Scenes/UI/level_ui.tscn" id="7_sme2a"]
 [ext_resource type="PackedScene" uid="uid://c64cjsv4teeu8" path="res://Scenes/Boat/Boat.tscn" id="7_xo4qv"]
 [ext_resource type="Material" uid="uid://did5jrj8sc7wm" path="res://Resources/Shader/water_mat.tres" id="9_4iodk"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/game_over.tscn" id="9_gk14i"]
+[ext_resource type="PackedScene" uid="uid://tsuxowft7al4" path="res://Scenes/UI/game_over.tscn" id="9_gk14i"]
 [ext_resource type="PackedScene" uid="uid://bbmfs03o1here" path="res://Scenes/SpecialEffectsAndParticleSystems/Tornado.tscn" id="10_rrces"]
 [ext_resource type="PackedScene" uid="uid://ccuoj71q5kdch" path="res://Scenes/SmallPrefabs/barrel.tscn" id="12_1eger"]
 [ext_resource type="PackedScene" uid="uid://bbpcn3gm56ial" path="res://Scenes/SmallPrefabs/hammer.tscn" id="14_xo4qv"]
