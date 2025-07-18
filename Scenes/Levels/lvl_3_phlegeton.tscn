@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bkx7ndiggf5pm" path="res://Scenes/SmallPrefabs/hand_2.tscn" id="15_48o5j"]
 [ext_resource type="PackedScene" uid="uid://bbpcn3gm56ial" path="res://Scenes/SmallPrefabs/hammer.tscn" id="15_wx7mh"]
 [ext_resource type="PackedScene" uid="uid://c6qf11375ilxy" path="res://Scenes/SmallPrefabs/ambrosia.tscn" id="16_0omc5"]
-[ext_resource type="PackedScene" uid="uid://gg2j0nct0vov" path="res://Scenes/SmallPrefabs/femur_shifted.tscn" id="16_axdt2"]
+[ext_resource type="PackedScene" path="res://Scenes/SmallPrefabs/femur_shifted.tscn" id="16_axdt2"]
 [ext_resource type="PackedScene" uid="uid://dik82d13kukoq" path="res://Scenes/SmallPrefabs/spine.tscn" id="17_4eagx"]
 [ext_resource type="PackedScene" uid="uid://f04cgv60ss8k" path="res://Scenes/SmallPrefabs/hand.tscn" id="17_no78o"]
 [ext_resource type="PackedScene" uid="uid://vkhmcib2aasb" path="res://Scenes/Phlegeton/phlegeton.tscn" id="19_2ois7"]

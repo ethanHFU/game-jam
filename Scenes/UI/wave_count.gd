@@ -27,6 +27,5 @@ func init(wave_budget: float):
 	
 
 func remove_wave_icon():
-	print("Trying to remove")
 	if get_child_count() > 0:
 		get_child(0).queue_free()  # Or remove the last, depending on your preference

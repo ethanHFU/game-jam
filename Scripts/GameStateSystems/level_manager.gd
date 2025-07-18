@@ -4,7 +4,7 @@ enum level {LEVEL_1, LEVEL_2, LEVEL_3}
 @export var levels: level
 
 @export_group("Wave Stuff")
-@export var wave_budget = 3
+@export var wave_budget = 4
 var available_waves = wave_budget
 var wave_cooldown = 3.0  # in seconds
 

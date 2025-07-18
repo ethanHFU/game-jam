@@ -20,6 +20,29 @@ var hold_threshold := 0.3
 var cooldown := 0.5  # Radial wave cooldown in seconds
 var cooldown_budget := 3*0.5
 
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var camera := get_viewport().get_camera_3d()
+		if camera == null:
+			return
+
+		var from := camera.project_ray_origin(event.position)
+		var to := from + camera.project_ray_normal(event.position) * 1000.0  # Casts ray 1000 units forward
+
+		var space_state := camera.get_world_3d().direct_space_state
+		var ray_params := PhysicsRayQueryParameters3D.new()
+		ray_params.from = from
+		ray_params.to = to
+		ray_params.collision_mask = 0xFFFFFFFF  # Optional: collide with everything
+		
+		var result := space_state.intersect_ray(ray_params)
+		
+		if result:
+			var collider = result["collider"]
+			print("Clicked object: ", collider.name)
+		else:
+			print("No object hit.")
+
 func water_input(camera, event, event_position, normal, shapde_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -43,6 +66,7 @@ func handle_mouse_release(release_screen_pos: Vector2, release_water_pos: Vector
 	var time_held = mouse_press_time
 	var move_distance = press_screen_pos.distance_to(release_screen_pos)
 	if time_held < hold_threshold and move_distance < drag_threshold:
+		print("Clicked")
 		emit_signal("click_performed", release_screen_pos, release_water_pos)
 	elif time_held >= hold_threshold and move_distance < drag_threshold:
 		return

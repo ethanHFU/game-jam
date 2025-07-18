@@ -99,6 +99,7 @@ func process_wave(wave, delta) -> Vector3:
 
 func spawn_radial_wave(screen_pos: Vector2, world_pos: Vector3):
 	if level_manager.available_waves > 0:
+		
 		canvas.show_disappearing_marker(screen_pos)
 		var visual_instance = radial_wave_scene.instantiate()
 		var plane_mesh_size = visual_instance.get_node("Plane").mesh.size
