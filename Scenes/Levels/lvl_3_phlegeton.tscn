@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://cm5r06aejc053"]
+[gd_scene load_steps=75 format=3 uid="uid://cm5r06aejc053"]
 
 [ext_resource type="Script" uid="uid://iqhc4lyanjwq" path="res://Scripts/Controller/Main.gd" id="1_2ois7"]
 [ext_resource type="PackedScene" uid="uid://clqgitp7w1665" path="res://Scenes/AcheronOverworld/acheron_radial_wave.tscn" id="2_v3ka3"]
@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cqfjblavvdd4n" path="res://Scenes/Phlegeton/blood_river.tscn" id="21_j08ft"]
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="21_ktilv"]
 [ext_resource type="PackedScene" uid="uid://dvnnksxqhdw03" path="res://Resources/Models/Scene/Phlegeton/rock_obstacles.tscn" id="21_s8as4"]
-[ext_resource type="PackedScene" path="res://Scenes/SmallPrefabs/end_trigger.tscn" id="22_s8as4"]
+[ext_resource type="PackedScene" uid="uid://c0lvcrcrcyr7q" path="res://Scenes/SmallPrefabs/end_trigger.tscn" id="22_s8as4"]
 [ext_resource type="PackedScene" uid="uid://ddmif4cf2dlyj" path="res://Scenes/SmallPrefabs/soul.tscn" id="23_grh70"]
 [ext_resource type="PackedScene" uid="uid://c84nlwid4gywx" path="res://Scenes/SmallPrefabs/arm.tscn" id="24_7f0m1"]
 [ext_resource type="PackedScene" uid="uid://dwlc56iq3abae" path="res://Scenes/SmallPrefabs/ribcage.tscn" id="26_5fhg8"]
@@ -38,148 +38,6 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_length = 506.94
 adjustment_enabled = true
-
-[sub_resource type="Curve" id="Curve_j08ft"]
-_data = [Vector2(0, 0), 0.0, 4.58802, 0, 0, Vector2(0.274286, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 1), 0.0, 0.0, 0, 0, Vector2(0.537143, 0), 0.0699925, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_s8as4"]
-curve = SubResource("Curve_j08ft")
-
-[sub_resource type="Gradient" id="Gradient_ktilv"]
-colors = PackedColorArray(0.0856845, 0.0483958, 0.00554282, 1, 0.448597, 0.296033, 0.117401, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_48o5j"]
-gradient = SubResource("Gradient_ktilv")
-use_hdr = true
-
-[sub_resource type="Curve" id="Curve_grh70"]
-_data = [Vector2(0, 0), 0.0, 0.279971, 0, 0, Vector2(0.509138, 0.230263), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.279971, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_7f0m1"]
-curve = SubResource("Curve_grh70")
-
-[sub_resource type="Curve" id="Curve_4eagx"]
-_data = [Vector2(0, 0.505618), 0.0, 7.78828, 0, 0, Vector2(0.203655, 1), 0.0, 0.0, 0, 0, Vector2(0.804178, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.467105), -7.27923, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_5fhg8"]
-curve = SubResource("Curve_4eagx")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_axdt2"]
-emission_shape = 6
-emission_ring_axis = Vector3(0, -1, 0)
-emission_ring_height = 1.0
-emission_ring_radius = 1.0
-emission_ring_inner_radius = 0.5
-emission_ring_cone_angle = 60.0
-angle_min = -720.0
-angle_max = 720.0
-inherit_velocity_ratio = 1.0
-velocity_pivot = Vector3(0, 1, 0)
-direction = Vector3(0, 1, 0)
-spread = 90.0
-initial_velocity_min = 4.0
-initial_velocity_max = 5.0
-radial_velocity_min = 9.99998
-radial_velocity_max = 20.0
-gravity = Vector3(0, 30, 0)
-radial_accel_min = -100.0
-radial_accel_max = -100.0
-tangential_accel_min = 80.0
-tangential_accel_max = 80.0
-damping_min = 10.0
-damping_max = 10.0
-scale_max = 2.0
-scale_curve = SubResource("CurveTexture_5fhg8")
-color = Color(0.777699, 0.242412, 0.166131, 1)
-color_ramp = SubResource("GradientTexture1D_48o5j")
-alpha_curve = SubResource("CurveTexture_s8as4")
-hue_variation_min = -2.23517e-08
-hue_variation_max = 0.12
-hue_variation_curve = SubResource("CurveTexture_7f0m1")
-turbulence_noise_strength = 0.1
-turbulence_noise_scale = 1.0
-
-[sub_resource type="Animation" id="Animation_6bsal"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(236.509, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(3.05176e-05, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1142.55, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_rrces"]
-resource_name = "move_tornado"
-length = 90.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(236.509, -0.25, 0, 0.25, 0, 236.509, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 90)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(3.05176e-05, -0.25, 0, 0.25, 0, 3.05176e-05, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 90)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1142.55, -0.25, 0, 0.25, 0, -2044.91, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 90)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6bsal"]
-_data = {
-&"RESET": SubResource("Animation_6bsal"),
-&"move_tornado": SubResource("Animation_rrces")
-}
 
 [sub_resource type="Resource" id="Resource_48o5j"]
 resource_local_to_scene = true
@@ -725,6 +583,69 @@ script = ExtResource("21_ktilv")
 octree_managers = [SubResource("Resource_grh70"), SubResource("Resource_4eagx"), SubResource("Resource_axdt2"), SubResource("Resource_qii8w"), SubResource("Resource_wx7mh"), SubResource("Resource_tl77h"), SubResource("Resource_1vnxo"), SubResource("Resource_gbwy1"), SubResource("Resource_np8jb"), SubResource("Resource_fpeag")]
 metadata/class = "Arborist"
 
+[sub_resource type="Curve" id="Curve_uuc2j"]
+_data = [Vector2(0, 0), 0.0, 4.58802, 0, 0, Vector2(0.274286, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 1), 0.0, 0.0, 0, 0, Vector2(0.605714, 0), 0.0699925, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_m86jh"]
+curve = SubResource("Curve_uuc2j")
+
+[sub_resource type="Gradient" id="Gradient_h3lki"]
+colors = PackedColorArray(0.113017, 0.0116434, 0.0135117, 1, 0.35, 0, 0.0116667, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rprln"]
+gradient = SubResource("Gradient_h3lki")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_m86jh"]
+_data = [Vector2(0, 0), 0.0, 0.279971, 0, 0, Vector2(0.509138, 0.230263), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.279971, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_h3lki"]
+curve = SubResource("Curve_m86jh")
+
+[sub_resource type="Curve" id="Curve_5nkuc"]
+_data = [Vector2(0, 0.505618), 0.0, 7.78828, 0, 0, Vector2(0.203655, 1), 0.0, 0.0, 0, 0, Vector2(0.804178, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.467105), -7.27923, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_uuc2j"]
+curve = SubResource("Curve_5nkuc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4eagx"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, -1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.5
+emission_ring_cone_angle = 60.0
+angle_min = -720.0
+angle_max = 720.0
+inherit_velocity_ratio = 1.0
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 4.0
+initial_velocity_max = 5.0
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+gravity = Vector3(0, 8, 0)
+radial_accel_min = -10.0
+radial_accel_max = -7.0
+tangential_accel_min = 13.0
+tangential_accel_max = 18.0
+damping_min = 10.0
+damping_max = 10.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_uuc2j")
+color = Color(0.536644, 0.517152, 0.505563, 1)
+color_ramp = SubResource("GradientTexture1D_rprln")
+alpha_curve = SubResource("CurveTexture_m86jh")
+hue_variation_min = -0.05
+hue_variation_max = 0.05
+hue_variation_curve = SubResource("CurveTexture_h3lki")
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 1.0
+
 [node name="Phlegeton" type="Node3D"]
 script = ExtResource("1_2ois7")
 radial_wave_scene = ExtResource("2_v3ka3")
@@ -766,16 +687,6 @@ boat_path = NodePath("../Boat")
 [node name="Boat" parent="." instance=ExtResource("11_axdt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.938, -17.816, 720.368)
 collision_layer = 2
-
-[node name="pepito_tornada" parent="." instance=ExtResource("13_qii8w")]
-transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 236.509, 3.05176e-05, 1142.55)
-process_material = SubResource("ParticleProcessMaterial_axdt2")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="pepito_tornada"]
-libraries = {
-&"": SubResource("AnimationLibrary_6bsal")
-}
-autoplay = "move_tornado"
 
 [node name="Obstacles" type="Node3D" parent="."]
 
@@ -970,6 +881,13 @@ transform = Transform3D(-0.000173802, 0, 239.602, 0, 1, 0, -3976.12, 0, -1.04733
 
 [node name="End_trigger" parent="." instance=ExtResource("22_s8as4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.413, -14.7645, -5921.21)
+
+[node name="pepito_tornada" parent="." instance=ExtResource("13_qii8w")]
+transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 221.129, -14.9716, 1213.06)
+process_material = SubResource("ParticleProcessMaterial_4eagx")
+use_this_feature = true
+speed = 100.0
+stop_point = -5000.0
 
 [editable path="CanvasLayer/Level_UI"]
 [editable path="Phlegeton3"]
