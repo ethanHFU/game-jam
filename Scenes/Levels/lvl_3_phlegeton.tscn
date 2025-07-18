@@ -1470,7 +1470,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.915, -4.577, -6228.93)
 
 [node name="Water_River" parent="." instance=ExtResource("21_j08ft")]
-transform = Transform3D(-0.000173802, 0, 239.602, 0, 1, 0, -3976.12, 0, -1.04733e-05, 240.459, -14.9716, -2647.17)
+transform = Transform3D(-0.000173802, 0, 252.278, 0, 1, 0, -3976.12, 0, -1.10274e-05, 248.925, -14.4328, -2647.04)
 
 [node name="End_trigger" parent="." instance=ExtResource("22_s8as4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.413, -14.7645, -5921.21)
@@ -1479,7 +1479,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.413, -14.7645, -5921.21)
 transform = Transform3D(-25, 0, -3.7749e-06, 0, 25, 0, 3.7749e-06, 0, -25, 221.129, -14.9716, 1213.06)
 process_material = SubResource("ParticleProcessMaterial_4eagx")
 use_this_feature = true
-speed = 0.0
+speed = 100.0
 stop_point = -5000.0
 
 [editable path="CanvasLayer/Level_UI"]
