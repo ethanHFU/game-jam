@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bbmfs03o1here"]
 
-[ext_resource type="Script" uid="uid://cyutwsuvq8jmo" path="res://Scripts/small_prefabs/constant_movement.gd" id="1_8xhqk"]
+[ext_resource type="Script" path="res://Scripts/small_prefabs/constant_movement.gd" id="1_8xhqk"]
 [ext_resource type="Script" uid="uid://dhkdrlrpa27jp" path="res://Scripts/small_prefabs/tornado.gd" id="1_lugh7"]
 
 [sub_resource type="Curve" id="Curve_uuc2j"]
@@ -46,6 +46,8 @@ direction = Vector3(0, 1, 0)
 spread = 90.0
 initial_velocity_min = 4.0
 initial_velocity_max = 5.0
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
 gravity = Vector3(0, 8, 0)
 radial_accel_min = -10.0
 radial_accel_max = -7.0
