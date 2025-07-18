@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://dgd17k5nvvclf" path="res://Resources/Shader/blood.gdshader" id="1_kosx6"]
 
 [sub_resource type="Gradient" id="Gradient_gksfk"]
-colors = PackedColorArray(0.159073, 5.6771e-05, 3.11075e-05, 1, 0.0760206, 1.74568e-05, 9.56899e-06, 1)
+colors = PackedColorArray(0.3653, 0.00028269, 0.000154837, 1, 0.0760206, 1.74568e-05, 9.56899e-06, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2t33t"]
 fractal_octaves = 2
