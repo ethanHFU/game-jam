@@ -4,6 +4,9 @@
 
 **Mighty Vessel** ist ein kurzformatiges Action-Puzzle-Spiel, das im Rahmen eines viertägigen Game Jams an der Hochschule Furtwangen von einem sechsköpfigen Team entwickelt wurde. Der Fokus liegt auf präziser Steuerung durch indirekte Navigation und der Einbindung von Elementen der griechischen Mythologie.
 
+## Demo starten
+Einfach die [Mighty Vessel Demo](build/MightyVesselDemo.exe) (build/MightyVesselDemo.exe) herunterladen und starten.
+
 ## Spielbeschreibung
 
 Der Spieler übernimmt die Rolle eines Fischers, der mithilfe der Kraft des Meeresgottes Triton zunächst einem Sturm entkommt und anschließend einen Weg aus der Unterwelt finden muss. Dabei wird keine klassische Steuerung verwendet – Bewegung erfolgt über das gezielte Auslösen von Wasserwellen.
@@ -19,7 +22,7 @@ Der Spieler übernimmt die Rolle eines Fischers, der mithilfe der Kraft des Meer
 
 - Bewegung durch indirekte Steuerung via Wasserwellen
 - Hindernisausweichen erfordert Timing
-- Visuelle Gestaltung in Knet-Optik (teils mit echten Modellierungen umgesetzt)
+- Visuelle Gestaltung in Knet-Optik (teils mit selbstgebauten Knetfiguren umgesetzt)
 
 ## Technische Informationen
 
