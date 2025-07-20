@@ -5,7 +5,7 @@
 **Mighty Vessel** ist ein kurzformatiges Action-Puzzle-Spiel, das im Rahmen eines viertägigen Game Jams an der Hochschule Furtwangen von einem sechsköpfigen Team entwickelt wurde. Der Fokus liegt auf präziser Steuerung durch indirekte Navigation und der Einbindung von Elementen der griechischen Mythologie.
 
 ## Demo starten
-Einfach die [Mighty Vessel Demo](build/MightyVesselDemo.exe) (build/MightyVesselDemo.exe) herunterladen und starten.
+Einfach die [Mighty Vessel Demo](build/mighty_vessel.exe) (build/mighty_vessel.exe) herunterladen und starten.
 
 ## Spielbeschreibung
 
